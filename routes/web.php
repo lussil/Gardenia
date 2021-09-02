@@ -17,9 +17,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/painel', function () {
-    return view('painel');
-})->middleware(['auth'])->name('painel');
+Route::get('/painel', function () {return view('painel');})->middleware(['auth'])->name('painel');
 
 
 Route::get('/user', [UserController::class, 'index'])->middleware(['auth'])->name('user.index');
