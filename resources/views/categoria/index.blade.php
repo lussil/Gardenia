@@ -20,12 +20,14 @@
 @endif
 <div class="container col-8">
  <table class="table  no-margin">
-    <thead>
+    <thead class="thead-dark">
         <tr>
             <td>ID</td>
             <td>Nome</td>
             
             <td>ações</td>
+            <td></td>
+            <td></td>
         </tr>
     </thead>      
     <tbody>
@@ -36,14 +38,18 @@
                     <td> {{$value->nome}}</td>
                    
                     <td>
-                <a class="btn btn-primary" href="{{ URL::to('categoria/' . $value->id) }}">Visualizar</a>
-                <a class="btn btn-warning" href="{{ URL::to('categoria/' . $value->id . '/edit') }}"> editar</a>
-                
-            {{ Form::open(array('url' => 'categoria/' . $value->id, 'onsubmit' => 'return ConfirmDelete()')) }}
-            {{ Form::hidden('_method', 'DELETE') }}
-            {{ Form::submit('Excluir', array('class' => 'btn btn-danger')) }}
-            {{ Form::close() }}
+                        <a class="btn btn-primary" href="{{ URL::to('categoria/' . $value->id) }}">Visualizar</a>
+                    </td>
 
+                    <td> 
+                        <a class="btn btn-warning" href="{{ URL::to('categoria/' . $value->id . '/edit') }}"> editar</a>
+                    </td>
+                    
+                    <td>
+                        {{ Form::open(array('url' => 'categoria/' . $value->id, 'onsubmit' => 'return ConfirmDelete()')) }}
+                        {{ Form::hidden('_method', 'DELETE') }}
+                        {{ Form::submit('Excluir', array('class' => 'btn btn-danger')) }}
+                        {{ Form::close() }}
                     </td>
                 </tr>
                 @endforeach
