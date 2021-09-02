@@ -257,7 +257,7 @@ return [
         ['header' => 'Configurações'],
         [
             'text' => 'Usuários',
-            'url'  => 'admin/settings',
+            'url'  => 'user',
             'icon' => 'fas fa-fw fa-users',
         ],
         // [
@@ -275,7 +275,7 @@ return [
                 ],
                 [
                     'text' => 'Categorias',
-                    'url'  => '#',
+                    'url'  => 'categoria',
                 ],
                 [
                     'text'    => 'Promoção',

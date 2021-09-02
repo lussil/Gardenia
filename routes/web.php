@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\CategoriaController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,10 +19,15 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/painel', function () {return view('painel');})->middleware(['auth'])->name('painel');
+Route::get('/dashboard', function () {return view('painel');})->middleware(['auth'])->name('painel');
 
 
 Route::get('/user', [UserController::class, 'index'])->middleware(['auth'])->name('user.index');
+
+
+// rotas para Página Categoria
+Route::get('/categoria' , [CategoriaController::class, 'index'])->name('categoria.index');
+
 
 
 
