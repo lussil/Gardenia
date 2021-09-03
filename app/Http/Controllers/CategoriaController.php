@@ -26,7 +26,7 @@ class CategoriaController extends Controller
      */
     public function create()
     {
-        //
+        return view('categoria.create');
     }
 
     /**
@@ -37,7 +37,25 @@ class CategoriaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $message = [
+            'nome.required' => 'O campo nome é obrigatório!',
+            'nome.min' => 'O campo nome precisa ter no mínimo :min caracteres!',
+            
+        ];
+
+        $validateData = $request->validate([
+            'nome'      => 'required|min:3',
+            
+        ], $message);
+
+
+        $categoria = new Categoria;
+        $categoria->nome      = $request->nome;
+        
+        
+        $categoria->save();
+
+        return redirect()->route('categoria.index')->with('message', "categoria {$categoria->nome} criado com sucesso!");
     }
 
     /**
@@ -46,9 +64,11 @@ class CategoriaController extends Controller
      * @param  \App\Models\Categoria  $categoria
      * @return \Illuminate\Http\Response
      */
-    public function show(Categoria $categoria)
+    public function show( $id)
     {
-        //
+        $categoria = Categoria::findOrFail($id);
+        
+        return view('categoria.show', ['categoria' => $categoria]);
     }
 
     /**
@@ -57,9 +77,11 @@ class CategoriaController extends Controller
      * @param  \App\Models\Categoria  $categoria
      * @return \Illuminate\Http\Response
      */
-    public function edit(Categoria $categoria)
+    public function edit( $id)
     {
-        //
+        $categoria = Categoria::findOrFail($id);
+
+        return view('categoria.edit', ['categoria' => $categoria]);
     }
 
     /**
@@ -69,9 +91,26 @@ class CategoriaController extends Controller
      * @param  \App\Models\Categoria  $categoria
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Categoria $categoria)
+    public function update(Request $request,  $id)
     {
-        //
+        $message = [
+            'nome.required' => 'O campo nome é obrigatório!',
+            'nome.min' => 'O campo nome precisa ter no mínimo :min caracteres!',
+            
+        ];
+
+        $validateData = $request->validate([
+            'nome'      => 'required|min:3',
+            
+        ], $message);
+
+        $categoria = Categoria::findOrFail($id);
+        $categoria->nome      =$request->nome;
+        
+
+        $categoria->save();
+       
+        return redirect()->route('categoria.index')->with('message','categoria Editada com sucesso!');
     }
 
     /**
@@ -80,8 +119,12 @@ class CategoriaController extends Controller
      * @param  \App\Models\Categoria  $categoria
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Categoria $categoria)
+    public function destroy($id)
     {
-        //
+        $categoria = Categoria::findOrFail($id);
+        $categoria->delete();
+
+        return redirect()->route('categoria.index')->with('message', 'categoria excluido com sucesso!');
+    
     }
 }

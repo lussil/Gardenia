@@ -56,7 +56,7 @@
             </tr>
     </tbody>
  </table>
-<a class="btn btn-success" href="{{URL::to ('categoria/create')}}"> criar</a>
+<a class="btn btn-success btn-lg" href="{{URL::to ('categoria/create')}}"> criar</a>
 </div>
 
 @stop
