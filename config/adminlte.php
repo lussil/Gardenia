@@ -271,7 +271,7 @@ return [
             'submenu' => [
                 [
                     'text' => 'Produtos',
-                    'url'  => '#',
+                    'url'  => 'produto',
                 ],
                 [
                     'text' => 'Categorias',

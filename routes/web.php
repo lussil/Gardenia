@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\CategoriaController;
+use App\Http\Controllers\ProdutoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -40,5 +41,17 @@ Route::put('/categoria/{id}' , [CategoriaController::class, 'update'])->name('ca
 
 Route::delete('/categoria/{id}', [CategoriaController::class, 'destroy'])->name('categoria.destroy');
 // rotas para Página produto
+
+Route::get('/produto' , [ProdutoController::class, 'index'])->name('produto.index');
+
+Route::get('/produto/create', [ProdutoController::class, 'create'])->name('produto.create');
+Route::post('/produto/create', [ProdutoController::class, 'store'])->name('produto.store');
+
+Route::get('/produto/{id}' ,  [ProdutoController::class, 'show'])->name('produto.show');
+
+Route::get('/produto/{id}/edit' , [ProdutoController::class, 'edit'])->name('produto.edit');
+Route::put('/produto/{id}' , [ProdutoController::class, 'update'])->name('produto.update');
+
+Route::delete('/produto/{id}', [ProdutoController::class, 'destroy'])->name('produto.destroy');
 
 require __DIR__.'/auth.php';
