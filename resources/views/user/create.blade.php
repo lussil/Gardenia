@@ -16,10 +16,10 @@
             {{ Form::text('email', null , ['class' => 'form-control'] ) }}
 
             {{ Form::label('password', 'senha') }}
-            {{ Form::number('password', null, ['class' => 'form-control']) }}
+            {{ Form::password('password', null, ['class' => 'form-control']) }}
                 
             {{ Form::label('password', 'confirmar senha') }}
-            {{ Form::number('password', null, ['class' => 'form-control']) }}
+            {{ Form::password('password', null, ['class' => 'form-control']) }}
                 
             {{ Form::submit('Enviar' , ['class' => 'btn btn-outline-success ']) }}
 

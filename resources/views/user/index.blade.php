@@ -32,7 +32,7 @@
                </tr>
        </tbody>
     </table>
-    <a class="btn btn-success btn-lg" href="{{URL::to ('user/create')}}"> Novo Usuário</a>
+    <a class="btn btn-success btn-lg" href="{{URL::to ('/register')}}"> Novo Usuário</a>
     </div>
 @stop
 

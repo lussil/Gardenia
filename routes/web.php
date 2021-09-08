@@ -24,9 +24,6 @@ Route::get('/dashboard', function () {return view('painel');})->middleware(['aut
 // rotas para user
 Route::get('/user', [UserController::class, 'index'])->middleware(['auth'])->name('user.index');
 
-Route::get('/user/create', [UserController::class, 'create'])->name('user.create');
-Route::post('/user/create', [UserController::class, 'store'])->name('user.store');
-
 
 // rotas para Página Categoria
 Route::get('/categoria' , [CategoriaController::class, 'index'])->name('categoria.index');
