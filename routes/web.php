@@ -26,29 +26,29 @@ Route::get('/user', [UserController::class, 'index'])->middleware(['auth'])->nam
 
 
 // rotas para Página Categoria
-Route::get('/categoria' , [CategoriaController::class, 'index'])->name('categoria.index');
+Route::get('/categoria' , [CategoriaController::class, 'index'])->middleware(['auth'])->name('categoria.index');
 
-Route::get('/categoria/create', [CategoriaController::class, 'create'])->name('categoria.create');
-Route::post('/categoria/create', [CategoriaController::class, 'store'])->name('categoria.store');
+Route::get('/categoria/create', [CategoriaController::class, 'create'])->middleware(['auth'])->name('categoria.create');
+Route::post('/categoria/create', [CategoriaController::class, 'store'])->middleware(['auth'])->name('categoria.store');
 
-Route::get('/categoria/{id}' ,  [CategoriaController::class, 'show'])->name('categoria.show');
+Route::get('/categoria/{id}' ,  [CategoriaController::class, 'show'])->middleware(['auth'])->name('categoria.show');
 
-Route::get('/categoria/{id}/edit' , [CategoriaController::class, 'edit'])->name('categoria.edit');
-Route::put('/categoria/{id}' , [CategoriaController::class, 'update'])->name('categoria.update');
+Route::get('/categoria/{id}/edit' , [CategoriaController::class, 'edit'])->middleware(['auth'])->name('categoria.edit');
+Route::put('/categoria/{id}' , [CategoriaController::class, 'update'])->middleware(['auth'])->name('categoria.update');
 
-Route::delete('/categoria/{id}', [CategoriaController::class, 'destroy'])->name('categoria.destroy');
+Route::delete('/categoria/{id}', [CategoriaController::class, 'destroy'])->middleware(['auth'])->name('categoria.destroy');
+
 // rotas para Página produto
+Route::get('/produto' , [ProdutoController::class, 'index'])->middleware(['auth'])->name('produto.index');
 
-Route::get('/produto' , [ProdutoController::class, 'index'])->name('produto.index');
+Route::get('/produto/create', [ProdutoController::class, 'create'])->middleware(['auth'])->name('produto.create');
+Route::post('/produto/create', [ProdutoController::class, 'store'])->middleware(['auth'])->name('produto.store');
 
-Route::get('/produto/create', [ProdutoController::class, 'create'])->name('produto.create');
-Route::post('/produto/create', [ProdutoController::class, 'store'])->name('produto.store');
+Route::get('/produto/{id}' ,  [ProdutoController::class, 'show'])->middleware(['auth'])->name('produto.show');
 
-Route::get('/produto/{id}' ,  [ProdutoController::class, 'show'])->name('produto.show');
+Route::get('/produto/{id}/edit' , [ProdutoController::class, 'edit'])->middleware(['auth'])->name('produto.edit');
+Route::put('/produto/{id}' , [ProdutoController::class, 'update'])->middleware(['auth'])->name('produto.update');
 
-Route::get('/produto/{id}/edit' , [ProdutoController::class, 'edit'])->name('produto.edit');
-Route::put('/produto/{id}' , [ProdutoController::class, 'update'])->name('produto.update');
-
-Route::delete('/produto/{id}', [ProdutoController::class, 'destroy'])->name('produto.destroy');
+Route::delete('/produto/{id}', [ProdutoController::class, 'destroy'])->middleware(['auth'])->name('produto.destroy');
 
 require __DIR__.'/auth.php';
