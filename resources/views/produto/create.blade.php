@@ -34,6 +34,9 @@
 
     {{ Form::label('valor', 'valor') }}
     {{ Form::number('valor', null , ['class' => 'form-control'] ) }}
+
+    
+    
     
     {{ Form::submit('Enviar' , ['class' => 'btn btn-outline-success ']) }}
 

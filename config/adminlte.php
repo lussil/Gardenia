@@ -280,13 +280,13 @@ return [
                 ],
                 [
                     'text'    => 'Promoção',
-                    'url'     => 'Comentários',
+                    'url'     => 'comentarios',
                     
                     
                 ],
                 [
-                    'text' => 'Comentários',
-                    'url'  => '#',
+                    'text' => 'Comentarios',
+                    'url'  => 'comentario',
                 ],
             ],
         ],

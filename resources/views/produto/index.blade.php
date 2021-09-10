@@ -24,7 +24,9 @@
             <td>ID</td>
             <td>Categoria</td>
             <td>Nome</td>
-            <td>ações</td>
+            <td>Preços</td>
+            <td>Ações</td>
+            
         </tr>
     </thead>      
     <tbody>
