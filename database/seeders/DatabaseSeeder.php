@@ -6,6 +6,7 @@ use Illuminate\Database\Seeder;
 use App\Models\Categoria;
 use App\Models\User;
 use App\Models\Produto;
+use App\Models\Comentario;
 
 class DatabaseSeeder extends Seeder
 {
@@ -20,6 +21,7 @@ class DatabaseSeeder extends Seeder
             CategoriaSeeder::class,
             UserSeeder::class,
             ProdutoSeeder::class,
+            ComentarioSeeder::class,
         ]);
         // \App\Models\User::factory(10)->create();
     }

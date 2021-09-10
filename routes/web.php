@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\CategoriaController;
+use App\Http\Controllers\ComentarioController;
 use App\Http\Controllers\ProdutoController;
 
 /*
@@ -52,3 +53,20 @@ Route::put('/produto/{id}' , [ProdutoController::class, 'update'])->name('produt
 Route::delete('/produto/{id}', [ProdutoController::class, 'destroy'])->name('produto.destroy');
 
 require __DIR__.'/auth.php';
+
+
+// rotas para Página Comentários
+
+Route::get('/comentario' , [ComentarioController::class, 'index'])->name('comentario.index');
+
+Route::get('/comentario/create', [ComentarioController::class, 'create'])->name('comentario.create');
+Route::post('/comentario/create', [ComentarioController::class, 'store'])->name('comentario.store');
+
+Route::get('/comentario/{id}' ,  [ComentarioController::class, 'show'])->name('comentario.show');
+
+Route::get('/comentario/{id}/edit' , [ComentarioController::class, 'edit'])->name('comentario.edit');
+Route::put('/comentario/{id}' , [ComentarioController::class, 'update'])->name('comentario.update');
+
+Route::delete('/comentario/{id}', [ComentarioController::class, 'destroy'])->name('comentario.destroy');
+
+
