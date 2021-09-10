@@ -110,7 +110,7 @@ class CategoriaController extends Controller
 
         $categoria->save();
        
-        return redirect()->route('categoria.index')->with('message','categoria Editada com sucesso!');
+        return redirect()->route('categoria.index')->with('message','categoria editada com sucesso!');
     }
 
     /**
