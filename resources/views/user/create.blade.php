@@ -1,7 +1,7 @@
 @extends('adminlte::page')
 
 @section('title', 'Dashboard')
-
+<h1>Usuários</h1>
 
 @section('content')
 
