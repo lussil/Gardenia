@@ -32,8 +32,8 @@
     {{ Form::label('descricao', 'Descrição') }}
     {{ Form::text('descricao', $produto->descricao , ['class' => 'form-control'] ) }}
 
-    {{ Form::label('descricao', 'Descrição') }}
-    {{ Form::number('valor', $produto->valor, ['class' => 'form-control']) }}
+    {{ Form::label('valor', 'Valor') }}
+    {{ Form::number('valor', $produto->valor, ['class' => 'form-control' , 'step'=> 'any']) }}
             
     {{ Form::submit('Enviar' , ['class' => 'btn btn-outline-success ']) }}
 

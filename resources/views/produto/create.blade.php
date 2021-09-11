@@ -33,10 +33,8 @@
     {{ Form::text('descricao', null , ['class' => 'form-control'] ) }}
 
     {{ Form::label('valor', 'valor') }}
-    {{ Form::number('valor', null , ['class' => 'form-control'] ) }}
+    {{ Form::number('valor', null , ['class' => 'form-control' ,'step'=> 'any'] ) }}
 
-    
-    
     
     {{ Form::submit('Enviar' , ['class' => 'btn btn-outline-success ']) }}
 

@@ -52,12 +52,7 @@ Route::put('/produto/{id}', [ProdutoController::class, 'update'])->middleware(['
 
 Route::delete('/produto/{id}', [ProdutoController::class, 'destroy'])->middleware(['auth'])->name('produto.destroy');
 
-
-require __DIR__.'/auth.php';
-
-
 // rotas para Página Comentários
-
 Route::get('/comentario' , [ComentarioController::class, 'index'])->name('comentario.index');
 
 Route::get('/comentario/create', [ComentarioController::class, 'create'])->name('comentario.create');
@@ -70,4 +65,4 @@ Route::put('/comentario/{id}' , [ComentarioController::class, 'update'])->name('
 
 Route::delete('/comentario/{id}', [ComentarioController::class, 'destroy'])->name('comentario.destroy');
 
-
+require __DIR__.'/auth.php';
