@@ -5,6 +5,8 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\ComentarioController;
 use App\Http\Controllers\ProdutoController;
+use App\Http\Controllers\PedidoController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -22,11 +24,11 @@ Route::get('/', function () {
 });
 
 Route::get('/dashboard', function () {return view('painel');})->middleware(['auth'])->name('painel');
-// rotas para user
+// Rotas para user
 Route::get('/user', [UserController::class, 'index'])->middleware(['auth'])->name('user.index');
 
 
-// rotas para Página Categoria
+// Rotas para página Categoria
 Route::get('/categoria', [CategoriaController::class, 'index'])->middleware(['auth' , 'can:administrador'])->name('categoria.index');
 
 Route::get('/categoria/create', [CategoriaController::class, 'create'])->middleware(['auth'])->name('categoria.create');
@@ -39,7 +41,7 @@ Route::put('/categoria/{id}', [CategoriaController::class, 'update'])->middlewar
 
 Route::delete('/categoria/{id}', [CategoriaController::class, 'destroy'])->middleware(['auth'])->name('categoria.destroy');
 
-// rotas para Página produto.
+// Rotas para página produto.
 Route::get('/produto' , [ProdutoController::class, 'index'])->middleware(['auth'])->name('produto.index');
 
 Route::get('/produto/create', [ProdutoController::class, 'create'])->middleware(['auth'])->name('produto.create');
@@ -52,7 +54,7 @@ Route::put('/produto/{id}', [ProdutoController::class, 'update'])->middleware(['
 
 Route::delete('/produto/{id}', [ProdutoController::class, 'destroy'])->middleware(['auth'])->name('produto.destroy');
 
-// rotas para Página Comentários
+// Rotas para página Comentários
 Route::get('/comentario' , [ComentarioController::class, 'index'])->name('comentario.index');
 
 Route::get('/comentario/create', [ComentarioController::class, 'create'])->name('comentario.create');
@@ -64,5 +66,11 @@ Route::get('/comentario/{id}/edit' , [ComentarioController::class, 'edit'])->nam
 Route::put('/comentario/{id}' , [ComentarioController::class, 'update'])->name('comentario.update');
 
 Route::delete('/comentario/{id}', [ComentarioController::class, 'destroy'])->name('comentario.destroy');
+
+// Rotas para os novos pedidos
+Route::get('/pedido', [PedidoController::class , 'index'])->name('pedido.index');
+
+Route::get('/pedido/{id}', [PedidoController::class , 'show'])->name('pedido.show');
+
 
 require __DIR__.'/auth.php';

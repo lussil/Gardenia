@@ -280,7 +280,7 @@ return [
                 ],
                 [
                     'text'    => 'Promoção',
-                    'url'     => 'comentarios',
+                    'url'     => '#',
                     
                     
                 ],
@@ -294,7 +294,7 @@ return [
         [
             'text'       => 'Novos',
             'icon_color' => 'cyan',
-            'url'        => '#',
+            'url'        => 'pedido',
             'label'       => 4,
             'label_color' => 'success',
         ],

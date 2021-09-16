@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Pedido;
 use Illuminate\Http\Request;
+use App\Models\Produto;
+use App\Models\PedidoProduto;
 
 class PedidoController extends Controller
 {
@@ -14,7 +16,13 @@ class PedidoController extends Controller
      */
     public function index()
     {
-        //
+
+        $pedido = Pedido::get();
+        return view('pedido.index', ['pedido' => $pedido]);
+        // foreach ($pedido->produto as $produto) {
+        //  echo ($produto->nome);
+        //}
+
     }
 
     /**
@@ -35,7 +43,7 @@ class PedidoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+       
     }
 
     /**
@@ -44,9 +52,13 @@ class PedidoController extends Controller
      * @param  \App\Models\Pedido  $pedido
      * @return \Illuminate\Http\Response
      */
-    public function show(Pedido $pedido)
+    public function show($id)
     {
-        //
+        //dd('entrou');
+       
+        $pedido = Pedido::findOrFail($id);
+        //dd($pedido);
+        return view('pedido.show', ['pedido' => $pedido]);
     }
 
     /**
