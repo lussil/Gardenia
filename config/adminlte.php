@@ -259,7 +259,7 @@ return [
             'text' => 'Usuários',
             'url'  => 'user',
             'icon' => 'fas fa-fw fa-users',
-            'can'  => 'administrador',
+            
         ],
         // [
         //     'text' => 'change_password',
