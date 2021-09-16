@@ -245,12 +245,12 @@ return [
         
         [
             'text' => 'blog',
-            'url'  => 'admin/blog',
+            'url'  => 'produto',
             'can'  => 'manage-blog',
         ],
         [
             'text'        => 'Doceria Gardenia',
-            'url'         => 'admin/pages',
+            'url'         => 'produto',
             'icon'        => 'far fa-fw fa-file',
             
         ],
