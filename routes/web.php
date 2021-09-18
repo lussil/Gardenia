@@ -77,6 +77,11 @@ Route::get('/pedido/concluidos', [PedidoController::class , 'concluidos'])->name
 
 Route::get('/pedido/cancelados', [PedidoController::class , 'cancelados'])->name('pedido.cancelados');
 
+
+Route::get('/pedido/{id}/statusCancelado', [PedidoController::class , 'statusCancelado'])->name('pedido.statusCancelado');
+
+Route::get('/pedido/{id}/statusConcluido', [PedidoController::class , 'statusConcluido'])->name('pedido.statusConcluido');
+
 Route::get('/pedido/{id}/statusAndamento', [PedidoController::class , 'statusAndamento'])->name('pedido.statusAndamento');
 
 Route::get('/pedido/{id}', [PedidoController::class , 'show'])->name('pedido.show');

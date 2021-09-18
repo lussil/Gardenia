@@ -18,7 +18,7 @@
 <div class="alert alert-info">{{ Session::get('message') }}</div>
 @endif
 
-
+<div class="container col-8">
 
 
 <table class="table  no-margin">
@@ -42,13 +42,8 @@
  </table>
 
 
-
-
-
-
-
-
 </div>
+
 @stop
 
 @section('css')

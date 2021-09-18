@@ -17,7 +17,7 @@ class PedidoController extends Controller
     public function index()
     {
 
-        $pedido = Pedido::get();
+        $pedido =  $pedido = Pedido::where('status',1)->get();
         return view('pedido.index', ['pedido' => $pedido]);
         // foreach ($pedido->produto as $produto) {
         //  echo ($produto->nome);
@@ -121,4 +121,27 @@ class PedidoController extends Controller
         $pedido = Pedido::where('status',2)->get();
         return view('pedido.andamento', ['pedido' => $pedido]);
     }
+
+
+    public function statusConcluido($id)
+    {
+        $pedido = Pedido::find($id);
+        $pedido->status = 3;
+        $pedido->save();
+        
+        $pedido = Pedido::where('status',3)->get();
+        return view('pedido.concluidos', ['pedido' => $pedido]);
+    }
+
+    public function statusCancelado($id)
+    {
+        $pedido = Pedido::find($id);
+        $pedido->status = 4;
+        $pedido->save();
+        
+        $pedido =  $pedido = Pedido::where('status',1)->get();
+        return view('pedido.index', ['pedido' => $pedido]);
+    }
+    
+
 }

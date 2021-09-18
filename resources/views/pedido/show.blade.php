@@ -3,7 +3,7 @@
 @section('title', 'Dashboard')
 
 @section('content_header')
-    <h1>Novos pedidos</h1>
+    <h1>Pedido {{$pedido->id}}</h1>
 @stop
 
 @section('content')
@@ -32,15 +32,22 @@
         @foreach ($pedido->produto as $value )
                  <li>{{$value->nome}}</li> 
                  @endforeach
-    
- <a class="btn btn-success" href="{{ URL::to('pedido/' . $pedido->id . '/statusAndamento') }}">aceitar</a>
-   
-    {{ Form::open(array('url' => 'produto/' . $value->id, 'onsubmit' => 'return ConfirmDelete()')) }}
-    {{ Form::hidden('_method', 'DELETE') }}
-    {{ Form::submit('rejeitar', array('class' => 'btn btn-danger')) }}
-    {{ Form::close() }}      
+
+                 @if ($pedido->status == 2)
+                    <a class="btn btn-success" href="{{ URL::to('pedido/' . $pedido->id . '/statusConcluido') }}">Concluir pedido</a>
+                @elseif ($pedido->status == 1)
+                <a class="btn btn-success" href="{{ URL::to('pedido/' . $pedido->id . '/statusAndamento') }}">Aceitar</a> 
+                <a class="btn btn-danger"  href="{{ URL::to('pedido/' . $pedido->id . '/statusCancelado') }}">Rejeira pedido</a>
+
+                @else
+                   
+                @endif
 
 </div>
+
+
+
+
 @stop
 
 @section('css')

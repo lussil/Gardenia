@@ -19,7 +19,7 @@
 @endif
 <div class="container col-8">
  
-
+  
     <table class="table  no-margin">
         <thead>
             <tr>
