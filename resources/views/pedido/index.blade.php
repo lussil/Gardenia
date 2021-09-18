@@ -27,12 +27,12 @@
                 <td>Telefone</td>
                 <td>detalhes do pedido</td> 
             </tr>
-        </thead>      
+        </thead>
         <tbody>
                 <tr>
                     @foreach ($pedido as $value) 
-                        <td>Nome        {{$value->nome}}</td> 
-                        <td>Telefone    {{$value->telefone}}</td>
+                        <td>    {{$value->nome}}</td> 
+                        <td>    {{$value->telefone}}</td>
                         <td><a class="btn btn-primary" href="{{ URL::to('pedido/' . $value->id) }}">Detalhar</a></td>
                 </tr>
                     @endforeach

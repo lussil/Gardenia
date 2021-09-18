@@ -67,10 +67,20 @@ Route::put('/comentario/{id}' , [ComentarioController::class, 'update'])->name('
 
 Route::delete('/comentario/{id}', [ComentarioController::class, 'destroy'])->name('comentario.destroy');
 
-// Rotas para os novos pedidos
+// Rotas para pedidos
+
 Route::get('/pedido', [PedidoController::class , 'index'])->name('pedido.index');
 
+Route::get('/pedido/andamento', [PedidoController::class , 'andamento'])->name('pedido.andamento');
+
+Route::get('/pedido/concluidos', [PedidoController::class , 'concluidos'])->name('pedido.concluidos');
+
+Route::get('/pedido/cancelados', [PedidoController::class , 'cancelados'])->name('pedido.cancelados');
+
+Route::get('/pedido/{id}/statusAndamento', [PedidoController::class , 'statusAndamento'])->name('pedido.statusAndamento');
+
 Route::get('/pedido/{id}', [PedidoController::class , 'show'])->name('pedido.show');
+
 
 
 require __DIR__.'/auth.php';

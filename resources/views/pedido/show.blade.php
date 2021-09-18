@@ -20,39 +20,26 @@
 <div class="container col-8">
  
 
-   
-     </table>
-     <table class="table  no-margin">
-        <thead>
-            <tr>
-                <td>ID</td>
-                <td>Categoria</td>
-                <td>Nome</td>
-                <td>Preços</td>
-                <td>Ações</td>
-                
-            </tr>
-        </thead>      
-        <tbody>
-                <tr>
-                    
-                    <tr>
-                        <td> {{$pedido->id}}</td> 
-                        <td> {{$pedido->nome}}</td> 
-                        <td> {{$pedido->telefone}}</td>
-                        <td> {{$pedido->observacao}}</td> 
-                        <td> {{$pedido->rua}}</td>
-                        <td> {{$pedido->numero}}</td><br> 
-                        <td> {{$pedido->complemento_observacao}}</td>
-                    </tr>
-                 @foreach ($pedido->produto as $value )
-                 <td> {{$value->nome}}</td> 
+    <div class="container col-8">
+      
+        <p>Nome                  :  {{$pedido->nome}}</p> 
+        <p>Telefone              :  {{$pedido->telefone}}</p>
+        <p>Observacao            :  {{$pedido->observacao}}</p> 
+        <p>Rua                   :  {{$pedido->rua}}</p>
+        <p>status                :  {{$pedido->status}}</p>
+        <p>Numero                :  {{$pedido->numero}}</p> 
+        <p>Complemento           :  {{$pedido->complemento_observacao}}</p>
+        @foreach ($pedido->produto as $value )
+                 <li>{{$value->nome}}</li> 
                  @endforeach
-                </tr>
-        </tbody>
-     </table>
+    
+ <a class="btn btn-success" href="{{ URL::to('pedido/' . $pedido->id . '/statusAndamento') }}">aceitar</a>
    
- 
+    {{ Form::open(array('url' => 'produto/' . $value->id, 'onsubmit' => 'return ConfirmDelete()')) }}
+    {{ Form::hidden('_method', 'DELETE') }}
+    {{ Form::submit('rejeitar', array('class' => 'btn btn-danger')) }}
+    {{ Form::close() }}      
+
 </div>
 @stop
 

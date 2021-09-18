@@ -301,17 +301,25 @@ return [
         [
             'text'       => 'Em andamento',
             'icon_color' => 'yellow',
-            'url'        => '#',
+            'url'        => 'pedido/andamento',
+            'label'       => 4,
+            'label_color' => 'success',
+        ],
+        [
+            'text'       => 'concluidos',
+            'icon_color' => 'green',
+            'url'        => 'pedido/concluidos',
             'label'       => 4,
             'label_color' => 'success',
         ],
         [
             'text'       => 'Negados',
             'icon_color' => 'red',
-            'url'        => '#',
+            'url'        => 'pedido/cancelados',
             'label'       => 4,
             'label_color' => 'success',
         ],
+        
         
     ],
 

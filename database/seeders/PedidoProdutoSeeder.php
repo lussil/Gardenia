@@ -15,6 +15,7 @@ class PedidoProdutoSeeder extends Seeder
      */
     public function run()
     {
+        /* pedido 1 */ 
         PedidoProduto::create([
         'produto_id' => '1',
         'pedido_id'  => '1',
@@ -35,16 +36,53 @@ class PedidoProdutoSeeder extends Seeder
         'quantidade' => '1',
         'valor'      => '15.90',
                     ]);  
-                    
+                   /* pedido 2 */ 
         PedidoProduto::create([
         'produto_id' => '2',
         'pedido_id'  => '2',
         'quantidade' => '2',
         'valor'      => '11.90',
                         ]);
+               /* pedido 3 */ 
+        PedidoProduto::create([
+            'produto_id' => '3',
+            'pedido_id'  => '3',
+            'quantidade' => '2',
+            'valor'      => '11.90',    
+            ]);     
 
-                        
+       PedidoProduto::create([
+          'produto_id' => '3',
+          'pedido_id'  => '3',
+         'quantidade' => '2',
+         'valor'      => '11.90',    
+        ]);  
 
+        PedidoProduto::create([
+            'produto_id' => '3',
+            'pedido_id'  => '3',
+            'quantidade' => '2',
+            'valor'      => '11.90',    
+            ]);  
 
+        PedidoProduto::create([
+            'produto_id' => '3',
+            'pedido_id'  => '3',
+            'quantidade' => '2',
+            'valor'      => '11.90',    
+            ]);  
+              /* pedido 4 */ 
+        PedidoProduto::create([
+            'produto_id' => '5',
+            'pedido_id'  => '4',
+            'quantidade' => '2',
+            'valor'      => '11.90',  
+            ]); 
+        PedidoProduto::create([
+            'produto_id' => '2',
+            'pedido_id'  => '4',
+            'quantidade' => '2',
+            'valor'      => '11.90',  
+            ]); 
     }
 }

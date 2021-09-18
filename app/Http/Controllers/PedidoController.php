@@ -54,10 +54,9 @@ class PedidoController extends Controller
      */
     public function show($id)
     {
-        //dd('entrou');
-       
+             
         $pedido = Pedido::findOrFail($id);
-        //dd($pedido);
+       
         return view('pedido.show', ['pedido' => $pedido]);
     }
 
@@ -92,6 +91,34 @@ class PedidoController extends Controller
      */
     public function destroy(Pedido $pedido)
     {
-        //
+        
+    }
+
+    public function andamento(Pedido $pedido)
+    {
+        $pedido = Pedido::where('status',2)->get();
+        return view('pedido.andamento', ['pedido' => $pedido]);
+    }
+
+    public function concluidos(Pedido $pedido)
+    {
+        $pedido = Pedido::where('status',3)->get();
+        return view('pedido.concluidos', ['pedido' => $pedido]);
+    }
+
+    public function cancelados(Pedido $pedido)
+    {
+        $pedido = Pedido::where('status',4)->get();
+        return view('pedido.cancelados', ['pedido' => $pedido]);
+    }
+
+    public function statusAndamento($id)
+    {
+        $pedido = Pedido::find($id);
+        $pedido->status = 2;
+        $pedido->save();
+        
+        $pedido = Pedido::where('status',2)->get();
+        return view('pedido.andamento', ['pedido' => $pedido]);
     }
 }
