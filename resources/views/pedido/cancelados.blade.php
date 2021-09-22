@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'Dashboard')
+@section('title', 'Gardenia - Pedidos negados')
 
 @section('content_header')
     <h1>Cancelados</h1>

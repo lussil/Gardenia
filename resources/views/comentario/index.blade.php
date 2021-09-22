@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'Dashboard')
+@section('title', 'Gardenia - Comentários')
 
 @section('content_header')
     <h1>Comentarios dos clientes:</h1>

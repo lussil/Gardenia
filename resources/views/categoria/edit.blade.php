@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'Dashboard')
+@section('title', 'Gardenia - Editar categoria')
 
 @section('content_header')
     <h1>Categorias</h1>

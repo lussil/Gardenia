@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'Dashboard')
+@section('title', 'Gardenia - Detalhes do pedido')
 
 @section('content_header')
     <h1>Pedido {{$pedido->id}}</h1>

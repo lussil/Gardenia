@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'Dashboard')
+@section('title', 'Gardenia - Novos pedidos')
 
 @section('content_header')
     <h1>Novos pedidos</h1>
@@ -39,7 +39,6 @@
                 </tr>
         </tbody>
      </table>
-   
  
 </div>
 @stop
