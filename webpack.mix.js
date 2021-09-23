@@ -11,8 +11,23 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/js/app.js', 'public/js').postCss('resources/css/app.css', 'public/css', [
-    require('postcss-import'),
-    require('tailwindcss'),
-    require('autoprefixer'),
-]);
+// mix.js('resources/js/app.js', 'public/js').postCss('resources/css/app.css', 'public/css', [
+//     require('postcss-import'),
+//     require('tailwindcss'),
+//     require('autoprefixer'),
+// ]);
+
+mix.styles([
+    'resources/views/site/css/normalize.css',
+    'resources/views/site/css/style.css'
+], 'public/site/css/style.css')
+
+    .scripts([
+        'resources/views/site/js/script.js'
+    ], 'public/site/js/script.js')
+
+    .sass('node_modules/bootstrap/scss/boostrap.scss', 'public/site/boostrap.css')
+
+    .scripts('node_modules/jquery/dist/jquery.js','public/site/jquery.js')
+    .scripts('node_modules/boostrap/dist/js/boostrap.bunble.js', 'public/site/boostrap.js')
+    .version();

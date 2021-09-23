@@ -20,7 +20,7 @@ use App\Http\Controllers\PedidoController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('site.index');
 });
 
 Route::get('/dashboard', function () {return view('painel');})->middleware(['auth'])->name('painel');
