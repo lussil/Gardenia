@@ -25,6 +25,9 @@
 
                 <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required />
             </div>
+            <!-- Perfil de usuário -->
+
+          
 
             <!-- Password -->
             <div class="mt-4">
@@ -46,9 +49,7 @@
             </div>
 
             <div class="flex items-center justify-end mt-4">
-                <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('login') }}">
-                    {{ __('Já registrado?') }}
-                </a>
+                
 
                 <x-button class="ml-4">
                     {{ __('Registrar') }}

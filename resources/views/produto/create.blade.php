@@ -23,17 +23,18 @@
     {{ Form::open(array('url' => '/produto/create')) }}
 
     {{ Form::label('nome', 'Nome do produtos') }}
-    {{ Form::text('nome', null , ['class' => 'form-control'] )}}
+    {{ Form::text('nome', null , ['class' => 'form-control mb-3'] )}}
      
-    {{ Form::label('categoria', 'Categoria') }}
-    {{ Form::select('categoria_id', $categorias , ['class' => 'form-control'] ) }}
-    
+    {{ Form::label('categoria', 'Categoria' , ['class' => 'form-select ']) }} 
     <br>
-    {{ Form::label('descricao', 'Descrição') }}
-    {{ Form::text('descricao', null , ['class' => 'form-control'] ) }}
+    {{ Form::select('categoria_id', $categorias , ['class' => 'form-select form-select-lg mb-3'] ) }} 
+    <br>
+
+    {{ Form::label('descricao', 'Descrição' , ['class' => 'mt-3 '] ) }}
+    {{ Form::text('descricao', null , ['class' => 'form-control mb-3 '] ) }}
 
     {{ Form::label('valor', 'valor') }}
-    {{ Form::number('valor', null , ['class' => 'form-control' ,'step'=> 'any'] ) }}
+    {{ Form::number('valor', null , ['class' => 'form-control mb-3' ,'step'=> 'any'] ) }}
 
     
     {{ Form::submit('Enviar' , ['class' => 'btn btn-outline-success ']) }}

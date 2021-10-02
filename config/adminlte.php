@@ -250,7 +250,7 @@ return [
         ],
         [
             'text'        => 'Doceria Gardenia',
-            'url'         => 'produto',
+            'url'         => 'site',
             'icon'        => 'far fa-fw fa-file',
             
         ],
@@ -259,6 +259,13 @@ return [
             'text' => 'Usuários',
             'url'  => 'user',
             'icon' => 'fas fa-fw fa-users',
+            
+        ],
+
+        [
+            'text' => 'Perfil',
+            'url'  => 'user/show',
+            'icon' => 'fas fa-fw fa-user',
             
         ],
         // [
@@ -270,13 +277,14 @@ return [
             'text'    => 'Loja',
             'icon'    => 'fas fa-fw fa-share',
             'submenu' => [
-                [
-                    'text' => 'Produtos',
-                    'url'  => 'produto',
-                ],
+                
                 [
                     'text' => 'Categorias',
                     'url'  => 'categoria',
+                ],
+                [
+                    'text' => 'Produtos',
+                    'url'  => 'produto',
                 ],
                 [
                     'text'    => 'Promoção',
