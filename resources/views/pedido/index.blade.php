@@ -20,6 +20,12 @@
 <div class="container col-8">
  
   
+@if ($pedido->count() > 1)
+aguarde por novos pedidos
+@else
+novo pedido
+
+@endif
     <table class="table  no-margin">
         <thead>
             <tr>
