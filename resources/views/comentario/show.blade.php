@@ -10,6 +10,7 @@
 <div class="container col-8">
 	<p>ID:                  {{ $comentario->id }}</p>
     <p>Nome:                {{ $comentario->nome }}</p>
+    <p>Comentario:          {{ $comentario->comentario }}</p>
    
     <p>Criação:             {{ Carbon\Carbon::parse($comentario->created_at)->format('d/m/Y H:i') }}</p>
     <p>Última modificação:  {{ Carbon\Carbon::parse($comentario->updated_at)->format('d/m/Y H:i') }}</p>
