@@ -16,9 +16,9 @@
 </head>
 <body>
     <header id="header" class="header">
-        <a id="logo" class="logo" href="index.html">
-          <img id="logo" class="logo" src="src/img/logo-gardênia.png" alt="" />
-        </a>
+    <a id="logo" class="logo" href="{{ route('site.index') }}">
+        <img id="logo" class="logo" src="{{ asset('/site/src/img/logo-gardênia.png')}}" alt="" />
+      </a>
         <nav id="nav" class="nav">
           <button
             id="btn-mobile" class="btn-mobile"
@@ -31,15 +31,15 @@
             <script src="script.js"></script>
           </button>
           <ul id="menu" class="menu" role="menu">
-            <li><a href="index.html">inicio</a></li>
-            <li><a href="quemSomos.html">quem somos</a></li>
-            <li><a href="produtos.html">produtos</a></li>
-            <li><a href="promocao.html">promoção</a></li>
-            <li><a href="contato.html">contato</a></li>
-            <li>
-              <a href="carrinho.html"><img src="src/img/icon-carrinho.png" alt="" srcset="" /></a>
-            </li>
-          </ul>
+          <li><a href="{{ route('site.index') }}">inicio</a></li>
+          <li><a href="{{ route('site.quemSomos') }}">quem somos</a></li>
+          <li><a href="{{ route('site.produtos') }}">produtos</a></li>
+          <li><a href="{{ route('site.promocao') }}">promoção</a></li>
+          <li><a href="{{ route('site.contato') }}">contato</a></li>
+          <li>
+            <a href="{{ route('site.carrinho') }}"><img src="{{ asset('/site/src/img/icon-carrinho.png')}}" alt="" srcset="" /></a>
+          </li>
+        </ul>
         </nav>
       </header>
     <br>
@@ -84,8 +84,7 @@
     <section class="copy">
         
             <p><small>doceriagardenia - 2021 alguns direitos reservados</small></p>
-            <a href="./Doceria Gardenia ADM/sidebars/index.html">adm</a>
-        
+
     </section>
     <!-- Final do copy -->
 

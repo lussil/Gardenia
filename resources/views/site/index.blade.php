@@ -17,7 +17,7 @@
 <body>
     <!-- Começo do header -->
     <header id="header" class="header">
-      <a id="logo" class="logo" href="index.html">
+      <a id="logo" class="logo" href="">
         <img id="logo" class="logo" src="{{ asset('/site/src/img/logo-gardênia.png')}}" alt="" />
       </a>
       <nav id="nav" class="nav">
@@ -32,13 +32,13 @@
           <script src="script.js"></script>
         </button>
         <ul id="menu" class="menu" role="menu">
-          <li><a href="index.blade.php">inicio</a></li>
-          <li><a href="quemSomos.blade.php">quem somos</a></li>
-          <li><a href="produtos.html">produtos</a></li>
-          <li><a href="promocao.html">promoção</a></li>
-          <li><a href="contato.html">contato</a></li>
+          <li><a href="{{ route('site.index') }}">inicio</a></li>
+          <li><a href="{{ route('site.quemSomos') }}">quem somos</a></li>
+          <li><a href="{{ route('site.produtos') }}">produtos</a></li>
+          <li><a href="{{ route('site.promocao') }}">promoção</a></li>
+          <li><a href="{{ route('site.contato') }}">contato</a></li>
           <li>
-            <a href="carrinho.html"><img src="{{ asset('/site/src/img/icon-carrinho.png')}}" alt="" srcset="" /></a>
+            <a href="{{ route('site.carrinho') }}"><img src="{{ asset('/site/src/img/icon-carrinho.png')}}" alt="" srcset="" /></a>
           </li>
         </ul>
       </nav>
@@ -123,7 +123,7 @@
               </div>  
 
             </article>
-            <a href="produtos.html">mais produtos</a>
+            <a href="{{ route('site.produtos') }}">mais produtos</a>
         </section>
       </section>
       <br>
@@ -141,7 +141,7 @@
           <p>A Doceria Gardênia é uma micro-empresa que foi criada em outubro de 
             2019 com a participação importante de seus amigos e 
             parentes ao incentivar a produção e início de um <b style="color: #533375; font-weight: bold;">próprio negócio.</b></p>
-          <button type="button"> <a href="quemSomos.html">conhecer</a></button>
+          <button type="button"> <a href="{{ route('site.quemSomos') }}">conhecer</a></button>
         </div>
       </article>
       </section>
@@ -240,17 +240,17 @@
         <div>
             <h3>redes sociais</h3>
                 <div class="icons">
-            <a href=""><img src="{{ asset('/site/src/img/icon-facebook.png')}}" alt=""></a>
-            <a href=""><img src="{{ asset('/site/src/img/icon-facebook.png')}}" class="icon-center" alt=""></a>
-            <a href=""><img src="{{ asset('/site/src/img/icon-facebook.png')}}" alt=""></a>
+            <a href="/"><img src="{{ asset('/site/src/img/icon-facebook.png')}}" alt=""></a>
+            <a href="/"><img src="{{ asset('/site/src/img/icon-facebook.png')}}" class="icon-center" alt=""></a>
+            <a href="/"><img src="{{ asset('/site/src/img/icon-facebook.png')}}" alt=""></a>
                 </div>
         </div>
         <div>
             <h3>pagamento</h3>
-            <img src="" alt="">
-            <img src="" alt="">
-            <img src="" alt="">
-            <img src="" alt="">
+            <img src="/" alt="">
+            <img src="/" alt="">
+            <img src="/" alt="">
+            <img src="/" alt="">
         </div>
         <div>
           <h3>contato</h3>
@@ -266,8 +266,7 @@
     <!-- Começo do copy -->
     <section class="copy">
         
-            <p><small>doceriagardenia - 2021 alguns direitos reservados</small></p>
-            <a href="#">adm</a>
+            <p><small>doceriagardenia - &copy; {{ date('Y') }}alguns direitos reservados</small></p>
         
     </section>
     <!-- Final do copy -->

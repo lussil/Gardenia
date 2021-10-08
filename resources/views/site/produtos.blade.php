@@ -12,7 +12,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <title>Quem Somos Doceria Gardenia</title>
+    <title> Promoção Doceria Gardenia</title>
 </head>
 <body>
     <header id="header" class="header">
@@ -43,13 +43,39 @@
         </nav>
       </header>
     <br>
-    <h1 style="text-align: center;">Quem Somos</h1>
+    <h1 style="text-align: center;">Produtos</h1>
     <br>
-    <section class="">
-      <div>
-        
-      </div>
+
+    <section class="third-cont">
+      <section class="third-contp2">
+       
+        <article class="container">
+
+          <div class="card-body">
+            <img
+              src="{{ asset('/site/src/img/chocotone.png')}}"
+              alt=""
+            />
+            <div class="card-inf">
+              <h5>Chocotone</h5>
+              <p>O melhor chocotone feito com amor e gotas de chocolate</p>
+            </div>
+            <div class="card-footer">
+              <p>
+                <span id="price">R$ 10,00</span>
+              </p>
+              <div class="quantity">
+                <button id="sub">-</button>
+                <input type="text" id="qtyBox" value="0" />
+                <button id="add">+</button>
+                <img src="{{ asset('/site/src/img/icon-carrinho.png')}}" alt="" />
+              </div>
+            </div>
+          </div>  
+        </article>
     </section>
+  </section>
+
     <footer>
         <section class="container">
         <div>
@@ -92,7 +118,6 @@
         
     </section>
     <!-- Final do copy -->
-
     <script>
         /*Menu Hamburguer*/
 const btnMobile = document.getElementById("btn-mobile");
