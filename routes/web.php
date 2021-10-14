@@ -5,6 +5,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\ComentarioController;
 use App\Http\Controllers\ProdutoController;
+use App\Http\Controllers\PromocaoController;
 use App\Http\Controllers\PedidoController;
 
 
@@ -73,6 +74,20 @@ Route::get('/produto/{id}/edit' , [ProdutoController::class, 'edit'])->middlewar
 Route::put('/produto/{id}', [ProdutoController::class, 'update'])->middleware(['auth'])->name('produto.update');
 
 Route::delete('/produto/{id}', [ProdutoController::class, 'destroy'])->middleware(['auth'])->name('produto.destroy');
+
+// Rotas para página promocao.
+Route::get('/promocao' , [PromocaoController::class, 'index'])->middleware(['auth'])->name('promocao.index');
+
+Route::get('/promocao/create', [PromocaoController::class, 'create'])->middleware(['auth'])->name('promocao.create');
+Route::post('/promocao/create', [PromocaoController::class, 'store'])->middleware(['auth'])->name('promocao.store');
+
+Route::get('/promocao/{id}',  [PromocaoController::class, 'show'])->middleware(['auth'])->name('promocao.show');
+
+Route::get('/promocao/{id}/edit' , [PromocaoController::class, 'edit'])->middleware(['auth'])->name('promocao.edit');
+Route::put('/promocao/{id}', [PromocaoController::class, 'update'])->middleware(['auth'])->name('promocao.update');
+
+Route::delete('/promocao/{id}', [PromocaoController::class, 'destroy'])->middleware(['auth'])->name('promocao.destroy');
+
 
 // Rotas para página Comentários
 Route::get('/comentario' , [ComentarioController::class, 'index'])->name('comentario.index');

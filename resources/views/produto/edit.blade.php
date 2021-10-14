@@ -32,6 +32,10 @@
     {{ Form::label('descricao', 'Descrição') }}
     {{ Form::text('descricao', $produto->descricao , ['class' => 'form-control'] ) }}
 
+    {{ Form::label('promocao', 'promocao') }}
+    {{ Form::select('promocao', ['1' => 'sim', '0' => 'nao'], $produto->promocao ) }}
+    <br>
+
     {{ Form::label('valor', 'Valor') }}
     {{ Form::number('valor', $produto->valor, ['class' => 'form-control' , 'step'=> 'any']) }}
             

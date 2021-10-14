@@ -19,6 +19,7 @@ class CreateProdutosTable extends Migration
             $table->text('descricao');
             $table->decimal('valor', 8, 2);
             $table->integer('categoria_id');
+            $table->integer('promocao');
             $table->timestamps();
         });
     }

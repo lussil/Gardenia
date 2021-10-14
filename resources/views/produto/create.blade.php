@@ -31,9 +31,15 @@
     <br>
     {{ Form::label('descricao', 'Descrição') }}
     {{ Form::text('descricao', null , ['class' => 'form-control'] ) }}
+    
+    {{ Form::label('promocao', 'promocao') }}
+    {{ Form::select('promocao', ['1' => 'sim', '0' => 'nao']) }}
+    <br>
 
     {{ Form::label('valor', 'valor') }}
     {{ Form::number('valor', null , ['class' => 'form-control' ,'step'=> 'any'] ) }}
+
+    
 
     
     {{ Form::submit('Enviar' , ['class' => 'btn btn-outline-success ']) }}
