@@ -36,10 +36,22 @@
                 
                 <tr>
                     <td> {{$value->id}}</td>
-                    <td> {{$value->categoria->nome}}</td>
+                    
                     <td> {{$value->nome}}</td>
+                    <td>
+                        @foreach ( $value->produto as $produto )
+                        {{$produto->nome}} <br>
+                        @endforeach
+
+                    </td>
             
-                    <!-- <td>
+                    <!-- 
+                         <td> {{-- $value->id --}}</td>
+                         <td> {{-- $value->categoria->nome --}}</td>
+                         <td> {{-- $value->nome--}}</td>
+                        
+                        
+                        <td>
                         <a class="btn btn-primary" href="{{ URL::to('promocao/' . $value->id) }}">Visualizar</a>
                     </td>
 

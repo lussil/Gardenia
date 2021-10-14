@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Produto;
-// use App\Models\Categoria;
+use App\Models\Categoria;
 use Illuminate\Http\Request;
 
 class PromocaoController extends Controller
@@ -16,8 +16,13 @@ class PromocaoController extends Controller
     public function index()
     {
         // listar todos os promocoes
-        $promocoes = Produto::where('promocao',1)->orderBy('categoria_id', 'ASC')->get();
+        /* $promocoes = Produto::where('promocao',1)->orderBy('categoria_id', 'ASC')->get();
+        return view('promocao.index', ['promocoes' => $promocoes]); */
+
+        $promocoes = Categoria::get();
         return view('promocao.index', ['promocoes' => $promocoes]);
+
+
     }
 
     /**
