@@ -7,6 +7,7 @@ use App\Http\Controllers\ComentarioController;
 use App\Http\Controllers\ProdutoController;
 use App\Http\Controllers\PromocaoController;
 use App\Http\Controllers\PedidoController;
+use App\Http\Controllers\SiteController;
 
 
 /*
@@ -19,10 +20,12 @@ use App\Http\Controllers\PedidoController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/doceria', [SiteController::class, 'index'])->name('doceria.index');
 
-Route::get('/', function () {
-    return view('site.index');
-})->name('site.index');
+
+// Route::get('/', function () {
+//     return view('site.index');
+// })->name('site.index');
 
 Route::get('/contato', function () {
     return view('site.contato');
@@ -35,6 +38,7 @@ Route::get('/produtos', function () {
 Route::get('/promocao', function () {
     return view('site.promocao');
 })->name('site.promocao');
+ 
 
 Route::get('/quemSomos', function () {
     return view('site.quemSomos');

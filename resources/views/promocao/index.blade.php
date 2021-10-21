@@ -3,7 +3,7 @@
 @section('title', 'Gardenia - Promocao')
 
 @section('content_header')
-    <h1>Promocaos</h1>
+    <h1>Promoções</h1>
 @stop
 
 @section('content')
@@ -19,59 +19,35 @@
 <div class="alert alert-info">{{ Session::get('message') }}</div>
 @endif
 <div class="container col-8">
- <table class="table  no-margin">
-    <thead class="thead-dark">
-        <tr>
-            <td>ID</td>
-            <td>Categoria</td>
-            <td>Nome</td>
+
             
-        </tr>
-    </thead>      
-    <tbody>
-            <tr>
                 @foreach ($promocoes as $key => $value )
 
-
-                
-                <tr>
-                    <td> {{$value->id}}</td>
-                    
-                    <td> {{$value->nome}}</td>
-                    <td>
+               
+                      <ul>                 
+                            <li>{{$value->nome}}</li>
+                        
                         @foreach ( $value->produto as $produto )
-                        {{$produto->nome}} <br>
+                        <ul>
+                          <li> {{$produto->nome}} /  @if ($produto->promocao === 1)
+                            Produto em promoção!
+                        @else
+                            Produto fora de promoção!
+                        @endif</li>
+                        </ul> 
+                       
+                        
                         @endforeach
-
-                    </td>
-            
-                    <!-- 
-                         <td> {{-- $value->id --}}</td>
-                         <td> {{-- $value->categoria->nome --}}</td>
-                         <td> {{-- $value->nome--}}</td>
-                        
-                        
-                        <td>
-                        <a class="btn btn-primary" href="{{ URL::to('promocao/' . $value->id) }}">Visualizar</a>
-                    </td>
-
-                    <td> 
-                        <a class="btn btn-warning" href="{{ URL::to('promocao/' . $value->id . '/edit') }}"> editar</a>
-                    </td>
-                    
-                    <td>
-                        {{ Form::open(array('url' => 'promocao/' . $value->id, 'onsubmit' => 'return ConfirmDelete()')) }}
-                        {{ Form::hidden('_method', 'DELETE') }}
-                        {{ Form::submit('Excluir', array('class' => 'btn btn-danger')) }}
-                        {{ Form::close() }}
-                    </td> -->
-                </tr>
+                </ul>
                 @endforeach
-            </tr>
-    </tbody>
- </table>
+  
 </div>
-
+<form>
+  
+       
+       
+        
+</form>
 @stop
 
 @section('css')

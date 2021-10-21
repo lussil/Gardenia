@@ -32,11 +32,11 @@
           <script src="script.js"></script>
         </button>
         <ul id="menu" class="menu" role="menu">
-          <li><a href="{{ route('site.index') }}">inicio</a></li>
+          {{-- <li><a href="{{ route('site.index') }}">inicio</a></li>
           <li><a href="{{ route('site.quemSomos') }}">quem somos</a></li>
-          <li><a href="{{ route('site.produtos') }}">produtos</a></li>
-          <li><a href="{{ route('site.promocao') }}">promoção</a></li>
-          <li><a href="{{ route('site.contato') }}">contato</a></li>
+          <li><a href="{{ route('site.produtos') }}">produtos</a></li> --}}
+          {{-- <li><a href="{{ route('site.promocao') }}">promoção</a></li> --}}
+          {{-- <li><a href="{{ route('site.contato') }}">contato</a></li> --}}
           <li>
             <a href="{{ route('site.carrinho') }}"><img src="{{ asset('/site/src/img/icon-carrinho.png')}}" alt="" srcset="" /></a>
           </li>
@@ -106,12 +106,12 @@
                   alt=""
                 />
                 <div class="card-inf">
-                  <h5>Chocotone</h5>
-                  <p>O melhor chocotone feito com amor e gotas de chocolate</p>
+                  <h5>{{$produtos->nome}}</h5>
+                  <p> {{$produtos->descricao}}</p>
                 </div>
                 <div class="card-footer">
                   <p>
-                    <span id="price">R$ 10,00</span>
+                    <span id="price">R${{$produtos->valor}}</span>
                   </p>
                   <div class="quantity">
                     <button id="sub">-</button>
