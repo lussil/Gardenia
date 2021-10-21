@@ -17,7 +17,7 @@ class ProdutoController extends Controller
     {
         // listar todos os produtos
         $produtos = Produto::orderBy('categoria_id', 'ASC')->get();
-        return view('doceria.index', ['produtos' => $produtos]);
+        return view('produto.index', ['produtos' => $produtos]);
     }
 
     /**
@@ -27,7 +27,8 @@ class ProdutoController extends Controller
      */
     public function create()
     {
-        return view('produto.create');
+        $categorias = Categoria::pluck('nome', 'id');
+        return view('produto.create', ['categorias' => $categorias]);
     }
 
     /**

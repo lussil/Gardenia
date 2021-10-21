@@ -38,7 +38,7 @@
          <li><a href="{{URL::to ('produto/create')}}">promoção</a></li> 
          <li><a href="{{URL::to ('produto/create')}}">contato</a></li> 
           <li>
-            <a href="{{ route('site.carrinho') }}"><img src="{{ asset('/site/src/img/icon-carrinho.png')}}" alt="" srcset="" /></a>
+            <a href="{{URL::to ('produto/create')}}"><img src="{{ asset('/site/src/img/icon-carrinho.png')}}" alt="" srcset="" /></a>
           </li>
         </ul>
       </nav>
@@ -123,7 +123,7 @@
               </div>  
 
             </article>
-            <a href="{{ route('site.produtos') }}">mais produtos</a>
+            <a href="{{URL::to ('produto/create')}}">mais produtos</a>
         </section>
       </section>
       <br>
@@ -141,7 +141,7 @@
           <p>A Doceria Gardênia é uma micro-empresa que foi criada em outubro de 
             2019 com a participação importante de seus amigos e 
             parentes ao incentivar a produção e início de um <b style="color: #533375; font-weight: bold;">próprio negócio.</b></p>
-          <button type="button"> <a href="{{ route('site.quemSomos') }}">conhecer</a></button>
+          <button type="button"> <a href="{{URL::to ('produto/create')}}">conhecer</a></button>
         </div>
       </article>
       </section>

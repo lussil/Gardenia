@@ -21,11 +21,11 @@ use App\Http\Controllers\SiteController;
 |
 */
 Route::get('/', [SiteController::class, 'index'])->name('doceria.index');
-Route::get('/', [SiteController::class, 'contato'])->name('doceria.index');
-Route::get('/', [SiteController::class, 'produtos'])->name('doceria.produtos');
-Route::get('/', [SiteController::class, 'promocao'])->name('doceria.promocao');
-Route::get('/', [SiteController::class, 'quemSomos'])->name('doceria.quemSomos');
-Route::get('/', [SiteController::class, 'carrinho'])->name('doceria.carrinho');
+Route::get('/contato', [SiteController::class, 'contato'])->name('doceria.index');
+Route::get('/produtos', [SiteController::class, 'produtos'])->name('doceria.produtos');
+Route::get('/promocao', [SiteController::class, 'promocao'])->name('doceria.promocao');
+Route::get('/quemSomos', [SiteController::class, 'quemSomos'])->name('doceria.quemSomos');
+Route::get('/carrinho', [SiteController::class, 'carrinho'])->name('doceria.carrinho');
 
 
 // Route::get('/', function () {
