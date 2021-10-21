@@ -20,33 +20,18 @@ use App\Http\Controllers\SiteController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/doceria', [SiteController::class, 'index'])->name('doceria.index');
+Route::get('/', [SiteController::class, 'index'])->name('doceria.index');
+Route::get('/', [SiteController::class, 'contato'])->name('doceria.index');
+Route::get('/', [SiteController::class, 'produtos'])->name('doceria.produtos');
+Route::get('/', [SiteController::class, 'promocao'])->name('doceria.promocao');
+Route::get('/', [SiteController::class, 'quemSomos'])->name('doceria.quemSomos');
+Route::get('/', [SiteController::class, 'carrinho'])->name('doceria.carrinho');
 
 
 // Route::get('/', function () {
 //     return view('site.index');
 // })->name('site.index');
 
-Route::get('/contato', function () {
-    return view('site.contato');
-})->name('site.contato');
-
-Route::get('/produtos', function () {
-    return view('site.produtos');
-})->name('site.produtos');
-
-Route::get('/promocao', function () {
-    return view('site.promocao');
-})->name('site.promocao');
- 
-
-Route::get('/quemSomos', function () {
-    return view('site.quemSomos');
-})->name('site.quemSomos');
-
-Route::get('/carrinho', function () {
-    return view('site.carrinho');
-})->name('site.carrinho');
 
 Route::get('/dashboard', function () {return view('painel');})->middleware(['auth'])->name('painel');
 // Rotas para user

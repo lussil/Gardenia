@@ -32,11 +32,11 @@
           <script src="script.js"></script>
         </button>
         <ul id="menu" class="menu" role="menu">
-          {{-- <li><a href="{{ route('site.index') }}">inicio</a></li>
-          <li><a href="{{ route('site.quemSomos') }}">quem somos</a></li>
-          <li><a href="{{ route('site.produtos') }}">produtos</a></li> --}}
-          {{-- <li><a href="{{ route('site.promocao') }}">promoção</a></li> --}}
-          {{-- <li><a href="{{ route('site.contato') }}">contato</a></li> --}}
+         <li><a href="{{URL::to ('produto/create')}}">inicio</a></li>
+          <li><a href="{{URL::to ('produto/create')}}">quem somos</a></li>
+          <li><a href="{{URL::to ('produto/create')}}">produtos</a></li> 
+         <li><a href="{{URL::to ('produto/create')}}">promoção</a></li> 
+         <li><a href="{{URL::to ('produto/create')}}">contato</a></li> 
           <li>
             <a href="{{ route('site.carrinho') }}"><img src="{{ asset('/site/src/img/icon-carrinho.png')}}" alt="" srcset="" /></a>
           </li>
