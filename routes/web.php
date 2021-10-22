@@ -20,12 +20,15 @@ use App\Http\Controllers\SiteController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', [SiteController::class, 'index'])->name('doceridoceria.index');
-Route::get('/contato', [SiteController::class, 'contato'])->name('doceridoceria.index');
-Route::get('/produtos', [SiteController::class, 'produtos'])->name('doceridoceria.produtos');
-Route::get('/promocao', [SiteController::class, 'promocao'])->name('doceridoceria.promocao');
-Route::get('/quemSomos', [SiteController::class, 'quemSomos'])->name('doceridoceria.quemSomos');
-Route::get('/carrinho', [SiteController::class, 'carrinho'])->name('doceridoceria.carrinho');
+Route::get('/teste', [SiteController::class, 'teste'])->name('doceriagardenia.index');
+
+
+Route::get('/', [SiteController::class, 'index'])->name('doceriagardenia.index');
+Route::get('/contato', [SiteController::class, 'contato'])->name('doceriagardenia.contato');
+Route::get('/produtos', [SiteController::class, 'produtos'])->name('doceriagardenia.produtos');
+Route::get('/promocao', [SiteController::class, 'promocao'])->name('doceriagardenia.promocao');
+Route::get('/quemSomos', [SiteController::class, 'quemSomos'])->name('doceriagardenia.quemSomos');
+Route::get('/carrinho', [SiteController::class, 'carrinho'])->name('doceriagardenia.carrinho');
 
 
 // Route::get('/', function () {

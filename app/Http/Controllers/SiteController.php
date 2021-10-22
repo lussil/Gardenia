@@ -21,9 +21,24 @@ class SiteController extends Controller
         $produtos = Produto::orderBy('nome', 'ASC')->get();
         $comentarios = Comentario::orderBy('nome', 'ASC')->get();
 
-        return view('doceria.index', ['produtos' => $produtos , 'comentarios' =>$comentarios]);
+        return view('doceriagardenia.index', ['produtos' => $produtos , 'comentarios' =>$comentarios]);
     }
 
+    /**
+     * Exibe a Páina de contao.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function contato()
+    {
+        return view('doceriagardenia.contato');
+    }
+
+    public function teste()
+    {
+        return view('doceriagardenia.teste');
+    }
+    
     /**
      * Show the form for creating a new resource.
      *
