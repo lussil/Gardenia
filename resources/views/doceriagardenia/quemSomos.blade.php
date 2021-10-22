@@ -94,7 +94,7 @@
               pesquisa de preço p manter o custo-benefício dos clientes
             </p>
           </div>
-          <article/>
+          </article>
         </li>
         <br />
 
@@ -113,7 +113,7 @@
             src="https://static1.purebreak.com.br/articles/0/49/71/0/@/216582-gravacoes-de-deadpool-2-devem-comecar-200x200-3.jpg"
             alt="Donuts"
           />
-          <article/>
+          </article>
         </li>
         <br />
 

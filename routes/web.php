@@ -27,7 +27,7 @@ Route::get('/', [SiteController::class, 'index'])->name('doceriagardenia.index')
 Route::get('/contato', [SiteController::class, 'contato'])->name('doceriagardenia.contato');
 Route::get('/produtos', [SiteController::class, 'produtos'])->name('doceriagardenia.produtos');
 Route::get('/promocoes', [SiteController::class, 'promocao'])->name('doceriagardenia.promocao');
-Route::get('/quemSomos', [SiteController::class, 'quemSomos'])->name('doceriagardenia.quemSomos');
+Route::get('/quemsomos', [SiteController::class, 'quemsomos'])->name('doceriagardenia.quemSomos');
 Route::get('/carrinho', [SiteController::class, 'carrinho'])->name('doceriagardenia.carrinho');
 
 

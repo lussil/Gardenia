@@ -19,7 +19,7 @@ class SiteController extends Controller
     public function index()
     {
         $produtos = Produto::orderBy('nome', 'ASC')->get();
-        $comentarios = Comentario::orderBy('nome', 'ASC')->get(); //oi
+        $comentarios = Comentario::orderBy('nome', 'ASC')->get(); 
 
         return view('doceriagardenia.index', ['produtos' => $produtos , 'comentarios' =>$comentarios]);
     }
@@ -43,7 +43,19 @@ class SiteController extends Controller
     {
         return view('doceriagardenia.carrinho');
     }
-    
+
+     /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function quemsomos()
+    {
+        return view('doceriagardenia.quemsomos');
+    }
+
+
+
     /**
      * Show the form for creating a new resource.
      *
