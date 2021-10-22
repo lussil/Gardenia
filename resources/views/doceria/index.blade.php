@@ -100,18 +100,23 @@
           <section class="third-contp2">
             <h2>Produtos</h2>
             <article class="container">
+             
+              @foreach ( $produtos as $key => $produto )
+                
+             
+             
               <div class="card-body">
                 <img
                   src="{{ asset('/site/src/img/chocotone.png')}}"
                   alt=""
                 />
                 <div class="card-inf">
-                  <h5>{{$produtos->nome}}</h5>
-                  <p> {{$produtos->descricao}}</p>
+                  <h5>{{$produto->nome}}</h5>
+                  <p> {{$produto->descricao}}</p>
                 </div>
                 <div class="card-footer">
                   <p>
-                    <span id="price">R${{$produtos->valor}}</span>
+                    <span id="price">R${{$produto->valor}}</span>
                   </p>
                   <div class="quantity">
                     <button id="sub">-</button>
@@ -121,6 +126,8 @@
                   </div>
                 </div>
               </div>  
+
+              @endforeach
 
             </article>
             <a href="{{URL::to ('produto/create')}}">mais produtos</a>

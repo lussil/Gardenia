@@ -18,7 +18,7 @@ class SiteController extends Controller
      */
     public function index()
     {
-        $produtos = Produto::findOrFail(1);
+        $produtos = Produto::orderBy('nome', 'ASC')->get();
         $comentarios = Comentario::orderBy('nome', 'ASC')->get();
 
         return view('doceria.index', ['produtos' => $produtos , 'comentarios' =>$comentarios]);
