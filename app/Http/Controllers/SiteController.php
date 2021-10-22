@@ -34,9 +34,14 @@ class SiteController extends Controller
         return view('doceriagardenia.contato');
     }
 
-    public function teste()
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function carrinho()
     {
-        return view('doceriagardenia.teste');
+        return view('doceriagardenia.carrinho');
     }
     
     /**

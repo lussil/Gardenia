@@ -1,6 +1,6 @@
 @extends('components.layout')
 
-@section('title','Doceria Gardenia - Contato')
+@section('title','Doceria Gardenia - Contatos')
 
 @section('content')
     <!-- Começo do header -->

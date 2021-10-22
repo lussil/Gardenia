@@ -15,33 +15,33 @@
     <title>@yield('title')</title>
 </head>
 <body>
-  <header id="header" class="header">
-    <a id="logo" class="logo" href="">
-      <img id="logo" class="logo" src="{{ asset('/site/src/img/logo-gardênia.png')}}" alt="" />
-    </a>
-    <nav id="nav" class="nav">
-      <button
-        id="btn-mobile" class="btn-mobile"
-        aria-label="Abrir menu"
-        aria-haspopup="true"
-        aria-controls="menu"
-        aria-expanded="false"
-      >
-        <span id="hamburger" class="hamburguer"></span>
-        <script src="script.js"></script>
-      </button>
-      <ul id="menu" class="menu" role="menu">
-       <li><a href="{{URL::to ('produto/create')}}">inicio</a></li>
-        <li><a href="{{URL::to ('produto/create')}}">quem somos</a></li>
-        <li><a href="{{URL::to ('produto/create')}}">produtos</a></li> 
-       <li><a href="{{URL::to ('produto/create')}}">promoção</a></li> 
-       <li><a href="{{URL::to ('produto/create')}}">contato</a></li> 
-        <li>
-          <a href="{{URL::to ('produto/create')}}"><img src="{{ asset('/site/src/img/icon-carrinho.png')}}" alt="" srcset="" /></a>
-        </li>
-      </ul>
-    </nav>
-  </header>
+     <header id="header" class="header">
+      <a id="logo" class="logo" href="">
+        <img id="logo" class="logo" src="{{ asset('/site/src/img/logo-gardênia.png')}}" alt="" />
+      </a>
+      <nav id="nav" class="nav">
+        <button
+          id="btn-mobile" class="btn-mobile"
+          aria-label="Abrir menu"
+          aria-haspopup="true"
+          aria-controls="menu"
+          aria-expanded="false"
+        >
+          <span id="hamburger" class="hamburguer"></span>
+          <script src="script.js"></script>
+        </button>
+        <ul id="menu" class="menu" role="menu">
+         <li><a href="{{URL::to ('produto/create')}}">inicio</a></li>
+          <li><a href="{{URL::to ('produto/create')}}">quem somos</a></li>
+          <li><a href="{{URL::to ('produto/create')}}">produtos</a></li> 
+         <li><a href="{{URL::to ('produto/create')}}">promoção</a></li> 
+         <li><a href="{{URL::to ('produto/create')}}">contato</a></li> 
+          <li>
+            <a href="{{URL::to ('produto/create')}}"><img src="{{ asset('/site/src/img/icon-carrinho.png')}}" alt="" srcset="" /></a>
+          </li>
+        </ul>
+      </nav>
+    </header>
    
 @yield('content')
 

@@ -111,49 +111,81 @@
     </article>
     </section>
 
-    <!-- Final do Espaço sobre a doceria -->
-
-
+<!-- Final do Espaço sobre a doceria -->
 <!--Começo do Espaço para por os comentários -->
-    <section class="slides">
-      @foreach ($comentarios as $key => $comentario )
-        
-      
-      <div class="body mySlides">
-          <div class="sub-body">
-          <div class="cliente">
-              <img src="{{ asset('/site/src/img/leticia.png')}}" alt="fotodocliente" >
-              <ul>
-                  <li>{{$comentario->nome}}</li>
-                  <li>cliente</li>
-              </ul>
-          </div>
-          <div class="icons">
-              <ul>
-                  <li><img src="{{ asset('/site/src/img/icon-facebook.png')}}" alt="icon"></li>
-                  <li><img src="{{ asset('/site/src/img/icon-insta.png')}}" alt="icon"></li>
-                  <li><img src="{{ asset('/site/src/img/icon-twt.png')}}" alt="icon"></li>
-              </ul>
-          </div>
-      </div>
-          <div>
-              <p>{{$comentario->comentario}}</p>
-          </div>
-      </div>
-      @endforeach
-      
-      
+<section class="slides"> 
+  @foreach ($comentarios as $key => $comentario )
     
-  <div class="botoes">
-    <button class="w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
-    <button class="w3-display-right" onclick="plusDivs(1)">&#10095;</button>
+ 
+  <div class="body mySlides">
+      <div class="sub-body">
+      <div class="cliente">
+          <img src="{{ asset('/site/src/img/leticia.png')}}" alt="fotodocliente" >
+          <ul>
+              <li>{{$comentario->nome}}</li>
+              <li>cliente</li>
+          </ul>
+      </div>
+      <div class="icons">
+          <ul>
+              <li><img src="{{ asset('/site/src/img/icon-facebook.png')}}" alt="icon"></li>
+              <li><img src="{{ asset('/site/src/img/icon-insta.png')}}" alt="icon"></li>
+              <li><img src="{{ asset('/site/src/img/icon-twt.png')}}" alt="icon"></li>
+          </ul>
+      </div>
   </div>
+      <div>
+          <p>{{$comentario->comentario}}</p>
+      </div>
+  </div>
+  @endforeach
   
-  </section>
+<div class="botoes">
+<button class="w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+<button class="w3-display-right" onclick="plusDivs(1)">&#10095;</button>
+</div>
+
+</section>
+
+
+<section class="slides"> 
+  @foreach ($comentarios as $key => $comentario )
+    
+ 
+  <div class="body mySlides">
+      <div class="sub-body">
+      <div class="cliente">
+          <img src="{{ asset('/site/src/img/leticia.png')}}" alt="fotodocliente" >
+          <ul>
+              <li>{{$comentario->nome}}</li>
+              <li>cliente</li>
+          </ul>
+      </div>
+      <div class="icons">
+          <ul>
+              <li><img src="{{ asset('/site/src/img/icon-facebook.png')}}" alt="icon"></li>
+              <li><img src="{{ asset('/site/src/img/icon-insta.png')}}" alt="icon"></li>
+              <li><img src="{{ asset('/site/src/img/icon-twt.png')}}" alt="icon"></li>
+          </ul>
+      </div>
+  </div>
+      <div>
+          <p>{{$comentario->comentario}}</p>
+      </div>
+  </div>
+  @endforeach
+  
+<div class="botoes">
+<button class="w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+<button class="w3-display-right" onclick="plusDivs(1)">&#10095;</button>
+</div>
+
+</section>
+
   <!--Final do  Espaço para por os comentários -->
 
-
-
  @endsection
+ 
+
  
  
