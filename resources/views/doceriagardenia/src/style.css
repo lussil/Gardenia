@@ -623,3 +623,87 @@ footer .container div ol li a {
     padding: 10px 45px;
     float: right;
   }
+
+  /* Quem Somos */
+.intro-quemsomos {
+  width: 100%;
+}
+.intro-quemsomos img {
+  width: 100%;
+}
+.QS-containerGeral {
+  padding: 1rem 0rem;
+  display: flex;
+
+  /* background-color: #ffd000; */
+}
+.QS-containerGeral img {
+  width: 20%;
+}
+.QS-containerGeral ul {
+  width: 100%;
+  /* background-color: #000; */
+  display: block;
+  flex-wrap: wrap;
+}
+.QS-containerGeral ul li article {
+  background-color: #533375;
+
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.QS-containerGeral ul li article .infromacoes {
+  background-color: #ffd000;
+  max-width: 600px;
+  text-align: center;
+  padding: 5px;
+}
+
+.QS-containerConteudo img {
+  width: 300px;
+}
+
+@media (max-width: 1000px) {
+  .QS-containerGeral ul {
+    width: 100%;
+  }
+  .QS-containerGeral ul li article {
+    padding: 5px;
+    background-color: #533375;
+    display: flex;
+    max-width: 90%;
+  }
+  .QS-containerGeral ul li article .infromacoes {
+    background-color: #ffd000;
+    text-align: center;
+    margin: 0 auto;
+  }
+  .QS-containerConteudo img {
+    width: 50%;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 600px) {
+  .QS-containerGeral ul {
+    width: 100%;
+  }
+  .QS-containerGeral ul li article {
+    padding: 5px;
+    background-color: #533375;
+    display: block;
+    max-width: 90%;
+    margin: 0 auto;
+  }
+  .QS-containerGeral ul li article .infromacoes {
+    background-color: #ffd000;
+    text-align: center;
+  }
+  .QS-containerConteudo img {
+    width: 100%;
+  }
+}
