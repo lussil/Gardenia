@@ -158,12 +158,15 @@
 
 <!--Começo do Espaço para por os comentários -->
       <section class="slides">
+        @foreach ($comentarios as $key => $comentario )
+          
+        
         <div class="body mySlides">
             <div class="sub-body">
             <div class="cliente">
                 <img src="{{ asset('/site/src/img/leticia.png')}}" alt="fotodocliente" >
                 <ul>
-                    <li>Leticia</li>
+                    <li>{{$comentario->nome}}</li>
                     <li>cliente</li>
                 </ul>
             </div>
@@ -176,55 +179,12 @@
             </div>
         </div>
             <div>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                Suscipit adipisci commodi maiores officia est aliquam.</p>
+                <p>{{$comentario->comentario}}</p>
             </div>
         </div>
-        <div class="body mySlides">
-            <div class="sub-body">
-            <div class="cliente">
-                <img src="{{ asset('/site/src/img/leticia.png')}}" alt="fotodocliente" >
-                <ul>
-                    <li>Rosa</li>
-                    <li>Empresa</li>
-                </ul>
-            </div>
-            <div class="icons">
-                <ul>
-                  <li><img src="{{ asset('/site/src/img/icon-facebook.png')}}" alt="icon"></li>
-                  <li><img src="{{ asset('/site/src/img/icon-insta.png')}}" alt="icon"></li>
-                  <li><img src="{{ asset('/site/src/img/icon-twt.png')}}" alt="icon"></li>
-                </ul>
-            </div>
-        </div>
-            <div>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                    Suscipit adipisci commodi maiores officia</p>
-            </div>
-        </div>
-        <div class="body mySlides">
-            <div class="sub-body">
-            <div class="cliente">
-                <img src="{{ asset('/site/src/img/leticia.png')}}" alt="fotodocliente" >
-                <ul>
-                    <li>Felipe</li>
-                    <li>Revendedor</li>
-                </ul>
-            </div>
-            <div class="icons">
-                <ul>
-                  <li><img src="{{ asset('/site/src/img/icon-facebook.png')}}" alt="icon"></li>
-                    <li><img src="{{ asset('/site/src/img/icon-insta.png')}}" alt="icon"></li>
-                    <li><img src="{{ asset('/site/src/img/icon-twt.png')}}" alt="icon"></li>
-                </ul>
-            </div>
-        </div>
-            <div>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                    Suscipit adipisci commodi maiores officia est aliquam. Lorem ipsum 
-                    dolor sit amet consectetur adipisicing elit.</p>
-            </div>
-        </div>
+        @endforeach
+        
+        
       
     <div class="botoes">
       <button class="w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
