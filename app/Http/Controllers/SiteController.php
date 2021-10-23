@@ -54,6 +54,28 @@ class SiteController extends Controller
         return view('doceriagardenia.quemsomos');
     }
 
+     /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function produtos()
+    {
+        $produtos = Produto::orderBy('nome', 'ASC')->get();
+        return view('doceriagardenia.produtos', ['produtos' => $produtos]);
+    }
+
+     /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function promocao()
+    {
+        $produtos = Produto::orderBy('nome', 'ASC')->get();
+        return view('doceriagardenia.promocao', ['produtos' => $produtos]);
+    }
+
 
 
     /**

@@ -11,6 +11,9 @@
     <link rel="stylesheet" href="{{asset('/site/src/normalize.css')}}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com">
+    
+
+    
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <title>@yield('title')</title>
 </head>
@@ -28,20 +31,25 @@
           aria-expanded="false"
         >
           <span id="hamburger" class="hamburguer"></span>
-          <script src="script.js"></script>
+          <script src="site/script.js"></script>
         </button>
         <ul id="menu" class="menu" role="menu">
-         <li><a href="{{URL::to ('produto/create')}}">inicio</a></li>
-          <li><a href="{{URL::to ('produto/create')}}">quem somos</a></li>
-          <li><a href="{{URL::to ('produto/create')}}">produtos</a></li> 
-         <li><a href="{{URL::to ('produto/create')}}">promoção</a></li> 
-         <li><a href="{{URL::to ('produto/create')}}">contato</a></li> 
+         <li><a href="{{URL::to ('/')}}">inicio</a></li>
+          <li><a href="{{URL::to ('/quemsomos')}}">quem somos</a></li>
+          <li><a href="{{URL::to ('/produtos')}}">produtos</a></li> 
+         <li><a href="{{URL::to ('/promocoes')}}">promoção</a></li> 
+         <li><a href="{{URL::to ('/contato')}}">contato</a></li> 
           <li>
-            <a href="{{URL::to ('produto/create')}}"><img src="{{ asset('/site/src/img/icon-carrinho.png')}}" alt="" srcset="" /></a>
+            <a href="{{URL::to ('/carrinho')}}"><img src="{{ asset('/site/src/img/icon-carrinho.png')}}" alt="" srcset="" /></a>
           </li>
         </ul>
       </nav>
     </header>
+    <br>
+    <h1 style="text-align: center;">@yield('inicio')</h1>
+    <br>
+
+    
    
 @yield('content')
 
@@ -90,28 +98,59 @@
 
 </section>
 <!-- Final do copy -->
-
 <script>
-    /*Menu Hamburguer*/
+      /*Slideshow dos comentários*/
+      var slideIndex = 1;
+      showDivs(slideIndex);
+      
+      function plusDivs(n) {
+        showDivs(slideIndex += n);
+      }
+      
+      function showDivs(n) {
+        var i;
+        var x = document.getElementsByClassName("mySlides");
+        if (n > x.length) {slideIndex = 1}
+        if (n < 1) {slideIndex = x.length}
+        for (i = 0; i < x.length; i++) {
+          x[i].style.display = "none";  
+        }
+        x[slideIndex-1].style.display = "block";  
+      }
+      /*Botão contador dentro dos cards*/
+      let addBtn = document.querySelector('#add');
+                    let subBtn = document.querySelector('#sub');
+                    let qty = document.querySelector('#qtyBox');
+              
+                    addBtn.addEventListener('click', ()=>{
+                      qty.value = parseInt(qty.value) + 1;
+                    });
+              
+                    subBtn.addEventListener('click',()=>{
+                      if (qty.value <= 0) {
+                        qty.value = 0;
+                      }
+                      else{
+                        qty.value = parseInt(qty.value) -1;
+                      }
+                    });
+                    
+ /*Menu Hamburguer*/
 const btnMobile = document.getElementById("btn-mobile");
-
 function toggleMenu(event) {
-if (event.type === "touchstart") event.preventDefault();
-const nav = document.getElementById("nav");
-nav.classList.toggle("active");
-const active = nav.classList.contains("active");
-event.currentTarget.setAttribute("aria-expanded", active);
-if (active) {
-event.currentTarget.setAttribute("aria-label", "fechar menu");
-} else {
-event.currentTarget.setAttribute("aria-label", "abrir menu");
+  if (event.type === "touchstart") event.preventDefault();
+  const nav = document.getElementById("nav");
+  nav.classList.toggle("active");
+  const active = nav.classList.contains("active");
+  event.currentTarget.setAttribute("aria-expanded", active);
+  if (active) {
+    event.currentTarget.setAttribute("aria-label", "fechar menu");
+  } else {
+    event.currentTarget.setAttribute("aria-label", "abrir menu");
+  }
 }
-}
-
 btnMobile.addEventListener("click", toggleMenu);
 btnMobile.addEventListener("touchstart", toggleMenu);
-
-
-</script>
+      </script>
 </body>
 </html>

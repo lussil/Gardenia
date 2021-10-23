@@ -1,18 +1,14 @@
 @extends('components.layout')
 
-@section('title','Doceria Gardenia - Contatos')
+@section('title','Doceria Gardenia - Quem Somos')
 
 @section('content')
     <!-- Começo do header -->
- 
-    <br>
-    <h1 style="text-align: center;">Quem Somos</h1>
+
+    
+ @section('inicio', 'Quem Somos')
     <section class="intro-quemsomos">
-      <img
-        src="https://static.zerochan.net/Levi.Ackerman.full.2271834.jpg"
-        alt=""
-        srcset=""
-      />
+       <img src="{{ asset('/site/src/img/1.png')}}" class="d-block w-100" alt="banner de promoção">
     </section>
     <br />
 
@@ -36,19 +32,19 @@
               </p>
             </div>
             <img
-              src="https://static1.purebreak.com.br/articles/0/49/71/0/@/216582-gravacoes-de-deadpool-2-devem-comecar-200x200-3.jpg"
-              alt="Donuts"
-            />
+                src="{{ asset('/site/src/img/chocotone.png')}}"
+                alt=""
+              />
           </article>
         </li>
         <br />
 
         <li class="QS-containerConteudo">
             <article>
-          <img
-            src="https://static1.purebreak.com.br/articles/0/49/71/0/@/216582-gravacoes-de-deadpool-2-devem-comecar-200x200-3.jpg"
-            alt="Donuts"
-          />
+            <img
+                src="{{ asset('/site/src/img/chocotone.png')}}"
+                alt=""
+              />
           <div class="infromacoes">
             <h2>Missão</h2>
             <p>
@@ -73,19 +69,19 @@
             </p>
           </div>
           <img
-            src="https://static1.purebreak.com.br/articles/0/49/71/0/@/216582-gravacoes-de-deadpool-2-devem-comecar-200x200-3.jpg"
-            alt="Donuts"
-          />
+                src="{{ asset('/site/src/img/chocotone.png')}}"
+                alt=""
+              />
           </article>
         </li>
         <br />
 
         <li class="QS-containerConteudo">
             <article>
-          <img
-            src="https://static1.purebreak.com.br/articles/0/49/71/0/@/216582-gravacoes-de-deadpool-2-devem-comecar-200x200-3.jpg"
-            alt="Donuts"
-          />
+            <img
+                src="{{ asset('/site/src/img/chocotone.png')}}"
+                alt=""
+              />
           <div class="infromacoes">
             <h2>Valores</h2>
             <p>
