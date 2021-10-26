@@ -45,6 +45,7 @@
         </ul>
       </nav>
     </header>
+
     <br>
     <h1 style="text-align: center;">@yield('inicio')</h1>
     <br>
@@ -99,46 +100,12 @@
 </section>
 <!-- Final do copy -->
 <script>
-      /*Slideshow dos comentários*/
-      var slideIndex = 1;
-      showDivs(slideIndex);
-      
-      function plusDivs(n) {
-        showDivs(slideIndex += n);
-      }
-      
-      function showDivs(n) {
-        var i;
-        var x = document.getElementsByClassName("mySlides");
-        if (n > x.length) {slideIndex = 1}
-        if (n < 1) {slideIndex = x.length}
-        for (i = 0; i < x.length; i++) {
-          x[i].style.display = "none";  
-        }
-        x[slideIndex-1].style.display = "block";  
-      }
-      /*Botão contador dentro dos cards*/
-      let addBtn = document.querySelector('#add');
-                    let subBtn = document.querySelector('#sub');
-                    let qty = document.querySelector('#qtyBox');
-              
-                    addBtn.addEventListener('click', ()=>{
-                      qty.value = parseInt(qty.value) + 1;
-                    });
-              
-                    subBtn.addEventListener('click',()=>{
-                      if (qty.value <= 0) {
-                        qty.value = 0;
-                      }
-                      else{
-                        qty.value = parseInt(qty.value) -1;
-                      }
-                    });
+   
                     
  /*Menu Hamburguer*/
 const btnMobile = document.getElementById("btn-mobile");
 function toggleMenu(event) {
-  if (event.type === "touchstart") event.preventDefault();
+  if (event.type == "touchstart") event.preventDefault();
   const nav = document.getElementById("nav");
   nav.classList.toggle("active");
   const active = nav.classList.contains("active");
@@ -152,5 +119,9 @@ function toggleMenu(event) {
 btnMobile.addEventListener("click", toggleMenu);
 btnMobile.addEventListener("touchstart", toggleMenu);
       </script>
+
+      
+@yield('scriptSlide')
+
 </body>
 </html>

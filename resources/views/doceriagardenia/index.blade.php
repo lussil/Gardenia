@@ -1,7 +1,9 @@
 @extends('components.layout')
 
 @section('title','Doceria Gardenia')
-@section('inicio', '')
+
+@section('inicio', 'Bem vindo')
+
 @section('content')
     <!-- Começo do header -->
  
@@ -145,10 +147,46 @@
 
 </section>
 
-
-
-  <!--Final do  Espaço para por os comentários -->
-
+  @section('scriptSlide')
+  <script>   /*Slideshow dos comentários*/
+    var slideIndex = 1;
+    showDivs(slideIndex);
+    
+    function plusDivs(n) {
+      showDivs(slideIndex += n);
+    }
+    
+    function showDivs(n) {
+      var i;
+      var x = document.getElementsByClassName("mySlides");
+      if (n > x.length) {slideIndex = 1}
+      if (n < 1) {slideIndex = x.length}
+      for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";  
+      }
+      [slideIndex-1].style.display = "block";  
+    }
+    /*Botão contador dentro dos cards*/
+    let addBtn = document.querySelector('#add');
+                  let subBtn = document.querySelector('#sub');
+                  let qty = document.querySelector('#qtyBox');
+            
+                  addBtn.addEventListener('click', ()=>{
+                    qty.value = parseInt(qty.value) + 1;
+                  });
+            
+                  subBtn.addEventListener('click',()=>{
+                    if (qty.value <= 0) {
+                      qty.value = 0;
+                    }
+                    else{
+                      qty.value = parseInt(qty.value) -1;
+                    }
+                  });
+                  
+  </script>
+ @endsection
+ 
  @endsection
  
 

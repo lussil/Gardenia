@@ -2,15 +2,14 @@
 
 @section('title','Doceria Gardenia - Quem Somos')
 
+@section('inicio', 'Quem Somos') 
+
 @section('content')
     <!-- Começo do header -->
-
-    
- @section('inicio', 'Quem Somos')
     <section class="intro-quemsomos">
        <img src="{{ asset('/site/src/img/1.png')}}" class="d-block w-100" alt="banner de promoção">
     </section>
-    <br />
+  
 
     <section class="QS-containerGeral">
       <ul>

@@ -1,12 +1,11 @@
 @extends('components.layout')
 
-@section('title','Doceria Gardenia - Contatos')
+@section('title','Doceria Gardenia - Conheça Nossos Maravilhosos Podutos')
+
+@section('inicio', 'Produto')
 
 @section('content')
 
-<br>
-    <h1 style="text-align: center;">Produtos</h1>
-    <br>
 
     <section class="third-cont">
       <section class="third-contp2">

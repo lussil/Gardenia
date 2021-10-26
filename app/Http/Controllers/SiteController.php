@@ -72,7 +72,8 @@ class SiteController extends Controller
      */
     public function promocao()
     {
-        $produtos = Produto::orderBy('nome', 'ASC')->get();
+        
+        $produtos = Produto::where('promocao',1)->get();
         return view('doceriagardenia.promocao', ['produtos' => $produtos]);
     }
 

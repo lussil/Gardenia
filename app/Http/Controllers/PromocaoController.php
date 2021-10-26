@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Produto;
+
 use App\Models\Categoria;
+use App\Models\Produto;
 use Illuminate\Http\Request;
 
 class PromocaoController extends Controller
@@ -32,8 +33,9 @@ class PromocaoController extends Controller
      */
     public function create()
     {
-        $categorias = Categoria::pluck('nome', 'id');
-        return view('promocao.create', ['categorias' => $categorias]);
+        
+        $produtos = Produto::pluck('nome', 'id');
+        return view('promocao.create', ['produtos' => $produtos]);
     }
 
     /**
@@ -44,31 +46,13 @@ class PromocaoController extends Controller
      */
     public function store(Request $request)
     {
-        $message = [
-            'nome.required' => 'O campo nome é obrigatório!',
-            'nome.min' => 'O campo nome precisa ter no mínimo :min caracteres!',
-            'descricao.required' => 'O campo descrição é obrigatório!',
-            'valor.required' => 'O campo valor é obrigatório!',
-            'categoria_id.required' => 'O campo categoria é obrigatório!',
-        ];
+     
 
-        $validateData = $request->validate([
-            'nome'      => 'required|min:7',
-            'descricao' => 'required',
-            'valor' => 'required',
-            'categoria_id.required' => 'O campo categoria é obrigatório!',
-        ], $message);
-
-
-        $promocao = new Promocao;
-        $promocao->nome      = $request->nome;
-        $promocao->descricao = $request->descricao;
-        $promocao->valor = $request->valor;
-        $promocao->categoria_id = $request->categoria_id;
+        $produtos->valor        = $request->valor;
         
-        $promocao->save();
+        $produtos->save();
 
-        return redirect()->route('promocao.index')->with('message', "Promocao {$promocao->nome} criado com sucesso!");
+        return redirect()->route('promocao.index')->with('message', "Promocao {$produtos->nome} criado com sucesso!");
     }
 
     /**

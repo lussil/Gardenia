@@ -32,7 +32,7 @@
                           <li> {{$produto->nome}} /  @if ($produto->promocao === 1)
                             Produto em promoção!
                         @else
-                            Produto fora de promoção!
+                            
                         @endif</li>
                         </ul> 
                        
@@ -42,12 +42,9 @@
                 @endforeach
   
 </div>
-<form>
-  
-       
-       
-        
-</form>
+
+<a class="btn btn-success" href="{{URL::to ('promocao/create')}}"> criar</a>
+
 @stop
 
 @section('css')

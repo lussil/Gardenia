@@ -17,7 +17,7 @@ class PedidoController extends Controller
     public function index()
     {
 
-        $pedido =  $pedido = Pedido::where('status',1)->get();
+        $pedido = Pedido::where('status',1)->get();
         return view('pedido.index', ['pedido' => $pedido]);
         // foreach ($pedido->produto as $produto) {
         //  echo ($produto->nome);
