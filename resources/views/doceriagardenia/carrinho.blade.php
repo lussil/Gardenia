@@ -49,7 +49,7 @@
     <form class="finalizacao" action="post">
       <label class="subtotal" for="">Subtotal <small>(1 item)</small></label>
       <label class="valor" for="">R$ 6,00</label>
-      <button type="submit"> <a style="text-decoration: none; color: #fff;" href="{{URL::to ('/checkout')}}">Finalizar</a></button>
+      <button type=""> <a style="text-decoration: none; color: #fff;" href="{{URL::to ('/checkout')}}">Finalizar</a></button>
     </form>
   </div>
   </section>
