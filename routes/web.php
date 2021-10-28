@@ -29,6 +29,7 @@ Route::get('/produtos', [SiteController::class, 'produtos'])->name('doceriagarde
 Route::get('/promocoes', [SiteController::class, 'promocao'])->name('doceriagardenia.promocao');
 Route::get('/quemsomos', [SiteController::class, 'quemsomos'])->name('doceriagardenia.quemSomos');
 Route::get('/carrinho', [SiteController::class, 'carrinho'])->name('doceriagardenia.carrinho');
+Route::get('/checkout', [SiteController::class, 'checkout'])->name('doceriagardenia.checkout');
 
 
 // Route::get('/', function () {
