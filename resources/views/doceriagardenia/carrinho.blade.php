@@ -2,12 +2,9 @@
 
 @section('title','Doceria Gardenia - Contatos')
 
+@section('inicio','Carrinho de compras')
+
 @section('content')
-    <!-- Começo do header -->
- 
-    <br>
-    <h1 style="text-align: center;">Carrinho de compras</h1>
-    <br>
 
 <section class="container-geral">
   <section class="container-inf-produto">
@@ -51,7 +48,7 @@
     <form class="finalizacao" action="post">
       <label class="subtotal" for="">Subtotal <small>(1 item)</small></label>
       <label class="valor" for="">R$ 6,00</label>
-      <button type="submit">Finalizar</button>
+      <a href="{{URL::to ('/checkout')}}">conhecer</a>
     </form>
   </div>
   </section>
