@@ -165,7 +165,7 @@ body {
 .third-cont .third-contp2 .container{
      /* background-color: violet; */
      padding: 15px 0;
-     max-width: 90%;
+     max-width: 80%;
      margin: 0 auto;
      display: flex;
      flex-wrap:wrap;
@@ -181,6 +181,7 @@ body {
     padding: 0;
     margin: 0 auto;
     border: none;
+    margin: 10px;
   }
   .third-cont .third-contp2 .container  .card-body img {
     width: 100%;

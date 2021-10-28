@@ -140,7 +140,7 @@ body {
 }
 .third-cont .third-contp2 {
     max-width: 90%;
-    background-color: #533375;
+    /* background-color: #533375; */
     margin: 0 auto;
     text-align: center;
 }
