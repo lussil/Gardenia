@@ -73,17 +73,37 @@
     </div>
     <!-- /.card-footer -->
   
+<input type="text" onkeydown="javascript: fMasc( this, mCEP );">
+    
+
+</div>
 
 
 
 </div>
 
-
-
 </div>
 
-</div>
+@section('scriptSlide')
+<script type="text/javascript">
+  function fMasc(objeto,mascara) {
+    obj=objeto
+    masc=mascara
+    setTimeout("fMascEx()",1)
+  }
+  function fMascEx() {
+    obj.value=masc(obj.value)
+  }
+  
+  function mCEP(cep){
+    cep=cep.replace(/\D/g,"")
+    cep=cep.replace(/^(\d{2})(\d)/,"$1.$2")
+    cep=cep.replace(/\.(\d{3})(\d)/,".$1-$2")
+    return cep
+  }
+  
+</script>
 
-
+@endsection
  @endsection
 
