@@ -21,8 +21,8 @@
 <div class="col-12 col-md-5">
   <div class="card">
     <div class="card-header border-transparent">
-      <h3 class="card-title">Meus Produtos</h3>
-      <p class="card-text text-primary">Confira seus produtos antes de finalizar sua encomenda.</p>
+      <h3 class="card-title  text-black">Meus Produtos</h3>
+      <p class="card-text text-secondary">Confira seus produtos antes de finalizar sua encomenda.</p>
       
     </div>
     <!-- /.card-header -->
@@ -63,7 +63,7 @@
     </div>
     <!-- /.card-body -->
     <div class="card-footer clearfix ">
-      <p class="text-black float-left mt-2 "> Total: <span class="text-secondary ">(15 items)</span></p><span class="text-black float-right mt-2">R$ 15,90</span>
+      <p class="text-black float-right mt-2 "> Total: <span class="text-secondary ">(15 items)</span> <span class="text-black  mt-2">R$ 15,90</span></p>
     </div>
   </div>
 
