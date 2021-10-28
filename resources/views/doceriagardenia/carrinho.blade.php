@@ -45,10 +45,11 @@
     </div> 
   </section>
   <div>
+    
     <form class="finalizacao" action="post">
       <label class="subtotal" for="">Subtotal <small>(1 item)</small></label>
       <label class="valor" for="">R$ 6,00</label>
-      <a href="{{URL::to ('/checkout')}}">conhecer</a>
+      <button type="submit"> <a style="text-decoration: none; color: #fff;" href="{{URL::to ('/checkout')}}">Finalizar</a></button>
     </form>
   </div>
   </section>
