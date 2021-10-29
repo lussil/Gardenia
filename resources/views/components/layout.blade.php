@@ -123,6 +123,26 @@ function toggleMenu(event) {
 }
 btnMobile.addEventListener("click", toggleMenu);
 btnMobile.addEventListener("touchstart", toggleMenu);
+
+/*API do CEP */
+
+$('#CEP').keyup(function () {
+        var cep = $(this).cleanVal();
+        if (cep.length == 8) {
+            $.ajax({
+                type: "GET",
+                url: "http://viacep.com.br/ws/" + cep + "/json/",
+                success: function (response) {
+                    $('#Endereco').val(response.logradouro);
+                    $('#Bairro').val(response.bairro);
+                    $('#Cidade').val(response.localidade);
+                    $('#UF').val(response.uf);
+                    $('#Cod_Municipio').val(response.ibge);
+                   
+                }
+            });
+        }
+    });
       </script>
 
       
