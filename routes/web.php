@@ -9,7 +9,6 @@ use App\Http\Controllers\PromocaoController;
 use App\Http\Controllers\PedidoController;
 use App\Http\Controllers\SiteController;
 
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,8 +19,6 @@ use App\Http\Controllers\SiteController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/teste', [SiteController::class, 'teste'])->name('doceriagardenia.index');
-
 
 Route::get('/', [SiteController::class, 'index'])->name('doceriagardenia.index');
 Route::get('/contato', [SiteController::class, 'contato'])->name('doceriagardenia.contato');
@@ -30,11 +27,6 @@ Route::get('/promocoes', [SiteController::class, 'promocao'])->name('doceriagard
 Route::get('/quemsomos', [SiteController::class, 'quemsomos'])->name('doceriagardenia.quemSomos');
 Route::get('/carrinho', [SiteController::class, 'carrinho'])->name('doceriagardenia.carrinho');
 Route::get('/checkout', [SiteController::class, 'checkout'])->name('doceriagardenia.checkout');
-
-
-// Route::get('/', function () {
-//     return view('site.index');
-// })->name('site.index');
 
 
 Route::get('/dashboard', function () {return view('painel');})->middleware(['auth'])->name('painel');
@@ -83,6 +75,19 @@ Route::get('/comentario/{id}/edit' , [ComentarioController::class, 'edit'])->nam
 Route::put('/comentario/{id}' , [ComentarioController::class, 'update'])->name('comentario.update');
 
 Route::delete('/comentario/{id}', [ComentarioController::class, 'destroy'])->name('comentario.destroy');
+
+// Rotas para página promocao.
+Route::get('/promocao' , [PromocaoController::class, 'index'])->middleware(['auth'])->name('promocao.index');
+
+Route::get('/promocao/create', [PromocaoController::class, 'create'])->middleware(['auth'])->name('promocao.create');
+Route::post('/promocao/create', [PromocaoController::class, 'store'])->middleware(['auth'])->name('promocao.store');
+
+Route::get('/promocao/{id}',  [PromocaoController::class, 'show'])->middleware(['auth'])->name('promocao.show');
+
+Route::get('/promocao/{id}/edit' , [PromocaoController::class, 'edit'])->middleware(['auth'])->name('promocao.edit');
+Route::put('/promocao/{id}', [PromocaoController::class, 'update'])->middleware(['auth'])->name('promocao.update');
+
+Route::delete('/promocao/{id}', [PromocaoController::class, 'destroy'])->middleware(['auth'])->name('promocao.destroy');
 
 
 // Rotas para pedidos

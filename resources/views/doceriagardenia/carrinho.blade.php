@@ -6,11 +6,14 @@
 
 @section('content')
 
+
+
+
 <section class="container-geral">
   <section class="container-inf-produto">
     <div class="lado-E">
       <h5>Produto</h5>
-      <div class="card-body2">
+      <div class="card-body">
         <img
           src="https://blog.novasafra.com.br/wp-content/uploads/2019/01/264597-aprenda-como-fazer-chocotone-e-por-que-investir-nesse-produto.jpg"
           alt=""

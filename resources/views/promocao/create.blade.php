@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'Gardenia - Criar promocao')
+@section('title', 'Gardenia - Adicionar Promoção')
 
 @section('content_header')
     <h1>Promoções</h1>
@@ -20,21 +20,15 @@
 
     {{ Form::open(array('url' => '/promocao/create')) }}
 
-     
-    {{ Form::label('produto', 'Produto', ['class' => 'form-control mt-3']) }}
-    {{ Form::select('produto_id', $produtos  ) }}
+    {{ Form::label('produto', 'Produto') }}
+    {{ Form::select('produto_id', $produtos,  null, array('class' => 'form-control')) }}
     
-
-    {{ Form::label('promocao', 'promocao' , ['class' => 'form-control mt-3']) }}
-    {{ Form::select('promocao', ['1' => 'Sim', '0' => 'Não']) }}
-    <br>
-
+    
+    
     {{ Form::label('valor', 'valor') }}
     {{ Form::number('valor', null , ['class' => 'form-control' ,'step'=> 'any'] ) }}
 
-
-    
-    {{ Form::submit('Enviar' , ['class' => 'btn btn-outline-success mt-3']) }}
+    {{ Form::submit('Adicionar Promoção' , ['class' => 'btn btn-outline-success mt-3']) }}
 
     {{ Form::close()  }}
 
@@ -46,5 +40,9 @@
 @stop
 
 @section('js')
-    <script> console.log('Hi!'); </script>
+    <script>
+    
+    
+
+     </script>
 @stop

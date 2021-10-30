@@ -27,7 +27,7 @@
      
     {{ Form::label('categoria', 'Categoria' , ['class' => 'form-select ']) }} 
     <br>
-    {{ Form::select('categoria_id', $categorias , ['class' => 'form-select form-select-lg mb-3'] ) }} 
+    {{ Form::select('categoria_id', $categorias,null, array('class' => 'form-control')) }} 
     <br>
     {{ Form::label('descricao', 'Descrição' , ['class' => 'mt-3 '] ) }}
     {{ Form::text('descricao', null , ['class' => 'form-control mb-3 '] ) }}

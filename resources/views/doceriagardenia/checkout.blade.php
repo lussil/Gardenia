@@ -15,44 +15,33 @@
   <div class="col-12 col-md-6 ">
     <div class="card" style="background-color:#ffd000" >
       <div class="card-body">
-
         <form action="">
             <div  class="form-group">
-              <label for="cep">CEP</label>
+              <label for="cep">CEP <span class="text-danger">*</span></label>
               <input type="text" class="form-control" name="cep" id="cep" >
             </div>
-
             <div  class="form-group">
-              <label for="logradouro">Rua</label>
+              <label for="logradouro">Rua <span class="text-danger">*</span></label>
               <input type="text" class="form-control" name="logradouro" id="logradouro" readonly >
             </div>
-          
             <div class="form-group">
-              <label for="bairro">Bairro</label>
+              <label for="bairro">Bairro <span class="text-danger">*</span></label>
               <input type="text" class="form-control"  name="bairro"  id="bairro" readonly >
             </div>
-
-
             <div class="form-group">
-              <label for="numero_casa">Número</label>
+              <label for="numero_casa">Número <span class="text-danger">*</span></label>
               <input type="text" class="form-control"  name="numero_casa"  id="numero_casa" >
             </div>
-
             <div class="form-group">
-              <label for="complemento">Complemento</label>
+              <label for="complemento">Complemento <span class="text-danger">*</span></label>
               <input type="text" class="form-control"  name="complemento"  id="complemento" >
             </div>
-
-  
-
             <div class="form-group">
               <label for="email">E-mail</label>
               <input type="email" class="form-control"  name="email"  id="email" >
-            </div>
-
-            
+            </div> 
             <div class="form-group">
-              <label for="telefone">Telefone</label>
+              <label for="telefone">Telefone <span class="text-danger">*</span></label>
               <input type="text" class="form-control"  name="Telefone"  id="Telefone" >
             </div>
     
@@ -125,7 +114,6 @@
 
 
 </div>
-
 </div>
 
 
