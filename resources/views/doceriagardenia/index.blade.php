@@ -63,32 +63,33 @@
            
             @foreach ( $produtos as $key => $produto )
               
-            <div class="card-body">
-              <img
+            <form action="" class="card-body">
+                <img
                 src="{{ asset('/site/src/img/chocotone.png')}}"
-                alt=""
-              />
-              <div class="card-inf">
-                <h5>{{$produto->nome}}</h5>
-                <p> {{$produto->descricao}}</p>
-              </div>
-              <div class="card-footer">
-                <p>
-                  <span id="price">R${{$produto->valor}}</span>
-                </p>
-                <div class="quantity">
-                  <button id="sub">-</button>
-                  <input type="text" id="qtyBox" value="0" />
-                  <button id="add">+</button>
-                  <img src="{{ asset('/site/src/img/icon-carrinho.png')}}" alt="" />
-                </div>
-              </div>
-            </div>  
+                alt=""/>
+                  <div class="card-inf">
+                    <h5>{{$produto->nome}}</h5>
+                    <p> {{$produto->descricao}}</p>
+                    </div>
+                    <div class="card-footer">
+                    <p>
+                    <span id="price">R${{$produto->valor}}</span>
+                    </p>
+                    <div class="quantity">
+                    <button id="sub">-</button>
+                    <input type="text" id="qtyBox" value="0" />
+                    <button id="add">+</button>
+                    <button class="carrinho" type="submit">
+                    <img src="{{ asset('/site/src/img/icon-carrinho.png')}}" alt="" />
+                    </button>
+                    </div>
+                  </div>
+              </form>  
 
             @endforeach
 
           </article>
-          <a href="{{URL::to ('produto/create')}}">mais produtos</a>
+          <a href="{{URL::to ('/produtos')}}">mais produtos</a>
       </section>
     </section>
     <br>
@@ -106,7 +107,7 @@
         <p>A Doceria Gardênia é uma micro-empresa que foi criada em outubro de 
           2019 com a participação importante de seus amigos e 
           parentes ao incentivar a produção e início de um <b style="color: #533375; font-weight: bold;">próprio negócio.</b></p>
-        <button type="button"> <a href="{{URL::to ('produto/create')}}">conhecer</a></button>
+        <button type="button"> <a href="{{URL::to ('/quemsomos')}}">conhecer</a></button>
       </div>
     </article>
     </section>

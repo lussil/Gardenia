@@ -31,7 +31,9 @@
                     <button id="sub">-</button>
                     <input type="text" id="qtyBox" value="0" />
                     <button id="add">+</button>
+                    <button class="carrinho" type="submit">
                     <img src="{{ asset('/site/src/img/icon-carrinho.png')}}" alt="" />
+                </button>
                   </div>
                 </div>
               </div>  

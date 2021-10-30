@@ -24,7 +24,7 @@
 </head>
 <body>
      <header id="header" class="header">
-      <a id="logo" class="logo" href="">
+      <a id="logo" class="logo" href="{{URL::to ('produto/create')}}">
         <img id="logo" class="logo" src="{{ asset('/site/src/img/logo-gardênia.png')}}" alt="" />
       </a>
       <nav id="nav" class="nav">

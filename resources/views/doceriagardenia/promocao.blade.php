@@ -28,10 +28,13 @@
                     <span id="price">R${{$produto->valor}}</span>
                   </p>
                   <div class="quantity">
+                    
                     <button id="sub">-</button>
                     <input type="text" id="qtyBox" value="0" />
                     <button id="add">+</button>
-                    <img src="{{ asset('/site/src/img/icon-carrinho.png')}}" alt="" />
+                    <button class="carrinho" type="submit">
+                      <img src="{{ asset('/site/src/img/icon-carrinho.png')}}" alt="" />
+                    </button>
                   </div>
                 </div>
               </div>  
