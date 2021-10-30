@@ -5,7 +5,9 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\ComentarioController;
 use App\Http\Controllers\ProdutoController;
+use App\Http\Controllers\PromocaoController;
 use App\Http\Controllers\PedidoController;
+use App\Http\Controllers\SiteController;
 
 
 /*
@@ -18,10 +20,22 @@ use App\Http\Controllers\PedidoController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/teste', [SiteController::class, 'teste'])->name('doceriagardenia.index');
 
-Route::get('/', function () {
-    return view('site.index');
-});
+
+Route::get('/', [SiteController::class, 'index'])->name('doceriagardenia.index');
+Route::get('/contato', [SiteController::class, 'contato'])->name('doceriagardenia.contato');
+Route::get('/produtos', [SiteController::class, 'produtos'])->name('doceriagardenia.produtos');
+Route::get('/promocoes', [SiteController::class, 'promocao'])->name('doceriagardenia.promocao');
+Route::get('/quemsomos', [SiteController::class, 'quemsomos'])->name('doceriagardenia.quemSomos');
+Route::get('/carrinho', [SiteController::class, 'carrinho'])->name('doceriagardenia.carrinho');
+Route::get('/checkout', [SiteController::class, 'checkout'])->name('doceriagardenia.checkout');
+
+
+// Route::get('/', function () {
+//     return view('site.index');
+// })->name('site.index');
+
 
 Route::get('/dashboard', function () {return view('painel');})->middleware(['auth'])->name('painel');
 // Rotas para user

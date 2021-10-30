@@ -14,6 +14,13 @@
 	<p>ID:                  {{ $produto->id }}</p>
     <p>Nome:                {{ $produto->nome }}</p>
     <p>Descrição:           {{ $produto->descricao }}</p>
+    <p>Promoção:            
+            @if ($produto->promocao === 1)
+                Produto em promoção!
+            @else
+                Produto fora de promoção!
+            @endif
+    </p>
 	<p>Valor:               {{ $produto->valor}}</p>
     <p>Categoria:           {{ $produto->categoria->nome }}</p>
     <p>Criação:             {{ Carbon\Carbon::parse($produto->created_at)->format('d/m/Y H:i') }}</p>

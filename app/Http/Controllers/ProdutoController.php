@@ -16,7 +16,8 @@ class ProdutoController extends Controller
     public function index()
     {
         // listar todos os produtos
-        $produtos = Produto::orderBy('categoria_id', 'ASC')->get();
+        //$produtos = Produto::orderBy('categoria_id', 'ASC')->get();
+        $produtos = Produto::orderBy('categoria_id', 'ASC')->paginate(2);
         return view('produto.index', ['produtos' => $produtos]);
     }
 
@@ -45,13 +46,15 @@ class ProdutoController extends Controller
             'descricao.required' => 'O campo descrição é obrigatório!',
             'valor.required' => 'O campo valor é obrigatório!',
             'categoria_id.required' => 'O campo categoria é obrigatório!',
+            'promocao.required' => 'O campo promoção é requirido',
         ];
 
         $validateData = $request->validate([
-            'nome'      => 'required|min:7',
-            'descricao' => 'required',
-            'valor' => 'required',
-            'categoria_id.required' => 'O campo categoria é obrigatório!',
+            'nome'          => 'required|min:7',
+            'descricao'     => 'required',
+            'valor'         => 'required',
+            'categoria_id'  => 'required',
+            'promocao'      => 'required',
         ], $message);
 
 
@@ -60,6 +63,7 @@ class ProdutoController extends Controller
         $produto->descricao = $request->descricao;
         $produto->valor = $request->valor;
         $produto->categoria_id = $request->categoria_id;
+        $produto->promocao = $request->promocao;
         
         $produto->save();
 
@@ -107,13 +111,15 @@ class ProdutoController extends Controller
             'descricao.required' => 'O campo descrição é obrigatório!',
             'valor.required' => 'O campo valor é obrigatório!',
             'categoria_id.required' => 'O campo categoria é obrigatório!',
+            'promocao.required' => 'O campo promoção é requirido',
         ];
 
         $validateData = $request->validate([
-            'nome'      => 'required|min:7',
-            'descricao' => 'required',
-            'valor'     => 'required',
-            'categoria_id' => 'required',
+            'nome'          => 'required|min:7',
+            'descricao'     => 'required',
+            'valor'         => 'required',
+            'categoria_id'  => 'required',
+            'promocao'      => 'required',
             
         ], $message);
 
@@ -122,6 +128,7 @@ class ProdutoController extends Controller
         $produto->descricao = $request->descricao;
         $produto->valor     = $request->valor;
         $produto->categoria_id = $request->categoria_id;
+        $produto->promocao = $request->promocao;
 
         $produto->save();
        

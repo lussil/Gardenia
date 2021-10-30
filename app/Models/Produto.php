@@ -9,12 +9,16 @@ use App\Models\Categoria;
 class Produto extends Model
 {
     use HasFactory;
+    
     public function categoria(){
         return $this->hasOne(Categoria::class, 'id', 'categoria_id');
     }
+
+
 
     public function pedido()
     {
         return $this->belongsToMany(Pedido::class, 'pedido_produtos');
     }
+
 }

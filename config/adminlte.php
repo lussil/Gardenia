@@ -288,7 +288,7 @@ return [
                 ],
                 [
                     'text'    => 'Promoção',
-                    'url'     => '#',
+                    'url'     => 'promocao',
                     
                     
                 ],

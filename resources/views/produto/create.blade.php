@@ -29,12 +29,13 @@
     <br>
     {{ Form::select('categoria_id', $categorias , ['class' => 'form-select form-select-lg mb-3'] ) }} 
     <br>
-
     {{ Form::label('descricao', 'Descrição' , ['class' => 'mt-3 '] ) }}
     {{ Form::text('descricao', null , ['class' => 'form-control mb-3 '] ) }}
 
     {{ Form::label('valor', 'valor') }}
     {{ Form::number('valor', null , ['class' => 'form-control mb-3' ,'step'=> 'any'] ) }}
+
+    
 
     
     {{ Form::submit('Enviar' , ['class' => 'btn btn-outline-success ']) }}

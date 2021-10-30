@@ -19,13 +19,15 @@
 @endif
 <div class="container col-8">
  
-  
-@if ($pedido->count() > 1)
-aguarde por novos pedidos
+    <div class="callout callout-info">
+@if ($pedido->count() < 0)
+
+    <P >AGUARDE NOVOS PEDIDOS</P > 
 @else
-novo pedido
+ <P>NOVOS PEDIDOS </P >
 
 @endif
+</div>
     <table class="table  no-margin">
         <thead>
             <tr>
