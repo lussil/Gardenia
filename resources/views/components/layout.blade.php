@@ -12,7 +12,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com">
 
-    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+            crossorigin="anonymous"></script>
     
     <link rel="stylesheet" href="http://localhost/gardenia/public/vendor/fontawesome-free/css/all.min.css">
     <link rel="stylesheet" href="http://localhost/gardenia/public/vendor/overlayScrollbars/css/OverlayScrollbars.min.css">
@@ -126,23 +128,7 @@ btnMobile.addEventListener("touchstart", toggleMenu);
 
 /*API do CEP */
 
-$('#CEP').keyup(function () {
-        var cep = $(this).cleanVal();
-        if (cep.length == 8) {
-            $.ajax({
-                type: "GET",
-                url: "http://viacep.com.br/ws/" + cep + "/json/",
-                success: function (response) {
-                    $('#Endereco').val(response.logradouro);
-                    $('#Bairro').val(response.bairro);
-                    $('#Cidade').val(response.localidade);
-                    $('#UF').val(response.uf);
-                    $('#Cod_Municipio').val(response.ibge);
-                   
-                }
-            });
-        }
-    });
+
       </script>
 
       
