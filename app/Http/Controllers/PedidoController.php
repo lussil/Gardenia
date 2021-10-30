@@ -18,7 +18,8 @@ class PedidoController extends Controller
     {
 
         $pedido = Pedido::where('status',1)->get();
-        return view('pedido.index', ['pedido' => $pedido]);
+        $numeroDePedidos =Pedido::where('status',1)->count();
+        return view('pedido.index', ['pedido' => $pedido ,'numeroDePedidos' => $numeroDePedidos ]);
         // foreach ($pedido->produto as $produto) {
         //  echo ($produto->nome);
         //}

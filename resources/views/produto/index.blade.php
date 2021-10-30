@@ -13,11 +13,13 @@
     }
 </script>
 
-
 @if (Session::has('message'))
 <div class="alert alert-info">{{ Session::get('message') }}</div>
 @endif
 <div class="container col-8">
+    
+<a class="btn btn-lg btn-success mb-2" href="{{URL::to ('produto/create')}}"> Adicionar</a>
+
  <table class="table  no-margin">
     <thead>
         <tr>
@@ -53,7 +55,6 @@
             </tr>
     </tbody>
  </table>
-<a class="btn btn-success" href="{{URL::to ('produto/create')}}"> criar</a>
 
 {{ $produtos->links() }}
 

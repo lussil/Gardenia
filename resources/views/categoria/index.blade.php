@@ -19,12 +19,12 @@
 <div class="alert alert-info">{{ Session::get('message') }}</div>
 @endif
 <div class="container col-8">
+<a class="btn btn-success btn-lg mb-3" href="{{URL::to ('categoria/create')}}"> Adicionar</a>
  <table class="table  no-margin">
     <thead class="thead-dark">
         <tr>
             <td>ID</td>
             <td>Nome</td>
-            
             <td>ações</td>
             
         </tr>
@@ -32,9 +32,6 @@
     <tbody>
             <tr>
                 @foreach ($categorias as $key => $value )
-
-
-                
                 <tr>
                     <td> {{$value->id}}</td>
                     <td> {{$value->nome}}</td>
@@ -58,7 +55,6 @@
             </tr>
     </tbody>
  </table>
-<a class="btn btn-success btn-lg" href="{{URL::to ('categoria/create')}}"> criar</a>
 </div>
 
 @stop

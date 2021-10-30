@@ -19,31 +19,36 @@
     </div>
     @endif
 
+    
     {{ Form::model($produto,array('route' => array('produto.update', $produto->id), 'method' => 'PUT')) }}
 
-    {{ Form::label('nome', 'Nome do produtos') }}
-    {{ Form::text('nome', $produto->nome , ['class' => 'form-control'] )}}
-
-    {{ Form::label('categoria', 'Categoria') }}
-    {{ Form::select('categoria_id', $categorias , ['class' => 'form-control'] ) }}
+    <div class="row">
+        <div class="col-6">
+            {{ Form::label('nome', 'Nome do produtos') }}
+            {{ Form::text('nome', $produto->nome , ['class' => 'form-control'] )}}
+        </div>
+        <div class="col-6">
+            {{ Form::label('categoria', 'Categoria' , ['class' => 'form-select ']) }} 
+            {{ Form::select('categoria_id', $categorias,null, array('class' => 'form-control ')) }} 
+        </div>
+        <div class="col-12">
+            {{ Form::label('descricao', 'Descrição' , ['class' => ' '] ) }}
+            {{ Form::text('descricao', $produto->descricao  , ['class' => 'form-control  '] ) }}
+        </div>
+        <div class="col-4">
+            {{ Form::label('valor', 'valor') }}
+            {{ Form::number('valor', $produto->valor , ['class' => 'form-control ' ,'step'=> 'any'] ) }} 
+        </div>
+        <div class="col-4">
+        {{ Form::label('promocao', 'promocao') }}
+        {{ Form::select('promocao', ['1' => 'Sim', '0' => 'Não'],$produto->promocao, array('class' => 'form-control') ) }}
+        </div>
+    </div>
+    {{ Form::submit('Enviar' , ['class' => 'btn btn-outline-success mt-3']) }}
     
-    <br>
-    
-    {{ Form::label('descricao', 'Descrição') }}
-    {{ Form::text('descricao', $produto->descricao , ['class' => 'form-control'] ) }}
-
-    {{ Form::label('promocao', 'promocao') }}
-    {{ Form::select('promocao', ['1' => 'sim', '0' => 'nao'], $produto->promocao ) }}
-    <br>
-
-    {{ Form::label('valor', 'Valor') }}
-    {{ Form::number('valor', $produto->valor, ['class' => 'form-control' , 'step'=> 'any']) }}
-            
-    {{ Form::submit('Enviar' , ['class' => 'btn btn-outline-success ']) }}
-
     {{ Form::close()  }}
-   
- 
+
+
 
 </div>
 

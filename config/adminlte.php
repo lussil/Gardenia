@@ -250,8 +250,14 @@ return [
         ],
         [
             'text'        => 'Doceria Gardenia',
-            'url'         => 'site',
+            'url'         => '/',
             'icon'        => 'far fa-fw fa-file',
+            
+        ],
+        [
+            'text'        => 'Dashboard',
+            'url'         => 'dashboard',
+            'icon'        => 'fas fa-tachometer-alt',
             
         ],
         ['header' => 'Configurações'],

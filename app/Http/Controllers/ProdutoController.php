@@ -17,7 +17,7 @@ class ProdutoController extends Controller
     {
         // listar todos os produtos
         //$produtos = Produto::orderBy('categoria_id', 'ASC')->get();
-        $produtos = Produto::orderBy('categoria_id', 'ASC')->paginate(2);
+        $produtos = Produto::orderBy('categoria_id', 'ASC')->paginate(10);
         return view('produto.index', ['produtos' => $produtos]);
     }
 

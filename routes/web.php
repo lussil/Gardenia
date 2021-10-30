@@ -29,7 +29,10 @@ Route::get('/carrinho', [SiteController::class, 'carrinho'])->name('doceriagarde
 Route::get('/checkout', [SiteController::class, 'checkout'])->name('doceriagardenia.checkout');
 
 
-Route::get('/dashboard', function () {return view('painel');})->middleware(['auth'])->name('painel');
+Route::get('/dashboard', function () {return view('dashboard');})->middleware(['auth'])->name('dashboard');
+
+
+//Route::get('/dashboard', function () {return view('painel');})->middleware(['auth'])->name('painel');
 // Rotas para user
 Route::get('/user', [UserController::class, 'index'])->middleware(['auth'])->name('user.index');
 Route::get('/user/show', [UserController::class, 'show'])->middleware(['auth'])->name('user.show');

@@ -7,30 +7,24 @@
 @stop
 
 @section('content')
-<script>
-    function ConfirmDelete() {
-        return confirm('Tem certeza que deseja excluir este registro?');
-    }
-</script>
+
 
 
 @if (Session::has('message'))
 <div class="alert alert-info">{{ Session::get('message') }}</div>
 @endif
-<div class="container col-8">
- 
+
+<div class="container col-8"> 
     <div class="callout callout-info">
-@if ($pedido->count() < 0)
-
-    <P >AGUARDE NOVOS PEDIDOS</P > 
+@if ($numeroDePedidos > 0)
+    <P>NOVOS PEDIDOS </P >
 @else
- <P>NOVOS PEDIDOS </P >
-
+    <P >AGUARDE POR NOVOS PEDIDOS</P > 
 @endif
 </div>
     <table class="table  no-margin">
         <thead>
-            <tr>
+            <tr> {{$numeroDePedidos}}
                 <td>Nome</td>
                 <td>Telefone</td>
                 <td>detalhes do pedido</td> 

@@ -3,7 +3,7 @@
 @section('title', 'Gardenia - Comentários')
 
 @section('content_header')
-    <h1>Comentarios dos clientes:</h1>
+    <h1>Comentarios dos clientes</h1>
 @stop
 
 @section('content')
@@ -19,6 +19,7 @@
 <div class="alert alert-info">{{ Session::get('message') }}</div>
 @endif
 <div class="container col-8">
+    <a class="btn btn-success btn-lg mb-3" href="{{URL::to ('comentario/create')}}"> Adicionar</a>
  <table class="table  no-margin">
     <thead class="thead-dark">
         <tr>
@@ -62,7 +63,6 @@
             </tr>
     </tbody>
  </table>
-<a class="btn btn-success btn-lg" href="{{URL::to ('comentario/create')}}"> criar</a>
 </div>
 
 @stop
