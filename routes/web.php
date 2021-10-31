@@ -20,25 +20,33 @@ use App\Http\Controllers\SiteController;
 |
 */
 
+
 Route::get('/', [SiteController::class, 'index'])->name('doceriagardenia.index');
 Route::get('/contato', [SiteController::class, 'contato'])->name('doceriagardenia.contato');
 Route::get('/produtos', [SiteController::class, 'produtos'])->name('doceriagardenia.produtos');
 Route::get('/promocoes', [SiteController::class, 'promocao'])->name('doceriagardenia.promocao');
 Route::get('/quemsomos', [SiteController::class, 'quemsomos'])->name('doceriagardenia.quemSomos');
+
+
+// Rotas do Carrinho
 Route::get('/carrinho', [SiteController::class, 'carrinho'])->name('doceriagardenia.carrinho');
 Route::get('/checkout', [SiteController::class, 'checkout'])->name('doceriagardenia.checkout');
 
+Route::get('/adicionarproduto/{id}', [SiteController::class, 'show'])->name('doceriagardenia.show');
+Route::post('/addProduto', [SiteController::class, 'addProduto'])->name('doceriagardenia.addProduto');
+Route::delete('/removeProduto/{key}',[SiteController::class,'removeProduto'])->name('removeProduto');
 
+
+// ---------
 Route::get('/dashboard', function () {return view('dashboard');})->middleware(['auth'])->name('dashboard');
 
 
-//Route::get('/dashboard', function () {return view('painel');})->middleware(['auth'])->name('painel');
-// Rotas para user
+// ------------------- Rotas para user
 Route::get('/user', [UserController::class, 'index'])->middleware(['auth'])->name('user.index');
 Route::get('/user/show', [UserController::class, 'show'])->middleware(['auth'])->name('user.show');
 
 
-// Rotas para página Categoria
+// ------------------- Rotas para página Categoria
 Route::get('/categoria', [CategoriaController::class, 'index'])->middleware(['auth' , 'can:administrador'])->name('categoria.index');
 
 Route::get('/categoria/create', [CategoriaController::class, 'create'])->middleware(['auth'])->name('categoria.create');
@@ -52,7 +60,7 @@ Route::put('/categoria/{id}', [CategoriaController::class, 'update'])->middlewar
 Route::delete('/categoria/{id}', [CategoriaController::class, 'destroy'])->middleware(['auth'])->name('categoria.destroy');
 
 
-// Rotas para página produto.
+// ------------------- Rotas para página produto.
 Route::get('/produto' , [ProdutoController::class, 'index'])->middleware(['auth'])->name('produto.index');
 
 Route::get('/produto/create', [ProdutoController::class, 'create'])->middleware(['auth'])->name('produto.create');
@@ -66,7 +74,7 @@ Route::put('/produto/{id}', [ProdutoController::class, 'update'])->middleware(['
 Route::delete('/produto/{id}', [ProdutoController::class, 'destroy'])->middleware(['auth'])->name('produto.destroy');
 
 
-// Rotas para página Comentários
+// ------------------- Rotas para página Comentários
 Route::get('/comentario' , [ComentarioController::class, 'index'])->name('comentario.index');
 
 Route::get('/comentario/create', [ComentarioController::class, 'create'])->name('comentario.create');
@@ -79,7 +87,7 @@ Route::put('/comentario/{id}' , [ComentarioController::class, 'update'])->name('
 
 Route::delete('/comentario/{id}', [ComentarioController::class, 'destroy'])->name('comentario.destroy');
 
-// Rotas para página promocao.
+// ------------------- Rotas para página promocao.
 Route::get('/promocao' , [PromocaoController::class, 'index'])->middleware(['auth'])->name('promocao.index');
 
 Route::get('/promocao/create', [PromocaoController::class, 'create'])->middleware(['auth'])->name('promocao.create');
@@ -93,7 +101,7 @@ Route::put('/promocao/{id}', [PromocaoController::class, 'update'])->middleware(
 Route::delete('/promocao/{id}', [PromocaoController::class, 'destroy'])->middleware(['auth'])->name('promocao.destroy');
 
 
-// Rotas para pedidos
+// ------------------- Rotas para pedidos
 Route::get('/pedido', [PedidoController::class , 'index'])->name('pedido.index');
 
 Route::get('/pedido/andamento', [PedidoController::class , 'andamento'])->name('pedido.andamento');

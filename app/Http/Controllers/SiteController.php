@@ -18,7 +18,7 @@ class SiteController extends Controller
      */
     public function index()
     {
-        $produtos = Produto::orderBy('nome', 'ASC')->get();
+        $produtos = Produto::limit(4)->orderBy('nome', 'ASC')->get();
         $comentarios = Comentario::orderBy('nome', 'ASC')->get(); 
 
         return view('doceriagardenia.index', ['produtos' => $produtos , 'comentarios' =>$comentarios]);
@@ -34,14 +34,106 @@ class SiteController extends Controller
         return view('doceriagardenia.contato');
     }
 
+     /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function addProduto(Request $request)
+    {
+         //echo gettype($cart), "\n";
+
+         $collection = collect([
+            [
+            'id' => $request->produto_id, 
+            'nome' => $request->nome, 
+            'quantidade' => $request->quantidade, 
+            'valor' => $request->valor
+        ]]);
+
+        //1 verifica se existe carrinho se não existe cria
+        $cart = (array) $request->session()->get('cart');
+
+        if(!$cart) { // se nao existe cria e insere primeiro registro
+            $request->session()->put('cart');
+            $request->session()->push('cart', $collection);
+        }else{ //se existe acrescenta novo registro
+
+            // 2 verifica se o item já existe no carrinho e se existir atualiza
+
+            $cart = (array) $request->session()->get('cart');
+
+            foreach ($cart as $key => $value) {
+                foreach ($value as $key2 => $value2) {
+                    if($value2['id'] == $request->produto_id){
+                        //echo('igual');
+                        unset($cart[$key]);
+                        $request->session()->forget('cart');
+                        $request->session()->put('cart', $cart);
+                    }
+                }
+            }
+
+            //4 recoloca no carrinho com nova quantidade
+            $request->session()->push('cart', $collection);
+
+            $cart = (array) $request->session()->get('cart');
+            //print_r($cart[0][0]['nome']);
+
+            //print_r($cart);
+
+        }
+
+        //return redirect()->back();
+        return redirect()->back()->with('message', 'Produto inserido com sucesso');  
+    }
+
+
+    public function carrinho(Request $request){
+
+        $cart = (array) $request->session()->get('cart');
+
+        return view('doceriagardenia.carrinho', ['cart' => $cart]);
+        /*
+        foreach ($cart as $key => $value) {
+            //echo($value[$key]['nome']);
+            //echo $key . ' - ' . gettype($value), "\n";
+            foreach ($value as $key2 => $value2) {
+                //echo gettype($value2), "\n";
+                echo($value2['id'] . ' - ' . $value2['nome'] . ' - ' . $value2['quantidade'] . ' - ' . $value2['valor']);
+                //echo($value[$key]->nome);
+                echo('<br>');
+            }
+        }
+        */
+
+    }
+
+     /**
+     * Exibe a Páina de contao.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+        $produto = Produto::findOrFail($id);
+        return view('doceriagardenia.show', ['produto' => $produto]);
+    }
+
     /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function carrinho()
-    {
-        return view('doceriagardenia.carrinho');
+   
+    public function removeProduto(Request $request, $key){
+
+        $cart = (array) $request->session()->get('cart');
+        unset($cart[$key]);
+        $request->session()->forget('cart');
+        $request->session()->put('cart', $cart);
+        return redirect()->back()->with('message', 'Produto excluido com sucesso'); 
+
     }
 
      /**
@@ -117,10 +209,7 @@ class SiteController extends Controller
      * @param  \App\Models\Site  $site
      * @return \Illuminate\Http\Response
      */
-    public function show(Site $site)
-    {
-        //
-    }
+  
 
     /**
      * Show the form for editing the specified resource.

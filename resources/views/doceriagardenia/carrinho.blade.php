@@ -57,6 +57,57 @@
   </div>
   </section>
 
+  @if (\Session::has('message'))
+  <div class="alert alert-success">
+      <ul>
+          <li>{!! \Session::get('message') !!}</li>
+      </ul>
+  </div>
+@endif
 
+    <dl class="dl-horizontal">
+
+      @if ($cart)
+
+      <table style="width:100%">
+        <tr>
+          <th>id</th>
+          <th>nome</th>
+          <th>quantidade</th>
+          <th>valor</th>
+          <th>total</th>
+          <th></th>
+        </tr>
+
+        @php($totaGeral=0)
+
+          @foreach ($cart as $key => $value)
+
+            @foreach ($value as $key2 => $value2)
+                  <tr>
+                    <td>{{ $value2['id'] }}</td>
+                    <td>{{ $value2['nome'] }}</td>
+                    <td>{{ $value2['quantidade'] }}</td>
+                    <td>{{ $value2['valor'] }}</td>
+                    <td>{{ $value2['quantidade'] * $value2['valor'] }}</td>
+                    <td>
+                      {{ Form::open(array('url' => 'removeProduto/' . $key)) }}
+                      {{ Form::hidden('_method', 'DELETE') }}
+                      {{ Form::submit('Excluir', array('class' => 'btn btn-danger')) }}
+                      {{ Form::close() }}</td>
+                  </tr>
+                  @php($totaGeral += $value2['quantidade'] * $value2['valor'])
+            @endforeach 
+                              
+          @endforeach 
+        </tr>
+        </table> 
+        Total geral = {{ $totaGeral }}
+
+      @else
+        Carrinho vazio!
+      @endif
+
+      
  @endsection
 

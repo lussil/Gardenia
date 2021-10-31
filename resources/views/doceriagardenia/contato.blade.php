@@ -31,8 +31,8 @@
         
     
               <div class="form-floating pt-2" >
-                <textarea class="form-control" placeholder="Deixe Sua Mensagem" id="Mensagem" style="height: 100px"></textarea>
-                <label for="Mensagem">Observação</label>
+                <textarea class="form-control"id="Mensagem" placeholder="Deixe sua mensagem" style="height:100px"></textarea>
+                <label for="Mensagem">Mensagem</label>
               </div>
 
               <div class="card-footer  d-grid gap-2 col-5 mx-auto">

@@ -35,9 +35,11 @@
                     <img src="{{ asset('/site/src/img/icon-carrinho.png')}}" alt="" />
                 </button>
                   </div>
+                  
                 </div>
+                <a  class="btn-outline" href="{{ URL::to('adicionarproduto/' . $produto->id) }}">Comprar</a>
               </div>  
-  
+             
               @endforeach
         </article>
     </section>
