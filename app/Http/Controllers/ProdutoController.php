@@ -21,11 +21,7 @@ class ProdutoController extends Controller
         return view('produto.index', ['produtos' => $produtos]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function create()
     {
         $categorias = Categoria::pluck('nome', 'id');

@@ -37,12 +37,19 @@
                   </div>
                   
                 </div>
-                <a  class="btn-outline" href="{{ URL::to('adicionarproduto/' . $produto->id) }}">Comprar</a>
+                <a  class="btn-outline" href="{{ URL::to('adicionarProduto/' . $produto->id) }}">Comprar</a>
               </div>  
              
               @endforeach
         </article>
     </section>
   </section>
+
+@endsection
+
+@section('js')
+
+<script></script>
+
 
 @endsection

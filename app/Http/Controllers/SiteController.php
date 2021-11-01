@@ -83,9 +83,11 @@ class SiteController extends Controller
             //print_r($cart);
 
         }
-
-        //return redirect()->back();
-        return redirect()->back()->with('message', 'Produto inserido com sucesso');  
+            $produto['succes'] = false;
+            $produto['message'] = $request->quantidade.  ' Produto Adicionado ao Carrinho';    
+            echo json_encode($produto);
+      //return redirect()->back();
+      //return redirect()->back()->with('message', '');  
     }
 
 
@@ -110,7 +112,7 @@ class SiteController extends Controller
     }
 
      /**
-     * Exibe a Páina de contao.
+     * Exibe a Página para adicionar produto ao carrinho.
      *
      * @return \Illuminate\Http\Response
      */

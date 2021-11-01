@@ -2,22 +2,19 @@
 
 @section('title','Doceria Gardenia - Adicionar {{$produto->nome}} Ao Carrinho')
 
-
-
 @section('content')
 
-@if (\Session::has('message'))
-<div class="alert alert-success">
-    {!! \Session::get('message') !!}
+<div id="mensagem" class="alert alert-success top-0 start-50 translate-middle-x toasts-top-right fixed " style="display: none" >
+  
 </div>
-@endif
-        <div class="box-body d-flex justify-content-center">      
-     
+
+        <div class="box-body d-flex justify-content-center" >      
+        
       
         <div class="card card-primary col-5">
-          {{ Form::open(array('url' => '/addProduto')) }}  
+          {{ Form::open(array('class' => 'addProduto' )) }}  
           {{ Form::hidden('produto_id', $produto->id) }}
-          {{ Form::hidden('nome', $produto->nome) }}
+          {{ Form::hidden('nome', $produto->nome, array('id' => 'nome' )) }}
           {{ Form::hidden('valor', $produto->valor) }}
             <div class="card-body">
               <div class="form-group">
@@ -51,4 +48,47 @@
         </div>
         
       </div>
-@endsection
+
+
+    
+
+        
+      @endsection
+
+      @section('script')
+      <script>       
+   
+       
+  
+      $(function()
+      {
+       $('form[class="addProduto"]').submit(function(event)
+       {
+        event.preventDefault();
+        setTimeout(function() {
+   $('#mensagem').fadeOut(1000);
+}, 2000);
+
+      $.ajax({
+        type: "post",
+        url: "{{ route('doceriagardenia.addProduto') }}",
+        data: $(this).serialize(),
+        dataType: "json",
+        success: function (response) {
+         
+          $( "#mensagem" ).empty();
+          $('#mensagem').show();
+          $('#mensagem').append(response.message);
+
+
+        }
+      });
+
+       });
+
+
+
+      });
+      </script>
+      @endsection
+   

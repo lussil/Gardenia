@@ -32,7 +32,7 @@ Route::get('/quemsomos', [SiteController::class, 'quemsomos'])->name('doceriagar
 Route::get('/carrinho', [SiteController::class, 'carrinho'])->name('doceriagardenia.carrinho');
 Route::get('/checkout', [SiteController::class, 'checkout'])->name('doceriagardenia.checkout');
 
-Route::get('/adicionarproduto/{id}', [SiteController::class, 'show'])->name('doceriagardenia.show');
+Route::get('/adicionarProduto/{id}', [SiteController::class, 'show'])->name('doceriagardenia.show');
 Route::post('/addProduto', [SiteController::class, 'addProduto'])->name('doceriagardenia.addProduto');
 Route::delete('/removeProduto/{key}',[SiteController::class,'removeProduto'])->name('removeProduto');
 

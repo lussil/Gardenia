@@ -5,17 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <!-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    
+   
     <link rel="stylesheet" href="{{asset('/site/src/style.css')}}">
     <link rel="stylesheet" href="{{asset('/site/src/normalize.css')}}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com">
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
-            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
-            crossorigin="anonymous"></script>
-    
     <link rel="stylesheet" href="http://localhost/gardenia/public/vendor/fontawesome-free/css/all.min.css">
     <link rel="stylesheet" href="http://localhost/gardenia/public/vendor/overlayScrollbars/css/OverlayScrollbars.min.css">
     <link rel="stylesheet" href="http://localhost/gardenia/public/vendor/adminlte/dist/css/adminlte.min.css">
@@ -38,7 +33,7 @@
           aria-expanded="false"
         >
           <span id="hamburger" class="hamburguer"></span>
-          <script src="site/script.js"></script>
+         
         </button>
         <ul id="menu" class="menu" role="menu">
          <li><a href="{{URL::to ('/')}}">inicio</a></li>
@@ -54,7 +49,7 @@
     </header>
 
     <br>
-    <h1 style="text-align: center;">@yield('inicio')</h1>
+    <h1  style="text-align: center;">@yield('inicio')  </h1>
     <br>
 
     
@@ -106,9 +101,10 @@
 
 </section>
 <!-- Final do copy -->
+
+
 <script>
-   
-                    
+                   
  /*Menu Hamburguer*/
 const btnMobile = document.getElementById("btn-mobile");
 function toggleMenu(event) {
@@ -126,13 +122,26 @@ function toggleMenu(event) {
 btnMobile.addEventListener("click", toggleMenu);
 btnMobile.addEventListener("touchstart", toggleMenu);
 
-/*API do CEP */
 
 
-      </script>
+    
+</script>
+    
+  @yield('scriptSlide')
 
-      
-@yield('scriptSlide')
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+crossorigin="anonymous"></script>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.3.0/jquery.form.min.js"></script>
+
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+@yield('script')
 </body>
 </html>
