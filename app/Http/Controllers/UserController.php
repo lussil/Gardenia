@@ -25,6 +25,7 @@ class UserController extends Controller
      */
     public function create()
     {
+        dd('teste');
         return view('user.create');
     }
 
@@ -45,9 +46,9 @@ class UserController extends Controller
      * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function show( $user)
+    public function show($id)
     {
-        $user = User::findOrFail($user);
+        $user = User::findOrFail($id);
         
         return view('user.show', ['user' => $user]);
     }

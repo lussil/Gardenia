@@ -43,7 +43,10 @@ Route::get('/dashboard', function () {return view('dashboard');})->middleware(['
 
 // ------------------- Rotas para user
 Route::get('/user', [UserController::class, 'index'])->middleware(['auth'])->name('user.index');
-Route::get('/user/show', [UserController::class, 'show'])->middleware(['auth'])->name('user.show');
+Route::get('/user/{id}', [UserController::class, 'show'])->middleware(['auth'])->name('user.show');
+
+Route::get('/user/create', [UserController::class, 'create'])->middleware(['auth'])->name('user.create');
+Route::post('/user/create', [UserController::class, 'store'])->middleware(['auth'])->name('user.store');
 
 
 // ------------------- Rotas para página Categoria
