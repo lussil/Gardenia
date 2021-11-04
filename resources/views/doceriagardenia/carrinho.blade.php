@@ -8,7 +8,7 @@
 
 
 
-
+{{-- 
 <section class="container-geral">
   <section class="container-inf-produto">
     <div class="lado-E">
@@ -55,7 +55,7 @@
       <button > <a style="text-decoration: none; color: #fff;" href="{{URL::to ('/checkout')}}">Finalizar</a></button>
     </form>
   </div>
-  </section>
+  </section> --}}
 
   @if (\Session::has('message'))
   <div class="alert alert-success">
@@ -101,9 +101,11 @@
                               
           @endforeach 
         </tr>
-        </table> 
-        Total geral = {{ $totaGeral }}
+        </table>  <br>
+        <a class="btn btn-lg btn-success mb-2 float-right" href="{{URL::to ('produto/create')}}"> Adicionar</a>
 
+        Total geral = R$ {{ $totaGeral }}
+       
       @else
         Carrinho vazio!
       @endif
