@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Hash;
+use Auth;
 
 class UserController extends Controller
 {
@@ -25,7 +27,6 @@ class UserController extends Controller
      */
     public function create()
     {
-        dd('teste');
         return view('user.create');
     }
 
@@ -37,7 +38,31 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $message = [
+            'name.required' => 'O campo nome é obrigatório!',
+            'name.min' => 'O campo nome precisa ter no mínimo :min caracteres!',
+            'email.required' => 'O campo email é obrigatório!',
+            'email.email' => 'Este e-mail não é valido!',
+            'password.required' => 'O campo nome é obrigatório!',
+            'password.same' => 'As senham precisam ser identicas!',
+
+        ];
+
+        $validateData = $request->validate([
+            'name'          => 'required|min:3',
+            'email'         => 'required|email',
+            'password'      =>'required|same:confirm-password',
+        ], $message);
+
+
+        $user = new User;
+        $user->name         = $request->name;
+        $user->perfil       = $request->perfil;
+        $user->email        = $request->email;
+        $user->password     = Hash::make($request->password);
+        $user->save();
+
+        return redirect()->route('user.index')->with('message', "user {$user->nome} criado com sucesso!");
     }
 
     /**
@@ -53,15 +78,25 @@ class UserController extends Controller
         return view('user.show', ['user' => $user]);
     }
 
+    public function perfil()
+    {
+        $user = Auth::user();
+
+        return view('user.perfil', ['user' => $user]);
+    }
+
+
     /**
      * Show the form for editing the specified resource.
      *
      * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function edit(User $user)
+    public function edit($id)
     {
-        //
+        $user = User::findOrFail($id);
+
+        return view('user.edit', ['user' => $user]);
     }
 
     /**
@@ -71,9 +106,32 @@ class UserController extends Controller
      * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, User $user)
+    public function update(Request $request, $id)
     {
-        //
+        $message = [
+            'name.required' => 'O campo nome é obrigatório!',
+            'name.min' => 'O campo nome precisa ter no mínimo :min caracteres!',
+            'email.required' => 'O campo email é obrigatório!',
+            'email.email' => 'Este e-mail não é valido!',
+        ];
+
+        $validateData = $request->validate([
+            'name'          => 'required|min:3',
+            'email'         => 'required|email',
+            'password'      => 'same:confirm-password',
+        ], $message);
+
+
+        $user = User::findOrFail($id);
+        $user->name         = $request->name;
+        $user->perfil       = $request->perfil;
+        $user->email        = $request->email;
+        if(!empty(trim($request->password))){
+            $user->password     = Hash::make($request->password);
+        }
+        $user->save();
+
+        return redirect()->route('user.index')->with('message', "user {$user->nome} atualizado com sucesso!");
     }
 
     /**
@@ -82,8 +140,11 @@ class UserController extends Controller
      * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function destroy(User $user)
+    public function destroy($id)
     {
-        //
+        $user = User::findOrFail($id);
+        $user->delete();
+
+        return redirect()->route('user.index')->with('message', 'usuário excluido com sucesso!');
     }
 }

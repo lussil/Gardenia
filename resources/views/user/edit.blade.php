@@ -1,10 +1,7 @@
 @extends('adminlte::page')
 
 @section('title', 'Dashboard')
-
-@section('content_header')
-    <h1>Usuarios</h1>
-@stop
+<h1>Usuários</h1>
 
 @section('content')
 
@@ -20,40 +17,43 @@
     </div>
     @endif
 
-            {{ Form::open(array('url' => '/user/create')) }}
+            {{ Form::model($user,array('route' => array('user.update', $user->id), 'method' => 'PUT')) }}
             <div class="row">
                 <div class="col-6">
                     {{ Form::label('name', 'Nome') }}
-                    {{ Form::text('name', null , ['class' => 'form-control'] )}}
+                    {{ Form::text('name', $user->name , ['class' => 'form-control'] )}}
                 </div>
                 <div class="col-6">
                     {{ Form::label('email', 'E-mail') }}
-                    {{ Form::text('email', null , ['class' => 'form-control'] ) }}
+                    {{ Form::text('email', $user->email , ['class' => 'form-control'] ) }}
                 </div>
                 <div class="col-6">
                     {{ Form::label('perfil', 'Perfil' , ['class' => 'form-select ']) }} 
-                    {{ Form::select('perfil', ['1' => 'Administrador', '2' => 'Ajudante'],null, array('class' => 'form-control ')) }} 
+                    {{ Form::select('perfil', ['1' => 'Administrador', '2' => 'Ajudante'],$user->perfil, array('class' => 'form-control ')) }} 
                 </div>
                 <div class="col-6">
                     {{ Form::label('password', 'senha') }}
-                    {{ Form::password('password', null, ['class' => 'form-control']) }}
+                    {{ Form::password('password', ['class' => 'form-control']) }}
+
+                    {{-- {{ Form::password('password', array('placeholder'=>'Password', 'class'=>'form-control' ) ) }} --}}
+
                 </div>
                 <div class="col-6">
                     {{ Form::label('password', 'confirmar senha') }}
-                    {{ Form::password('confirm-password', null, array('class' => 'form-control ')) }}
-                </div>
-            </div>
-            {{ Form::submit('Enviar' , ['class' => 'btn btn-outline-success ']) }}
+                    {{ Form::password('confirm-password',  array('class' => 'form-control ')) }}
 
-        
-        
+                    
+                </div>
+                {{ Form::submit('Enviar' , ['class' => 'btn btn-outline-success ']) }}
+
+            </div>
             {{ Form::close()  }}
+        
+         
 
 
 
         </div>
-
-        
 
 
 

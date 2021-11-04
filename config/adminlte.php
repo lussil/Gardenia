@@ -270,7 +270,7 @@ return [
 
         [
             'text' => 'Perfil',
-            'url'  => 'user/show',
+            'url'  => 'user/perfil',
             'icon' => 'fas fa-fw fa-user',
             
         ],

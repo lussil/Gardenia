@@ -26,8 +26,14 @@
                         <td>
                     
                         <a class="btn btn-info" href="{{ URL::to('user/' . $value->id) }}">visualizar</a>
-                    <a class="btn btn-warning" href="{{ URL::to('user/' . $value->id) }}">editar</a>
-                    <a class="btn btn-danger" href="#"> deletar</a>
+                    <a class="btn btn-warning" href="{{ URL::to('user/' . $value->id . '/edit') }}">editar</a>
+                    <!-- <a class="btn btn-danger" href="#"> deletar</a> -->
+
+                    {{ Form::open(array('url' => 'user/' . $value->id, 'onsubmit' => 'return ConfirmDelete()')) }}
+                    {{ Form::hidden('_method', 'DELETE') }}
+                    {{ Form::submit('Excluir', array('class' => 'btn btn-danger')) }}
+                    {{ Form::close() }}
+
                 </td>
                     </tr>
                     @endforeach
