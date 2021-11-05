@@ -11,6 +11,15 @@
 @php($quantidadeTotal=0)
 
 @section('content')
+@if ($errors->any())
+<div class="alert alert-danger">
+    <ul>
+        @foreach ($errors->all() as $error)
+            <li>{{ $error }}</li>
+        @endforeach
+    </ul>
+</div>
+@endif
    <h5 class="text-center"> confira seus futuros produtos</h5>
 <div class="card-body container-lg">
 <div class="row">
@@ -19,7 +28,7 @@
     <div class="card" style="background-color:#ffd000" >
       <div class="card-body">
         {{ Form::open(array('url' => '/concluirPedido')) }}
-        {{ Form::hidden('status', 1 ) }}
+      
           <div  class="form-group">
             {{ Form::label('nome', 'Nome') }}
             {{ Form::text('nome', null , ['class' => 'form-control', 'id'=> 'nome'] ) }}

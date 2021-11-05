@@ -148,7 +148,7 @@ btnMobile.addEventListener("touchstart", toggleMenu);
 			success: function(resposta){
 				$("#rua").val(resposta.logradouro);
 				$("#bairro").val(resposta.bairro);
-				$("#numero_casa").focus();
+				$("#numero").focus();
 			}
 		});
 	});

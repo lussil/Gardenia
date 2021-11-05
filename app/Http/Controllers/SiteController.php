@@ -6,6 +6,7 @@ use App\Models\Site;
 
 use App\Models\Produto;
 use App\Models\Categoria;
+use App\Models\PedidoProduto;
 use App\Models\Pedido;
 use App\Models\Comentario;
 use Illuminate\Http\Request;
@@ -133,27 +134,30 @@ class SiteController extends Controller
     public function concluirPedido(Request $request)
     {
         
-       /*  $cart = (array) $request->session()->get('cart');
+       /* 
         return view('doceriagardenia.index')->with('message', 'Pedido Solicitado');
          */
 /* 
-
 pegar dados do formulário
 salvar na tabela pedido
 guardar o id do pedido
 pegar $cart na session
 fazer foreach para cada linha 
 ai para cada linha fazer insert colocando como pedido_id o id do que acabou de ser inserido
-
 */
         $message = [
             'nome.required' => 'O campo nome é obrigatório!',
             'nome.min' => 'O campo nome precisa ter no mínimo :min caracteres!',
+            'CEP.required' => 'O campo CEP é obrigatório!',
+            'rua.required' => 'O campo rua é obrigatório!',
+            'numero.required' => 'O campo numero é obrigatório!',
+            'telefone.required' => 'O campo telefone é obrigatório!',
+            'observacao.required' => 'O campo observacao é obrigatório!',
+            'bairro.required' => 'O campo bairro é obrigatório!',
+            'complemento_observacao.required' => 'O campo complemento_observacao é obrigatório!',
         ];
-
         $validateData = $request->validate([
             'nome'                    => 'required|min:1',
-            'status'                  => 'required|min:1',
             'CEP'                     => 'required|min:1',
             'rua'                     => 'required|min:1',
             'numero'                  => 'required|min:1',
@@ -175,14 +179,32 @@ ai para cada linha fazer insert colocando como pedido_id o id do que acabou de s
         $pedido->bairro      = $request->bairro;
         $pedido->observacao      = $request->observacao;
         $pedido->complemento_observacao      = $request->complemento_observacao;
+        $pedido->status = 1;
+       
+       // $pedido->save();
 
-        $pedido->save();
-
-        dd($pedido->id);
-
+        $cart = (array) $request->session()->get('cart');
+       
+        foreach ($cart as $key => $value) {
+          
+          $produtoPedido = new PedidoProduto;
+          $produtoPedido->pedido_id = $pedido->id;
+          $produtoPedido->produto_id = 1 ; //$value[$key]['id'];
+          $produtoPedido->quantidade = $value[$key]['quantidade'];
+          $produtoPedido->valor = $value[$key]['valor'];
+          
+          $produtoPedido->save();
+        }
+        dd('teste');
 
     }
 
+    /* 
+            'id' => $request->produto_id, 
+            'nome' => $request->nome, 
+            'quantidade' => $request->quantidade, 
+            'valor' => $request->valor
+             */
      /**
      * Exibe a Página para adicionar produto ao carrinho.
      *
