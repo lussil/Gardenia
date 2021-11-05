@@ -19,6 +19,7 @@
     <div class="card" style="background-color:#ffd000" >
       <div class="card-body">
         {{ Form::open(array('url' => '/concluirPedido')) }}
+        {{ Form::hidden('status', 1 ) }}
           <div  class="form-group">
             {{ Form::label('nome', 'Nome') }}
             {{ Form::text('nome', null , ['class' => 'form-control', 'id'=> 'nome'] ) }}
