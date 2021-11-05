@@ -6,6 +6,7 @@ use App\Models\Site;
 
 use App\Models\Produto;
 use App\Models\Categoria;
+use App\Models\Pedido;
 use App\Models\Comentario;
 use Illuminate\Http\Request;
 
@@ -94,7 +95,6 @@ class SiteController extends Controller
     public function carrinho(Request $request){
 
         $cart = (array) $request->session()->get('cart');
-
         return view('doceriagardenia.carrinho', ['cart' => $cart]);
         /*
         foreach ($cart as $key => $value) {
@@ -108,6 +108,78 @@ class SiteController extends Controller
             }
         }
         */
+
+    }
+
+      /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function checkout(Request $request)
+    {
+        
+        $cart = (array) $request->session()->get('cart');
+        return view('doceriagardenia.checkout', ['cart' => $cart]);
+        
+    }
+
+
+     /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function concluirPedido(Request $request)
+    {
+        
+       /*  $cart = (array) $request->session()->get('cart');
+        return view('doceriagardenia.index')->with('message', 'Pedido Solicitado');
+         */
+/* 
+
+pegar dados do formulário
+salvar na tabela pedido
+guardar o id do pedido
+pegar $cart na session
+fazer foreach para cada linha 
+ai para cada linha fazer insert colocando como pedido_id o id do que acabou de ser inserido
+
+*/
+        $message = [
+            'nome.required' => 'O campo nome é obrigatório!',
+            'nome.min' => 'O campo nome precisa ter no mínimo :min caracteres!',
+        ];
+
+        $validateData = $request->validate([
+            'nome'                    => 'required|min:1',
+            'status'                  => 'required|min:1',
+            'CEP'                     => 'required|min:1',
+            'rua'                     => 'required|min:1',
+            'numero'                  => 'required|min:1',
+            'telefone'                => 'required|min:1',
+            'observacao'              => 'required|min:1',
+            'bairro'                  => 'required|min:1',
+            'complemento_observacao'  => 'required|min:1',
+            
+        ], $message);
+
+
+        $pedido = new Pedido;
+        $pedido->nome      = $request->nome;
+        $pedido->status      = $request->status;
+        $pedido->CEP      = $request->CEP;
+        $pedido->rua      = $request->rua;
+        $pedido->numero      = $request->numero;
+        $pedido->telefone      = $request->telefone;
+        $pedido->bairro      = $request->bairro;
+        $pedido->observacao      = $request->observacao;
+        $pedido->complemento_observacao      = $request->complemento_observacao;
+
+        $pedido->save();
+
+        dd($pedido->id);
+
 
     }
 
@@ -170,18 +242,6 @@ class SiteController extends Controller
         $produtos = Produto::where('promocao',1)->get();
         return view('doceriagardenia.promocao', ['produtos' => $produtos]);
     }
-
-
-     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function checkout()
-    {
-        return view('doceriagardenia.checkout');
-    }
-
 
 
     /**

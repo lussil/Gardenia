@@ -7,6 +7,9 @@
 
 @section('inicio','Opa, Estamos Quase Lá!')
 
+@php($totaGeral=0)
+@php($quantidadeTotal=0)
+
 @section('content')
    <h5 class="text-center"> confira seus futuros produtos</h5>
 <div class="card-body container-lg">
@@ -15,42 +18,47 @@
   <div class="col-12 col-md-6 ">
     <div class="card" style="background-color:#ffd000" >
       <div class="card-body">
-        <form action="">
+        {{ Form::open(array('url' => '/concluirPedido')) }}
+        {{ Form::hidden('status', 1 ) }}
+          <div  class="form-group">
+            {{ Form::label('nome', 'Nome') }}
+            {{ Form::text('nome', null , ['class' => 'form-control', 'id'=> 'nome'] ) }}
+          </div>
             <div  class="form-group">
-              <label for="cep">CEP <span class="text-danger">*</span></label>
-              <input type="text" class="form-control" name="cep" id="cep" >
+              {{ Form::label('CEP', 'CEP') }}
+              {{ Form::text('CEP', null , ['class' => 'form-control', 'id'=> 'CEP'] ) }}
             </div>
             <div  class="form-group">
-              <label for="logradouro">Rua <span class="text-danger">*</span></label>
-              <input type="text" class="form-control" name="logradouro" id="logradouro" readonly >
+              {{ Form::label('rua', 'Rua') }}
+              {{ Form::text('rua', null , ['class' => 'form-control', 'id'=> 'rua', 'readonly' => true] ) }}
+              
             </div>
             <div class="form-group">
-              <label for="bairro">Bairro <span class="text-danger">*</span></label>
-              <input type="text" class="form-control"  name="bairro"  id="bairro" readonly >
+               {{ Form::label('bairro', 'bairro') }}
+               {{ Form::text('bairro', null , ['class' => 'form-control', 'id'=> 'bairro', 'readonly' => true] ) }}
             </div>
             <div class="form-group">
-              <label for="numero_casa">Número <span class="text-danger">*</span></label>
-              <input type="text" class="form-control"  name="numero_casa"  id="numero_casa" >
+              {{ Form::label('Numero', 'Numero') }}
+              {{ Form::text('numero', null , ['class' => 'form-control', 'id'=> 'numero'] ) }}
             </div>
             <div class="form-group">
-              <label for="complemento">Complemento <span class="text-danger">*</span></label>
-              <input type="text" class="form-control"  name="complemento"  id="complemento" >
+              {{ Form::label('complemento_observacao', 'Complemento') }}
+              {{ Form::text('complemento_observacao', null , ['class' => 'form-control', 'id'=> 'complemento_observacao'] ) }}
             </div>
             <div class="form-group">
-              <label for="email">E-mail</label>
-              <input type="email" class="form-control"  name="email"  id="email" >
-            </div> 
-            <div class="form-group">
-              <label for="telefone">Telefone <span class="text-danger">*</span></label>
-              <input type="text" class="form-control"  name="Telefone"  id="Telefone" >
-            </div>
+              {{ Form::label('telefone', 'Telefone') }}
+              {{ Form::text('telefone', null , ['class' => 'form-control', 'id'=> 'telefone'] ) }}
+           </div>
     
 
           <div class="form-floating">
-            <textarea class="form-control" placeholder="Deixe uma Observação" id="observacao" style="height: 100px"></textarea>
+            {{ Form::textarea('observacao', null , ['class' => 'form-control', 'id'=> 'observacao', 'style' =>'height: 100px', 'placeholder'=>'' ] ) }}
+           
             <label for="observacao">Observação</label>
           </div>
-        </form>
+
+          {{ Form::submit('Enviar' , ['class' => 'btn btn-outline-success mt-3']) }}
+          {{ Form::close()  }}
       </div>
     </div>
 </div>
@@ -73,33 +81,28 @@
             
           </tr>
           </thead>
+          @foreach ($cart as $key => $value)
+
+          @foreach ($value as $key2 => $value2)
           <tbody>
             <tr>
-              <td><a href="pages/examples/invoice.html">Brigadeiro</a></td>
-              <td>2</td>
-              <td>R$ 6,90</td>
-              
-            </tr>
-            <tr>
-              <td><a href="pages/examples/invoice.html">Brigadeiro</a></td>
-              <td>2</td>
-              <td>R$ 6,90</td>
-              
-            </tr>
-            <tr>
-              <td><a href="pages/examples/invoice.html">Brigadeiro</a></td>
-              <td>2</td>
-              <td>R$ 6,90</td>
-              
+              <td><a href="pages/examples/invoice.html">{{ $value2['nome'] }}</a></td>
+              <td>{{ $value2['quantidade'] }}</td>
+              <td>R$ {{ $value2['valor'] }}</td> 
             </tr>
           </tbody>
+          @php($totaGeral += $value2['quantidade'] * $value2['valor'])
+          @php($quantidadeTotal += $value2['quantidade'])
+          @endforeach 
+                              
+          @endforeach 
         </table>
       </div>
       <!-- /.table-responsive -->
     </div>
     <!-- /.card-body -->
     <div class="card-footer clearfix ">
-      <p class="text-black float-right mt-2 "> Total: <span class="text-secondary ">(15 items)</span> <span class="text-black  mt-2">R$ 15,90</span></p>
+      <p class="text-black float-right mt-2 "> Total: <span class="text-secondary ">({{$quantidadeTotal}} items)</span> <span class="text-black  mt-2">R$ {{ $totaGeral }}</span></p>
     </div>
   </div>
 
@@ -111,33 +114,10 @@
   
 </div>
 
-
-
 </div>
 </div>
 
 
 
-@section('scriptSlide')
-<script type="text/javascript">
-	$("#cep").focusout(function(){
-	//Aqui vai o código		
-	});
-</script>
-<script type="text/javascript">
-	$("#cep").focusout(function(){
-		$.ajax({
-			url: 'https://viacep.com.br/ws/'+$(this).val()+'/json/unicode/',
-			dataType: 'json',
-			success: function(resposta){
-				$("#logradouro").val(resposta.logradouro);
-				$("#bairro").val(resposta.bairro);
-				$("#numero_casa").focus();
-			}
-		});
-	});
-</script>
-
-@endsection
  @endsection
 

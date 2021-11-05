@@ -36,7 +36,7 @@ Route::get('/adicionarProduto/{id}', [SiteController::class, 'show'])->name('doc
 Route::post('/addProduto', [SiteController::class, 'addProduto'])->name('doceriagardenia.addProduto');
 Route::delete('/removeProduto/{key}',[SiteController::class,'removeProduto'])->name('removeProduto');
 
-
+Route::post('/concluirPedido', [SiteController::class, 'concluirPedido'])->name('doceriagardenia.concluirPedido');
 // ---------
 Route::get('/dashboard', function () {return view('dashboard');})->middleware(['auth'])->name('dashboard');
 
