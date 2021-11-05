@@ -101,10 +101,12 @@
                               
           @endforeach 
         </tr>
-        </table>  <br>
-        <a class="btn btn-lg btn-success mb-2 float-right" href="{{URL::to ('produto/create')}}"> Adicionar</a>
-
+        </table> 
         Total geral = R$ {{ $totaGeral }}
+
+     
+        <a class="btn btn-lg btn-success mb-2" href="{{URL::to ('/checkout')}}"> seguir</a>
+
        
       @else
         Carrinho vazio!
