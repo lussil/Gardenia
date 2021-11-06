@@ -24,7 +24,8 @@
     {{ Form::text('nome', $promocao->nome , ['class' => 'form-control'] )}}
     
    
-    {{ Form::submit('Enviar' , ['class' => 'btn btn-outline-success ']) }}
+    {{ Form::submit('Enviar' , ['class' => 'btn btn-outline-success mt-2 mb-2 ']) }}
+    <a class="btn btn-primary " href="{{URL::to('promocao/')}}">Voltar</a>
 
     {{ Form::close()  }}
    

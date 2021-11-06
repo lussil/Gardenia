@@ -3,7 +3,7 @@
 @section('title', 'Gardenia - Editar categoria')
 
 @section('content_header')
-    <h1>Categorias</h1>
+    <h1 style="text-align: center;">Categorias</h1>
 @stop
 
 @section('content')
@@ -24,8 +24,8 @@
     {{ Form::text('nome', $categoria->nome , ['class' => 'form-control'] )}}
     
    
-    {{ Form::submit('Enviar' , ['class' => 'btn btn-outline-success ']) }}
-
+    {{ Form::submit('Enviar' , ['class' => 'btn btn-outline-success mt-2 mb-2 ']) }}
+    <a class="btn btn-primary " href="{{URL::to('categoria/')}}">Voltar</a>
     {{ Form::close()  }}
    
  

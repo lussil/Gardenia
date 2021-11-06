@@ -1,10 +1,9 @@
 @extends('adminlte::page')
 
 @section('title', 'Dashboard')
-<h1>Usuários</h1>
 
 @section('content')
-
+<h1 style="text-align: center;">Usuários</h1>
 <div class="container col-8">
 
 @if ($errors->any())
@@ -44,9 +43,10 @@
 
                     
                 </div>
-                {{ Form::submit('Enviar' , ['class' => 'btn btn-outline-success ']) }}
 
             </div>
+            {{ Form::submit('Enviar' , ['class' => 'btn btn-outline-success mt-2 mb-2 ']) }}
+            <a class="btn btn-primary" href="{{URL::to('user')}}">Voltar</a>
             {{ Form::close()  }}
         
          

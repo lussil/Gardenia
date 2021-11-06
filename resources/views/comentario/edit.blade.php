@@ -3,7 +3,7 @@
 @section('title', 'Gardenia - Editar comentários')
 
 @section('content_header')
-    <h1>Dashboard</h1>
+    <h1 style="text-align: center">Comentários</h1>
 @stop
 
 @section('content')
@@ -28,8 +28,8 @@
     
    
    
-    {{ Form::submit('Enviar' , ['class' => 'btn btn-outline-success ']) }}
-
+    {{ Form::submit('Enviar' , ['class' => 'btn btn-outline-success mb-2 mt-2 ']) }}
+    <a class="btn btn-primary " href="{{URL::to('comentario/')}}">Voltar</a>
     {{ Form::close()  }}
    
  

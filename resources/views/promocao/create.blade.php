@@ -3,7 +3,7 @@
 @section('title', 'Gardenia - Adicionar Promoção')
 
 @section('content_header')
-    <h1>Promoções</h1>
+    <h1 style="text-align: center">Promoções</h1>
 @stop
 
 @section('content')
@@ -26,10 +26,10 @@
     
     
     {{ Form::label('valor', 'valor') }}
-    {{ Form::number('valor', null , ['class' => 'form-control' ,'step'=> 'any'] ) }}
+    {{ Form::number('valor', null , ['class' => 'form-control' ,'step'=> 'any', 'placeholder' => 'Ex: 4,00'] ) }}
 
-    {{ Form::submit('Adicionar Promoção' , ['class' => 'btn btn-outline-success mt-3']) }}
-
+    {{ Form::submit('Adicionar Promoção' , ['class' => 'btn btn-outline-success mt-2 mb-2']) }}
+    <a class="btn btn-primary " href="{{URL::to('promocao/')}}">Voltar</a>
     {{ Form::close()  }}
 
 </div>

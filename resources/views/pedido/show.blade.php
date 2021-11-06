@@ -3,7 +3,7 @@
 @section('title', 'Gardenia - Detalhes do pedido')
 
 @section('content_header')
-    <h1>Pedido {{$pedido->id}}</h1>
+    <h1 style="text-align: center;">Pedido {{$pedido->id}}</h1>
 @stop
 
 @section('content')
@@ -30,19 +30,19 @@
         <p>Numero                :  {{$pedido->numero}}</p> 
         <p>Complemento           :  {{$pedido->complemento_observacao}}</p>
         @foreach ($pedido->produto as $value )
-                 <li>{{$value->nome}}</li> 
+                 <li  class="list-group-item">{{$value->nome}}</li> 
                  @endforeach
 
                  @if ($pedido->status == 2)
-                    <a class="btn btn-success" href="{{ URL::to('pedido/' . $pedido->id . '/statusConcluido') }}">Concluir pedido</a>
+                    <a class="btn btn-success mt-2" href="{{ URL::to('pedido/' . $pedido->id . '/statusConcluido') }}">Concluir pedido</a>
                 @elseif ($pedido->status == 1)
-                <a class="btn btn-success" href="{{ URL::to('pedido/' . $pedido->id . '/statusAndamento') }}">Aceitar</a> 
-                <a class="btn btn-danger"  href="{{ URL::to('pedido/' . $pedido->id . '/statusCancelado') }}">Rejeira pedido</a>
+                <a class="btn btn-success mt-2" href="{{ URL::to('pedido/' . $pedido->id . '/statusAndamento') }}">Aceitar</a> 
+                <a class="btn btn-danger mt-2"  href="{{ URL::to('pedido/' . $pedido->id . '/statusCancelado') }}">Rejeira pedido</a>
 
                 @else
                    
                 @endif
-
+                <a class="btn btn-primary mt-2" href="{{URL::to('pedido')}}">Voltar</a>
 </div>
 
 

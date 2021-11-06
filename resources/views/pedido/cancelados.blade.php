@@ -3,7 +3,7 @@
 @section('title', 'Gardenia - Pedidos negados')
 
 @section('content_header')
-    <h1>Cancelados</h1>
+    <h1 style="text-align: center;">Cancelados</h1>
 @stop
 
 @section('content')

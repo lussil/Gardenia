@@ -4,7 +4,7 @@
 @section('title', 'Gardenia - Detalhes do produto')
 
 @section('content_header')
-    <h1>Produtos</h1>
+    <h1 style="text-align: center">Produtos</h1>
 @stop
 
 @section('content')
@@ -25,8 +25,10 @@
     <p>Categoria:           {{ $produto->categoria->nome }}</p>
     <p>Criação:             {{ Carbon\Carbon::parse($produto->created_at)->format('d/m/Y H:i') }}</p>
     <p>Última modificação:  {{ Carbon\Carbon::parse($produto->updated_at)->format('d/m/Y H:i') }}</p>
-    </div>
 
+    <a class="btn btn-primary " href="{{URL::to('produto/')}}">Voltar</a>
+</div>
+    
 @stop
 
 @section('css')

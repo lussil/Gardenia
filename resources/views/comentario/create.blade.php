@@ -26,7 +26,8 @@
     {{ Form::label('comentario', 'Digite o comentario') }}
     {{ Form::text('comentario', null , ['class' => 'form-control'] )}}
     
-    {{ Form::submit('Enviar' , ['class' => 'btn btn-outline-success ']) }}
+    {{ Form::submit('Enviar' , ['class' => 'btn btn-outline-success mb-2 mt-2 ']) }}
+    <a class="btn btn-primary " href="{{URL::to('comentario/')}}">Voltar</a>
 
     {{ Form::close()  }}
 

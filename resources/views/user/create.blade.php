@@ -3,7 +3,7 @@
 @section('title', 'Dashboard')
 
 @section('content_header')
-    <h1>Usuarios</h1>
+    <h1 style="text-align: center">Usuarios</h1>
 @stop
 
 @section('content')
@@ -23,27 +23,28 @@
             {{ Form::open(array('url' => '/user/create')) }}
             <div class="row">
                 <div class="col-6">
-                    {{ Form::label('name', 'Nome') }}
-                    {{ Form::text('name', null , ['class' => 'form-control'] )}}
+                    {{ Form::label('name', 'Nome:') }}
+                    {{ Form::text('name', null , ['class' => 'form-control', 'placeholder' => 'Ex: Lucas'] )}}
                 </div>
                 <div class="col-6">
-                    {{ Form::label('email', 'E-mail') }}
-                    {{ Form::text('email', null , ['class' => 'form-control'] ) }}
+                    {{ Form::label('email', 'E-mail:') }}
+                    {{ Form::text('email', null , ['class' => 'form-control', 'placeholder' => 'Ex: lucas@gmail.com'] ) }}
                 </div>
                 <div class="col-6">
-                    {{ Form::label('perfil', 'Perfil' , ['class' => 'form-select ']) }} 
+                    {{ Form::label('perfil', 'Perfil:' , ['class' => 'form-select ']) }} 
                     {{ Form::select('perfil', ['1' => 'Administrador', '2' => 'Ajudante'],null, array('class' => 'form-control ')) }} 
                 </div>
                 <div class="col-6">
-                    {{ Form::label('password', 'senha') }}
-                    {{ Form::password('password', null, ['class' => 'form-control']) }}
+                    {{ Form::label('password', 'Senha:') }}
+                    {{ Form::password('password', ['class' => 'form-control', 'placeholder' => 'Digite uma senha forte']) }}
                 </div>
                 <div class="col-6">
-                    {{ Form::label('password', 'confirmar senha') }}
-                    {{ Form::password('confirm-password', null, array('class' => 'form-control ')) }}
+                    {{ Form::label('password', 'Confirmar senha:') }}
+                    {{ Form::password('confirm-password', array('class' => 'form-control ', 'placeholder' => 'Digite novamente')) }}
                 </div>
             </div>
-            {{ Form::submit('Enviar' , ['class' => 'btn btn-outline-success ']) }}
+            
+            {{ Form::submit('Enviar' , ['class' => 'btn btn-outline-success mt-3']) }}
 
         
         

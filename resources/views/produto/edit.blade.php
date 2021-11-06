@@ -3,7 +3,7 @@
 @section('title', 'Gardenia - Editar produtos')
 
 @section('content_header')
-    <h1>Produtos</h1>
+    <h1 style="text-align: center">Produtos</h1>
 @stop
 
 @section('content')
@@ -44,8 +44,8 @@
         {{ Form::select('promocao', ['1' => 'Sim', '0' => 'Não'],$produto->promocao, array('class' => 'form-control') ) }}
         </div>
     </div>
-    {{ Form::submit('Enviar' , ['class' => 'btn btn-outline-success mt-3']) }}
-    
+    {{ Form::submit('Enviar' , ['class' => 'btn btn-outline-success mt-2 mb-2']) }}
+    <a class="btn btn-primary " href="{{URL::to('produto/')}}">Voltar</a>
     {{ Form::close()  }}
 
 
