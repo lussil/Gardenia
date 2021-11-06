@@ -61,7 +61,7 @@ class SiteController extends Controller
             $request->session()->push('cart', $collection);
         }else{ //se existe acrescenta novo registro
 
-            // 2 verifica se o item já existe no carrinho e se existir atualiza
+        // 2 verifica se o item já existe no carrinho e se existir atualiza
 
             $cart = (array) $request->session()->get('cart');
 
@@ -181,23 +181,30 @@ ai para cada linha fazer insert colocando como pedido_id o id do que acabou de s
         $pedido->complemento_observacao      = $request->complemento_observacao;
         $pedido->status = 1;
        
-       // $pedido->save();
+        $pedido->save();
 
         $cart = (array) $request->session()->get('cart');
-       
+
         foreach ($cart as $key => $value) {
-          
-          $produtoPedido = new PedidoProduto;
-          $produtoPedido->pedido_id = $pedido->id;
-          $produtoPedido->produto_id = 1 ; //$value[$key]['id'];
-          $produtoPedido->quantidade = $value[$key]['quantidade'];
-          $produtoPedido->valor = $value[$key]['valor'];
-          
-          $produtoPedido->save();
+            foreach ($value as $key2 => $value2) {
+                
+                echo($value2['id']);
+                
+                $produtoPedido = new PedidoProduto;
+                $produtoPedido->pedido_id =  $pedido->id;
+                $produtoPedido->produto_id = $value2['id'];//intval($value[$key]['id']);
+                $produtoPedido->quantidade = $value2['quantidade'];
+                $produtoPedido->valor = $value2['valor'];
+               
+                $produtoPedido->save();
+            }
         }
-        dd('teste');
+        $request->session()->forget('cart');
+        return redirect()->route('doceriagardenia.index')->with('message', "Pedido realizado!");
+
 
     }
+
 
     /* 
             'id' => $request->produto_id, 

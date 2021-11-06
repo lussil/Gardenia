@@ -7,6 +7,9 @@
 @section('content')
     <!-- Começo do header -->
  
+@if (Session::has('message'))
+<div class="alert alert-info">{{ Session::get('message') }}</div>
+@endif
 <div id="mensagem" class="alert alert-success top-0 start-50 translate-middle-x toasts-top-right fixed " style="display: none" >
   
 </div>
