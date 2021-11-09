@@ -71,9 +71,9 @@
     <div>
         <h3>redes sociais</h3>
             <div class="icons">
-        <a href=""><img src="src/img/icon-facebook.png" alt=""></a>
-        <a href=""><img src="src/img/icon-insta.png" class="icon-center" alt=""></a>
-        <a href=""><img src="src/img/icon-twt.png" alt=""></a>
+        <a href=""><img src="{{ asset('/site/src/img/icon-facebook.png')}}" alt=""></a>
+        <a href=""><img src="{{ asset('/site/src/img/icon-insta.png')}}" class="icon-center" alt=""></a>
+        <a href=""><img src="{{ asset('/site/src/img/icon-twt.png')}}" alt=""></a>
             </div>
     </div>
     <div>
@@ -86,7 +86,7 @@
     <div>
       <h3>contato</h3>
       <ol>
-          <li><a href="">(21) 9999-9999</a></li>
+          <li><a href="">(21) 98210-9100</a></li>
           <li><a href="">(21) 9999-9999</a></li>
           <li><a href="mailto:comercial@gmail.com">comercial@gmail.com</a></li>
       </ol>

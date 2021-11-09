@@ -261,11 +261,12 @@ body {
 .third-cont .third-contp2 .container .card-body .card-footer .quantity input {
     border: none;
     background: none;
-    width: 20px;
+    width: 30px;
     font-size: 20px;
     color: #000;
     font-weight: 300;
     text-align: center;
+    margin-left: 2px;
 }
 
 .third-cont .third-contp2 .container .card-body .card-footer .quantity button {
@@ -274,7 +275,7 @@ body {
     color: #000;
     border-radius: 0;
     background: none;
-    padding: 0px 5px;
+    
 }
 
 .third-cont .third-contp2 .container .card-body .card-footer .quantity img {

@@ -251,6 +251,7 @@ body {
 }
 
 .third-cont .third-contp2 .container .card-body .card-footer .quantity {
+    background-color: #3A2351;
     border: solid 1px black;
     border-radius: 10px;
     line-height: 5px;
