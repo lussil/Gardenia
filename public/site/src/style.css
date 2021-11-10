@@ -355,6 +355,7 @@ body {
 .fourth-cont .container button:hover {
     transition: 0.3s;
     background-color: #FFD000;
+    color: #4A2D69;
     font-weight: bold;
 }
 
@@ -392,7 +393,7 @@ body {
 }
 
 .slides .body .sub-body .cliente {
-    max-width: 250px;
+   
     /* background-color: cornflowerblue; */
     display: flex;
     flex-wrap: wrap;

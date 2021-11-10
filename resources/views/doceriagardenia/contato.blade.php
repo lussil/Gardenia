@@ -51,7 +51,7 @@
         <br />
         <h2>Celular:</h2>
         <p>
-          +55 (21)9999-99999 <br />
+          +55 (21)98210-9100 <br />
           +55 (21)9999-99999
         </p>
         <br />
@@ -60,11 +60,11 @@
         <br />
         <h2>Redes socias</h2>
         <div class="imgContato">
-          <a href=""><img src="src/img/icon-facebook.png" alt="" /></a>
+          <a href=""><img src="{{ asset('/site/src/img/icon-facebook.png')}}" alt="" /></a>
           <a href=""
-            ><img src="src/img/icon-insta.png" class="icon-center" alt=""
+            ><img src="{{ asset('/site/src/img/icon-insta.png')}}" class="icon-center" alt=""
           /></a>
-          <a href=""><img src="src/img/icon-twt.png" alt="" /></a>
+          <a href=""><img src="{{ asset('/site/src/img/icon-twt.png')}}" alt="" /></a>
         </div>
       </div>
     
