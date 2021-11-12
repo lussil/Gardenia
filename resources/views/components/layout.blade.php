@@ -87,8 +87,8 @@
       <h3>contato</h3>
       <ol>
           <li><a href="">(21) 98210-9100</a></li>
-          <li><a href="">(21) 9999-9999</a></li>
-          <li><a href="mailto:comercial@gmail.com">comercial@gmail.com</a></li>
+         
+          <li><a href="doceria.gardeniaa@gmail.com">doceria.gardeniaa@gmail.com</a></li>
       </ol>
   </div>
 </section>

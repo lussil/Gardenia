@@ -30,43 +30,44 @@
         {{ Form::open(array('url' => '/concluirPedido')) }}
       
           <div  class="form-group">
-            {{ Form::label('nome', 'Nome') }}
-            {{ Form::text('nome', null , ['class' => 'form-control', 'id'=> 'nome'] ) }}
+            {{ Form::label('nome', 'Digite seu nome:') }}
+            {{ Form::text('nome', null , ['class' => 'form-control', 'id'=> 'nome', 'placeholder' => 'Ex: Leandro Correia'] ) }}
           </div>
             <div  class="form-group">
-              {{ Form::label('CEP', 'CEP') }}
+              {{ Form::label('CEP', 'CEP:') }}
               {{ Form::text('CEP', null , ['class' => 'form-control', 'id'=> 'CEP'] ) }}
             </div>
             <div  class="form-group">
-              {{ Form::label('rua', 'Rua') }}
-              {{ Form::text('rua', null , ['class' => 'form-control', 'id'=> 'rua', 'readonly' => true] ) }}
+              {{ Form::label('rua', 'Rua:') }}
+              {{ Form::text('rua', null , ['class' => 'form-control', 'id'=> 'rua', 'readonly' => true , 'placeholder' => 'Ex: Rua do alfaiate'] ) }}
               
             </div>
             <div class="form-group">
-               {{ Form::label('bairro', 'bairro') }}
-               {{ Form::text('bairro', null , ['class' => 'form-control', 'id'=> 'bairro', 'readonly' => true] ) }}
+               {{ Form::label('bairro', 'Bairro') }}
+               {{ Form::text('bairro', null , ['class' => 'form-control', 'id'=> 'bairro', 'readonly' => true , 'placeholder' => 'Ex: Barra da Tijuca'] ) }}
             </div>
             <div class="form-group">
-              {{ Form::label('Numero', 'Numero') }}
-              {{ Form::text('numero', null , ['class' => 'form-control', 'id'=> 'numero'] ) }}
+              {{ Form::label('Numero', 'Número:') }}
+              {{ Form::text('numero', null , ['class' => 'form-control', 'id'=> 'numero' , 'placeholder' => 'Ex: 07'] ) }}
             </div>
             <div class="form-group">
-              {{ Form::label('complemento_observacao', 'Complemento') }}
-              {{ Form::text('complemento_observacao', null , ['class' => 'form-control', 'id'=> 'complemento_observacao'] ) }}
+              {{ Form::label('complemento_observacao', 'Complemento:') }}
+              {{ Form::text('complemento_observacao', null , ['class' => 'form-control', 'id'=> 'complemento_observacao' , 'placeholder' => 'Ex: Ao lado da sorveteria Kiboom'] ) }}
             </div>
             <div class="form-group">
-              {{ Form::label('telefone', 'Telefone') }}
-              {{ Form::text('telefone', null , ['class' => 'form-control', 'id'=> 'telefone'] ) }}
+              {{ Form::label('telefone', 'Telefone:') }}
+              {{ Form::text('telefone', null , ['class' => 'form-control', 'id'=> 'telefone' , 'placeholder' => 'Ex: (21)97634-0934'] ) }}
            </div>
     
 
-          <div class="form-floating">
-            {{ Form::textarea('observacao', null , ['class' => 'form-control', 'id'=> 'observacao', 'style' =>'height: 100px', 'placeholder'=>'' ] ) }}
+          <div class="form-group">
+            {{ Form::label('observacao', 'Digite uma observação:') }}
+            {{ Form::textarea('observacao', null , ['class' => 'form-control', 'id'=> 'observacao', 'style' =>'height: 100px', 'placeholder' => 'Ex: Pouco chocolate'] ) }}
            
-            <label for="observacao">Observação</label>
+            
           </div>
 
-          {{ Form::submit('Enviar' , ['class' => 'btn btn-outline-success mt-3']) }}
+          {{ Form::submit('Enviar' , ['class' => 'btn btn-success mt-3']) }}
           {{ Form::close()  }}
       </div>
     </div>
