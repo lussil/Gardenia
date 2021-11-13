@@ -111,7 +111,7 @@
                   {{ Form::hidden('nome', $produto->nome, array('id' => 'nome' )) }}
                   {{ Form::hidden('valor', $produto->valor) }}  
                   <img
-                    src="{{ asset('/site/src/img/chocotone.png')}}"
+                    src="{{ asset("storage/{$produto->arquivo_name[0]}") }}"
                     alt=""
                   />
                   <div class="card-inf">

@@ -10,15 +10,18 @@ class Produto extends Model
 {
     use HasFactory;
     
-    public function categoria(){
+    public function categoria()
+    {
         return $this->hasOne(Categoria::class, 'id', 'categoria_id');
     }
-
-
 
     public function pedido()
     {
         return $this->belongsToMany(Pedido::class, 'pedido_produtos');
     }
 
+    public function arquivos()
+    {
+        return $this->hasMany(Arquivo::class, 'produto_id', 'id');
+    }
 }

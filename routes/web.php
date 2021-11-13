@@ -8,6 +8,7 @@ use App\Http\Controllers\ProdutoController;
 use App\Http\Controllers\PromocaoController;
 use App\Http\Controllers\PedidoController;
 use App\Http\Controllers\SiteController;
+use App\Http\Controllers\ArquivoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -133,6 +134,12 @@ Route::get('/pedido/{id}/statusAndamento', [PedidoController::class , 'statusAnd
 
 Route::get('/pedido/{id}', [PedidoController::class , 'show'])->name('pedido.show');
 
+
+Route::get('/arquivocreate/{id}', [ArquivoController::class, 'create'])->name('arquivo.create');
+
+Route::post('/arquivocreate', [ArquivoController::class, 'store'])->name('arquivo.store');
+
+Route::delete('arquivocreate/{id}', [ArquivoController::class, 'destroy'])->name('arquivocreate.destroy');
 
 
 require __DIR__.'/auth.php';

@@ -43,7 +43,7 @@
                             <td> {{$value->id}}</td>
                             <td> {{$value->categoria->nome}}</td>
                             <td> {{$value->nome}}</td>
-                            
+                            <td><a class="btn btn-primary" href="{{ URL::to('arquivocreate/' . $value->id) }}">Imagens</a></td>
                     <td><a class="btn btn-primary" href="{{ URL::to('produto/' . $value->id) }}">Visualizar</a>
                     </td>    
                     <td><a class="btn btn-warning" href="{{ URL::to('produto/' . $value->id . '/edit') }}"> editar</a>

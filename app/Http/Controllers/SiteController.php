@@ -9,6 +9,7 @@ use App\Models\Categoria;
 use App\Models\PedidoProduto;
 use App\Models\Pedido;
 use App\Models\Comentario;
+use App\Models\Arquivo;
 use Illuminate\Http\Request;
 
 class SiteController extends Controller
@@ -22,8 +23,8 @@ class SiteController extends Controller
     {
         $produtos = Produto::limit(4)->orderBy('nome', 'ASC')->get();
         $comentarios = Comentario::orderBy('nome', 'ASC')->get(); 
-
-        return view('doceriagardenia.index', ['produtos' => $produtos , 'comentarios' =>$comentarios]);
+        $arquivos = Arquivo::get();
+        return view('doceriagardenia.index', ['produtos' => $produtos , 'comentarios' =>$comentarios, ]);
     }
 
     /**

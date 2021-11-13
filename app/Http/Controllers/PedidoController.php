@@ -139,9 +139,11 @@ class PedidoController extends Controller
         $pedido = Pedido::find($id);
         $pedido->status = 4;
         $pedido->save();
-        
-        $pedido =  $pedido = Pedido::where('status',1)->get();
-        return view('pedido.index', ['pedido' => $pedido]);
+       
+        $numeroDePedidos =Pedido::where('status',1)->count();
+        $pedido = Pedido::where('status',1)->get();
+        return view('pedido.index', ['pedido' => $pedido ,'numeroDePedidos' => $numeroDePedidos ]);
+       
     }
     
 
