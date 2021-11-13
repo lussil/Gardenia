@@ -159,7 +159,7 @@ ai para cada linha fazer insert colocando como pedido_id o id do que acabou de s
         ];
         $validateData = $request->validate([
             'nome'                    => 'required|min:1',
-            'CEP'                     => 'required|min:1',
+            'CEP'                     => 'required|min:8',
             'rua'                     => 'required|min:1',
             'numero'                  => 'required|min:1',
             'telefone'                => 'required|min:1',

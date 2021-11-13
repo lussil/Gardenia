@@ -65,19 +65,21 @@
   </div>
 @endif
 
-    <dl class="dl-horizontal">
+    <dl class="dl-horizontal" style="width: 80%; margin: 0 auto;">
 
       @if ($cart)
 
-      <table style="width:100%">
-        <tr>
-          <th>id</th>
-          <th>nome</th>
-          <th>quantidade</th>
-          <th>valor</th>
-          <th>total</th>
-          <th></th>
-        </tr>
+      <table class="table" style="width:100%;">
+        <thead>
+            <tr>
+              <th scope="col">id</th>
+              <th scope="col">nome</th>
+              <th scope="col">quantidade</th>
+              <th scope="col">valor</th>
+              <th scope="col">total</th>
+              <th></th>
+            </tr>
+        </thead>
 
         @php($totaGeral=0)
 
@@ -102,16 +104,17 @@
           @endforeach 
         </tr>
         </table> 
-        Total geral = R$ {{ $totaGeral }}
+        <b>Total geral = R$
+          {{ $totaGeral }} </b> <br>
 
      
-        <a class="btn btn-lg btn-success mb-2" href="{{URL::to ('/checkout')}}"> seguir</a>
+        <a class="btn btn-lg btn-success mb-2" href="{{URL::to ('/checkout')}}">Realizar pedido</a>
 
        
       @else
         Carrinho vazio!
       @endif
 
-      
+    </dl>
  @endsection
 
