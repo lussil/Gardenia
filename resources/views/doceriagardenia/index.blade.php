@@ -110,10 +110,12 @@
                   {{ Form::hidden('produto_id', $produto->id) }}
                   {{ Form::hidden('nome', $produto->nome, array('id' => 'nome' )) }}
                   {{ Form::hidden('valor', $produto->valor) }}  
+                  @isset($produto->arquivos->first()->arquivo_name)
                   <img
-                    src="{{ asset("storage/{$produto->arquivo_name[0]}") }}"
+                  src="{{ asset("storage/{$produto->arquivos->first()->arquivo_name}") }}"
                     alt=""
                   />
+                  @endisset
                   <div class="card-inf">
                     <h5>{{$produto->nome}}</h5>
                     <p> {{$produto->descricao}}</p>
