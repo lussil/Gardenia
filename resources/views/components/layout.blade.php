@@ -71,9 +71,9 @@
     <div>
         <h3>redes sociais</h3>
             <div class="icons">
-        <a href=""><img src="{{ asset('/site/src/img/icon-facebook.png')}}" alt=""></a>
-        <a href=""><img src="{{ asset('/site/src/img/icon-insta.png')}}" class="icon-center" alt=""></a>
-        <a href=""><img src="{{ asset('/site/src/img/icon-twt.png')}}" alt=""></a>
+        <a href="https://www.facebook.com/doceriagardenia/"><img src="{{ asset('/site/src/img/icon-facebook.png')}}" alt=""></a>
+        <a href="https://instagram.com/doceria.gardenia?utm_medium=copy_link"><img src="{{ asset('/site/src/img/icon-insta.png')}}" class="icon-center" alt=""></a>
+        <a href="https://api.whatsapp.com/send?phone=5521982109100&text=Ol%C3%A1%2C%20Doceria%20Gardenia"><img src="{{ asset('/site/src/img/icon-twt.png')}}" alt=""></a>
             </div>
     </div>
     <div>
@@ -86,9 +86,9 @@
     <div>
       <h3>contato</h3>
       <ol>
-          <li><a href="">(21) 98210-9100</a></li>
+          <li><a href="https://api.whatsapp.com/send?phone=5521982109100&text=Ol%C3%A1%2C%20Doceria%20Gardenia">(21) 98210-9100</a></li>
          
-          <li><a href="doceria.gardeniaa@gmail.com">doceria.gardeniaa@gmail.com</a></li>
+          <li><a href="mailto:doceria.gardeniaa@gmail.com">doceria.gardeniaa@gmail.com</a></li>
       </ol>
   </div>
 </section>
