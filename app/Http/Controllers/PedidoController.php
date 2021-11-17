@@ -6,6 +6,7 @@ use App\Models\Pedido;
 use Illuminate\Http\Request;
 use App\Models\Produto;
 use App\Models\PedidoProduto;
+use Carbon\Carbon;
 
 class PedidoController extends Controller
 {
@@ -16,8 +17,8 @@ class PedidoController extends Controller
      */
     public function index()
     {
-
-        $pedido = Pedido::where('status',1)->get();
+        $pedido = Pedido::where('status',1)->orderBy('created_at', 'desc')->get();
+        
         $numeroDePedidos =Pedido::where('status',1)->count();
         return view('pedido.index', ['pedido' => $pedido ,'numeroDePedidos' => $numeroDePedidos ]);
         // foreach ($pedido->produto as $produto) {
@@ -97,19 +98,20 @@ class PedidoController extends Controller
 
     public function andamento(Pedido $pedido)
     {
-        $pedido = Pedido::where('status',2)->get();
+       
+        $pedido = Pedido::where('status',2)->orderBy('created_at', 'desc')->get();
         return view('pedido.andamento', ['pedido' => $pedido]);
     }
 
     public function concluidos(Pedido $pedido)
     {
-        $pedido = Pedido::where('status',3)->get();
+        $pedido = Pedido::where('status',3)->orderBy('created_at', 'desc')->get();
         return view('pedido.concluidos', ['pedido' => $pedido]);
     }
 
     public function cancelados(Pedido $pedido)
     {
-        $pedido = Pedido::where('status',4)->get();
+        $pedido = Pedido::where('status',4)->orderBy('created_at', 'desc')->get();
         return view('pedido.cancelados', ['pedido' => $pedido]);
     }
 
@@ -118,8 +120,7 @@ class PedidoController extends Controller
         $pedido = Pedido::find($id);
         $pedido->status = 2;
         $pedido->save();
-        
-        $pedido = Pedido::where('status',2)->get();
+        $pedido = Pedido::where('status',2)->orderBy('created_at', 'desc')->get();
         return view('pedido.andamento', ['pedido' => $pedido]);
     }
 
@@ -129,8 +130,9 @@ class PedidoController extends Controller
         $pedido = Pedido::find($id);
         $pedido->status = 3;
         $pedido->save();
-        
-        $pedido = Pedido::where('status',3)->get();
+       
+        $date = Carbon::today();
+        $pedido = Pedido::where('status',3)->where('created_at', '<', $date)->get();
         return view('pedido.concluidos', ['pedido' => $pedido]);
     }
 

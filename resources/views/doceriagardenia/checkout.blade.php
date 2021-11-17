@@ -66,9 +66,13 @@
            
             
           </div>
-
-          {{ Form::submit('Enviar' , ['class' => 'btn btn-success mt-3']) }}
-          {{ Form::close()  }}
+        
+     
+            <a href="{{URL::to ('/carrinho')}}" class="btn  btn-secondary mt-3 ">Voltar</a>
+            {{ Form::submit('Enviar' , ['class' => 'btn btn-success mt-3 float-right']) }}
+            {{ Form::close()  }}
+          
+         
       </div>
     </div>
 </div>
@@ -98,7 +102,9 @@
             <tr>
               <td><a href="pages/examples/invoice.html">{{ $value2['nome'] }}</a></td>
               <td>{{ $value2['quantidade'] }}</td>
-              <td>R$ {{ $value2['valor'] }}</td> 
+
+              
+              <td>R$ {{ $value2['quantidade'] * $value2['valor'] }}</td> 
             </tr>
           </tbody>
           @php($totaGeral += $value2['quantidade'] * $value2['valor'])
@@ -116,10 +122,7 @@
     </div>
   </div>
 
-    <div class="card-footer clearfix">
-      <a href="javascript:void(0)" class="btn btn-md btn-success ">Enviar</a>
-      <a href="javascript:void(0)" class="btn btn-md btn-secondary float-right">Voltar</a>
-    </div>
+   
     <!-- /.card-footer -->
   
 </div>

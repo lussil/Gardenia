@@ -21,14 +21,14 @@
  
 
     <div class="container col-8">
-      
-        <p>Nome                  :  {{$pedido->nome}}</p> 
-        <p>Telefone              :  {{$pedido->telefone}}</p>
-        <p>Observacao            :  {{$pedido->observacao}}</p> 
-        <p>Rua                   :  {{$pedido->rua}}</p>
-        <p>status                :  {{$pedido->status}}</p>
-        <p>Numero                :  {{$pedido->numero}}</p> 
-        <p>Complemento           :  {{$pedido->complemento_observacao}}</p>
+        <p class="bg-dark">Data do pedido        : {{ Carbon\Carbon::parse($pedido->created_at)->format('d/m  H:i' ) }}</p> 
+        <p>Nome                                  : {{$pedido->nome}}</p> 
+        <p>Telefone                              : {{$pedido->telefone}}</p>
+        <p>Observacao                            : {{$pedido->observacao}}</p> 
+        <p>Rua                                   : {{$pedido->rua}}</p>
+        <p>status                                : {{$pedido->status}}</p>
+        <p>Numero                                : {{$pedido->numero}}</p> 
+        <p>Complemento                           : {{$pedido->complemento_observacao}}</p>
         @foreach ($pedido->produto as $value )
                  <li  class="list-group-item">{{$value->nome}}</li> 
                  @endforeach

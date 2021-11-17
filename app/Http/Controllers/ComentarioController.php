@@ -41,13 +41,14 @@ class ComentarioController extends Controller
             'nome.required' => 'O campo nome é obrigatório!',
             'nome.min' => 'O campo nome precisa ter no mínimo :min caracteres!',
             'comentario.required' => 'O campo descrição é obrigatório!',
-            
+            'comentario.min' => 'O campo comentario precisa ter no mínimo :min caracteres!',
+            'comentario.max' => 'O campo comentario precisa ter no maximo :max caracteres!',
         ];
 
         $validateData = $request->validate([
             'nome'      => 'required|min:3',
-            'comentario'=>'required|min:2',
-            
+            'comentario'=>'required|min:2|max:170',
+                       
         ], $message);
 
 
@@ -100,13 +101,14 @@ class ComentarioController extends Controller
             'nome.required' => 'O campo nome é obrigatório!',
             'nome.min' => 'O campo nome precisa ter no mínimo :min caracteres!',
             'comentario.required' => 'O campo descrição é obrigatório!',
-            
+            'comentario.min' => 'O campo comentario precisa ter no mínimo :min caracteres!',
+            'comentario.max' => 'O campo comentario precisa ter no maximo :max caracteres!',
         ];
 
         $validateData = $request->validate([
             'nome'      => 'required|min:3',
-            'comentario'=>'required|min:2',
-            
+            'comentario'=>'required|min:2|max:170',
+                       
         ], $message);
 
         $comentario = Comentario::findOrFail($id);

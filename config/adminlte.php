@@ -281,9 +281,9 @@ return [
         // ],
         [
             'text'    => 'Loja',
-            'icon'    => 'fas fa-fw fa-share',
+            'icon'    => 'fas fa-fw fa-cash-register',
             'submenu' => [
-                
+              
                 [
                     'text' => 'Categorias',
                     'url'  => 'categoria',
