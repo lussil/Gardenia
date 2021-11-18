@@ -28,10 +28,11 @@
         <table class="table  no-margin">
             <thead>
                 <tr>
-                    <td>ID</td>
+                    <td>Id</td>
                     <td>Categoria</td>
                     <td>Nome</td>
                     <td>Preços</td>
+                    <td>Imagens</td>
                     <td>Ações</td>
                     
                 </tr>
@@ -43,8 +44,9 @@
                             <td> {{$value->id}}</td>
                             <td> {{$value->categoria->nome}}</td>
                             <td> {{$value->nome}}</td>
+                            <td> {{$value->valor}}</td>
                             <td><a class="btn btn-primary" href="{{ URL::to('arquivocreate/' . $value->id) }}">Imagens</a></td>
-                    <td><a class="btn btn-primary" href="{{ URL::to('produto/' . $value->id) }}">Visualizar</a>
+                    <td><a class="btn btn-info" href="{{ URL::to('produto/' . $value->id) }}">Visualizar</a>
                     </td>    
                     <td><a class="btn btn-warning" href="{{ URL::to('produto/' . $value->id . '/edit') }}"> editar</a>
                     </td>   

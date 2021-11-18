@@ -17,9 +17,9 @@
         <!-- small box -->
         <div class="small-box bg-info">
           <div class="inner">
-            <h3>150</h3>
+            <h3>{{$numeroDePedidos}}</h3>
 
-            <p>New Orders</p>
+            <p>Novos Pedidos</p>
           </div>
           <div class="icon">
             <i class="ion ion-bag"></i>
@@ -65,7 +65,7 @@
 
         <div class="info-box-content">
           <span class="info-box-text">Produtos</span>
-          <span class="info-box-number">42</span>
+          <span class="info-box-number">{{$numeroDeProdutos}}</span>
         </div>
         <!-- /.info-box-content -->
       </div>

@@ -20,7 +20,6 @@ class PedidoController extends Controller
     public function index()
     {
         $pedido = Pedido::where('status',1)->orderBy('created_at', 'desc')->get();
-        
         $numeroDePedidos =Pedido::where('status',1)->count();
         return view('pedido.index', ['pedido' => $pedido ,'numeroDePedidos' => $numeroDePedidos ]);
         // foreach ($pedido->produto as $produto) {
@@ -100,22 +99,21 @@ class PedidoController extends Controller
 
     public function andamento(Pedido $pedido)
     {
-       
-        $pedido = Pedido::where('status',2)->orderBy('created_at', 'desc')->get();
+        $pedido = Pedido::where('status',2)->get();
         return view('pedido.andamento', ['pedido' => $pedido]);
     }
 
     public function concluidos(Pedido $pedido)
     {
         $date = Carbon::today()->format('Y-m-d');
-        $pedido = Pedido::where('status',3)->where('updated_at','<', $date)->get();
-       
+        $pedido = Pedido::where('status',3)->where('updated_at', $date)->get();
         return view('pedido.concluidos', ['pedido' => $pedido]);
     }
 
     public function cancelados(Pedido $pedido)
     {
-        $pedido = Pedido::where('status',4)->orderBy('created_at', 'desc')->get();
+        $date = Carbon::today()->format('Y-m-d');
+        $pedido = Pedido::where('status',4)->where('updated_at', $date)->get();
         return view('pedido.cancelados', ['pedido' => $pedido]);
     }
 
@@ -155,8 +153,14 @@ class PedidoController extends Controller
 
     public function dashboard()
     {
+        $ultimoMes = Carbon::today()->subDays(30)->format('Y-m-d');
+        
+        $pedidoDoMes = Pedido::where('status',3)->where('updated_at','>', $ultimoMes)->get();
+        dd($pedidoDoMes);
+        $numeroDePedidos = Pedido::where('status',1)->count();
+        $numeroDeProdutos = Produto::count();
         $user = Auth::user();
-        return view('dashboard', ['user' => $user]);
+        return view('dashboard', ['pedidoDoMes' => $pedidoDoMes,'user' => $user, 'numeroDePedidos' => $numeroDePedidos, 'numeroDeProdutos' => $numeroDeProdutos]);
     }
     
 
