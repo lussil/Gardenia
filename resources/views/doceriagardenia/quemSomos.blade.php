@@ -31,7 +31,7 @@
               </p>
             </div>
             <img
-                src="{{ asset('/site/src/img/chocotone.png')}}"
+                src="{{ asset('/site/src/img/quemSomos-donut1.jpg')}}"
                 alt=""
               />
           </article>
@@ -41,7 +41,7 @@
         <li class="QS-containerConteudo">
             <article>
             <img
-                src="{{ asset('/site/src/img/chocotone.png')}}"
+                src="{{ asset('/site/src/img/quemSomos-donut2.jpg')}}"
                 alt=""
               />
           <div class="infromacoes">
@@ -68,7 +68,7 @@
             </p>
           </div>
           <img
-                src="{{ asset('/site/src/img/chocotone.png')}}"
+                src="{{ asset('/site/src/img/quemSomos-donut3.jpg')}}"
                 alt=""
               />
           </article>
@@ -78,7 +78,7 @@
         <li class="QS-containerConteudo">
             <article>
             <img
-                src="{{ asset('/site/src/img/chocotone.png')}}"
+                src="{{ asset('/site/src/img/quemSomos-donut4.jpg')}}"
                 alt=""
               />
           <div class="infromacoes">

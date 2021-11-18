@@ -31,7 +31,7 @@
                     <td>ID</td>
                     <td>Categoria</td>
                     <td>Nome</td>
-                    <td>Preços</td>
+                    <td>Imagem</td>
                     <td>Ações</td>
                     
                 </tr>

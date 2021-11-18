@@ -59,7 +59,8 @@
                 </div>
                 </fieldset><!-- /.table-responsive -->
             </div>
-         
+            <a class="btn btn-primary " href="{{URL::to('produto/')}}">Voltar</a>
+
 </body>
 </html>
 @endsection
