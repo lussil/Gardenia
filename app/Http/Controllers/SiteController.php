@@ -134,18 +134,6 @@ class SiteController extends Controller
      */
     public function concluirPedido(Request $request)
     {
-        
-       /* 
-        return view('doceriagardenia.index')->with('message', 'Pedido Solicitado');
-         */
-/* 
-pegar dados do formulário
-salvar na tabela pedido
-guardar o id do pedido
-pegar $cart na session
-fazer foreach para cada linha 
-ai para cada linha fazer insert colocando como pedido_id o id do que acabou de ser inserido
-*/
         $message = [
             'nome.required' => 'O campo nome é obrigatório!',
             'nome.min' => 'O campo nome precisa ter no mínimo :min caracteres!',
@@ -258,7 +246,8 @@ ai para cada linha fazer insert colocando como pedido_id o id do que acabou de s
     public function produtos()
     {
         $produtos = Produto::orderBy('nome', 'ASC')->get();
-        return view('doceriagardenia.produtos', ['produtos' => $produtos]);
+        $arquivos = Arquivo::get();
+        return view('doceriagardenia.produtos', ['produtos' => $produtos  ]);
     }
 
      /**
@@ -270,6 +259,7 @@ ai para cada linha fazer insert colocando como pedido_id o id do que acabou de s
     {
         
         $produtos = Produto::where('promocao',1)->get();
+        $arquivos = Arquivo::get();
         return view('doceriagardenia.promocao', ['produtos' => $produtos]);
     }
 

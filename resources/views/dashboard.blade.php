@@ -3,7 +3,8 @@
 @section('title', 'Gardenia - Dashboard')
 
 @section('content_header')
-    <h1>Dashboard</h1>
+   
+<h1 style="text-align: center;">Bem-Vindo {{ $user->name }}</h1>
 @stop
 
 @section('content')

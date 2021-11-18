@@ -39,8 +39,7 @@ Route::delete('/removeProduto/{key}',[SiteController::class,'removeProduto'])->n
 
 Route::post ('/concluirPedido', [SiteController::class, 'concluirPedido'])->name('doceriagardenia.concluirPedido');
 // ---------
-Route::get('/dashboard', function () {return view('dashboard');})->middleware(['auth'])->name('dashboard');
-
+Route::get('/dashboard',  [PedidoController::class, 'dashboard'])->middleware(['auth'])->name('dashboard');
 
 // ------------------- Rotas para user
 Route::get('/user', [UserController::class, 'index'])->middleware(['auth'])->name('user.index');

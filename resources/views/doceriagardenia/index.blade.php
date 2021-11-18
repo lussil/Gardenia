@@ -67,44 +67,7 @@
           <h2>Produtos</h2>
           <article class="container">
            
-            @foreach ( $produtos as $key => $produto )
-              
-            {{-- <div class="card card-primary col-5">
-              {{ Form::open(array('class' => 'addProduto' )) }}  
-              {{ Form::hidden('produto_id', $produto->id) }}
-              {{ Form::hidden('nome', $produto->nome, array('id' => 'nome' )) }}
-              {{ Form::hidden('valor', $produto->valor) }}
-                <div class="card-body">
-                  <div class="form-group">
-                    {{ $produto->nome}}
-                  </div>
-                  <div class="form-group">
-                    {{ $produto->valor}}
-                  </div>
-                  <div class="form-group">
-                    {{ $produto->descricao}}
-                  </div>    
-                </div>
-                <!-- /.card-body -->
-                <div class="card-footer">
-                  <div class="row g-3">
-                    <div class="col-12">
-                      {{ Form::label('quantidade', 'Quantidade' , ['class' => 'form col-12 ']) }} 
-                     
-                    </div>
-                    <div class="col-4">
-                      {{ Form::number('quantidade', 1, array('class' => 'form-control ', 'min' => '1')) }}
-                    </div>
-                    <div class="col-4">
-                      {{ Form::submit('Adicionar ao Carrinho', array('class' => 'btn btn-primary ' )) }}
-                    </div>
-                  </div>
-                </div>
-                {{ Form::close() }} --}}
-    
-    
-    
-                 
+            @foreach ( $produtos as $key => $produto ) 
                 <div class="card-body">
                   {{ Form::open(array('class' => 'addProduto' )) }}  
                   {{ Form::hidden('produto_id', $produto->id) }}
@@ -135,9 +98,6 @@
                   </div>
                   {{ Form::close() }}
                 </div>  
-           
-         
-                
                   @endforeach
 
           </article>

@@ -6,6 +6,8 @@ use App\Models\Pedido;
 use Illuminate\Http\Request;
 use App\Models\Produto;
 use App\Models\PedidoProduto;
+use App\Models\User;
+use Auth;
 use Carbon\Carbon;
 
 class PedidoController extends Controller
@@ -105,7 +107,9 @@ class PedidoController extends Controller
 
     public function concluidos(Pedido $pedido)
     {
-        $pedido = Pedido::where('status',3)->orderBy('created_at', 'desc')->get();
+        $date = Carbon::today()->format('Y-m-d');
+        $pedido = Pedido::where('status',3)->where('updated_at','<', $date)->get();
+       
         return view('pedido.concluidos', ['pedido' => $pedido]);
     }
 
@@ -130,9 +134,9 @@ class PedidoController extends Controller
         $pedido = Pedido::find($id);
         $pedido->status = 3;
         $pedido->save();
-       
-        $date = Carbon::today();
-        $pedido = Pedido::where('status',3)->where('created_at', '<', $date)->get();
+
+        $date = Carbon::today()->format('Y-m-d');
+        $pedido = Pedido::where('status',3)->where('updated_at', $date)->get();
         return view('pedido.concluidos', ['pedido' => $pedido]);
     }
 
@@ -146,6 +150,13 @@ class PedidoController extends Controller
         $pedido = Pedido::where('status',1)->get();
         return view('pedido.index', ['pedido' => $pedido ,'numeroDePedidos' => $numeroDePedidos ]);
        
+    }
+
+
+    public function dashboard()
+    {
+        $user = Auth::user();
+        return view('dashboard', ['user' => $user]);
     }
     
 
