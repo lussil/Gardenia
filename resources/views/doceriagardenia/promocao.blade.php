@@ -22,7 +22,7 @@
             {{ Form::hidden('nome', $produto->nome, array('id' => 'nome' )) }}
             {{ Form::hidden('valor', $produto->valor) }}  
             @isset($produto->arquivos->first()->arquivo_name)
-            <img
+            <img class="fotoProduto" style=""
             src="{{ asset("storage/{$produto->arquivos->first()->arquivo_name}") }}"
               alt=""
             />
@@ -36,7 +36,7 @@
                 <span id="price">R${{$produto->valor}}</span>
               </p>
               <div class="quantity">
-                
+
                 {{ Form::number('quantidade', 1, array( 'min' => '1' )) }}
             
                 <button class="carrinho" type="submit">

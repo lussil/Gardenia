@@ -207,8 +207,10 @@ body {
     margin: 10px;
 }
 
-.third-cont .third-contp2 .container .card-body img {
-    width: 100%;
+.third-cont .third-contp2 .container .card-body  .fotoProduto {
+    width:100%;
+    height: 200px;
+    
 }
 
 .third-cont .third-contp2 .container .card-body .card-inf {
@@ -503,11 +505,9 @@ footer .container div h3 {
     letter-spacing: 1px;
 }
 
-footer .container div img {
+footer .container div a svg {
     margin-right: 22px;
-    padding: 5px;
-    width: 30px;
-    background-color: #533375;
+    
 }
 
 footer .container div p {
@@ -892,11 +892,9 @@ footer .container div ol li a {
     display: flex;
 }
 
-.CTT-contcContatos .imgContato a img {
+.CTT-contcContatos .imgContato a svg {
     margin-right: 22px;
-    padding: 10px;
-    width: 30px;
-    background-color: #4a2d69;
+    color: #000;
 }
 
 @media (max-width: 600px) {

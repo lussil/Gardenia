@@ -22,7 +22,7 @@
             {{ Form::hidden('nome', $produto->nome, array('id' => 'nome' )) }}
             {{ Form::hidden('valor', $produto->valor) }}  
             @isset($produto->arquivos->first()->arquivo_name)
-            <img
+            <img class="fotoProduto"
             src="{{ asset("storage/{$produto->arquivos->first()->arquivo_name}") }}"
               alt=""
             />

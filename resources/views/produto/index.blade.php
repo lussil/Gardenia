@@ -31,8 +31,10 @@
                     <td>Id</td>
                     <td>Categoria</td>
                     <td>Nome</td>
+
                     <td>Preços</td>
                     <td>Imagens</td>
+
                     <td>Ações</td>
                     
                 </tr>
