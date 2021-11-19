@@ -154,13 +154,12 @@ class PedidoController extends Controller
     public function dashboard()
     {
         $ultimoMes = Carbon::today()->subDays(30)->format('Y-m-d');
-        
-        $pedidoDoMes = Pedido::where('status',3)->where('updated_at','>', $ultimoMes)->get();
-        dd($pedidoDoMes);
+        $pedidoDoMes = Pedido::where('status',3)->where('updated_at','>', $ultimoMes)->count();
+        $pedidoNegados = Pedido::where('status',4)->where('updated_at','>', $ultimoMes)->count();
         $numeroDePedidos = Pedido::where('status',1)->count();
         $numeroDeProdutos = Produto::count();
         $user = Auth::user();
-        return view('dashboard', ['pedidoDoMes' => $pedidoDoMes,'user' => $user, 'numeroDePedidos' => $numeroDePedidos, 'numeroDeProdutos' => $numeroDeProdutos]);
+        return view('dashboard', ['pedidoNegados' => $pedidoNegados, 'pedidoDoMes' => $pedidoDoMes,'user' => $user, 'numeroDePedidos' => $numeroDePedidos, 'numeroDeProdutos' => $numeroDeProdutos]);
     }
     
 
