@@ -189,7 +189,7 @@ class SiteController extends Controller
             }
         }
         $request->session()->forget('cart');
-        return redirect()->route('doceriagardenia.index')->with('message', "Pedido realizado!");
+        return redirect()->route('doceriagardenia.index')->with('message', "Seu pedido foi recebido e em breve entraremos em contato para confirmar a forma de pagamento ");
 
 
     }
