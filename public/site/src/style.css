@@ -83,8 +83,10 @@ body {
 
 .frist-cont {
     padding: 10px 0px;
-    background-color: #86709e;
-    width: 100%;
+    background-image: url("./img/capa.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+   
 }
 
 .frist-cont .container {
@@ -404,8 +406,8 @@ body {
 .slides .body .sub-body .cliente img {
     border-radius: 60%;
     /* background-color: chocolate; */
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
 }
 
 .slides .body .sub-body .cliente ul {
@@ -421,8 +423,8 @@ body {
 }
 
 .slides .body .sub-body .cliente ul li:nth-child(2) {
-    font-size: 18px;
-    font-weight: bold;
+    font-size: 14px;
+    font-weight: 600;
     color: rgb(104, 102, 102);
 }
 

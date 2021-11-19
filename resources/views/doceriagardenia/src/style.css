@@ -83,7 +83,8 @@ body {
 
 .frist-cont {
     padding: 10px 0px;
-    background-color: #86709e;
+        background-image: url("./img/capa.png");
+
     width: 100%;
 }
 
