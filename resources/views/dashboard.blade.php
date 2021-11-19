@@ -13,6 +13,7 @@
 
 
     <div class="row">
+   
     <div class="col-lg-3 col-6">
         <!-- small box -->
         <div class="small-box bg-info">
@@ -22,23 +23,23 @@
             <p>Novos Pedidos</p>
           </div>
           <div class="icon">
-            <i class="ion ion-bag"></i>
+            <i class="fas fa-concierge-bell"></i>
           </div>
-          <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+          
         </div>
       </div>
       <div class="col-lg-3 col-6">
         <!-- small box -->
         <div class="small-box bg-success">
           <div class="inner">
-            <h3>53<sup style="font-size: 20px">%</sup></h3>
+            <h3>{{$pedidoDoMes}}</h3>
 
-            <p>Bounce Rate</p>
+            <p>Pedidos concluidos</p>
           </div>
           <div class="icon">
-            <i class="ion ion-stats-bars"></i>
+            <i class="fas fa-check-circle"></i>
           </div>
-          <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+          
         </div>
       </div>
       
@@ -46,29 +47,33 @@
         <!-- small box -->
         <div class="small-box bg-danger">
           <div class="inner">
-            <h3>65</h3>
+            <h3>{{$pedidoNegados}}</h3>
 
-            <p>Unique Visitors</p>
+            <p>Pedidos negados</p>
           </div>
           <div class="icon">
-            <i class="ion ion-pie-graph"></i>
+            <i class="far fa-thumbs-down"></i>
           </div>
-          <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+          
         </div>
       </div>
-    
+      <div class="col-lg-3 col-6">
+        <!-- small box -->
+        <div class="small-box bg-warning">
+          <div class="inner">
+            <h3>{{$numeroDeProdutos}}</h3>
+           
+            <p>Produtos cadastrados</p>
+          </div>
+          <div class="icon">
+            <i class="fas fa-shopping-bag"></i>
+          </div>
+        </div>
+      </div>
     
     </div>
 
-      <div class="info-box mb-3 bg-warning">
-        <span class="info-box-icon"><i class="fas fa-tag"></i></span>
-
-        <div class="info-box-content">
-          <span class="info-box-text">Produtos</span>
-          <span class="info-box-number">{{$numeroDeProdutos}}</span>
-        </div>
-        <!-- /.info-box-content -->
-      </div>
+    
 
       <div class="card-footer bg-dark">
         <div class="row">
