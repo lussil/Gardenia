@@ -50,14 +50,14 @@ class AppServiceProvider extends ServiceProvider
                     'text'       => 'concluidos',
                     'icon_color' => 'green',
                     'url'        => 'pedido/concluidos',
-                    'label'       => Pedido::where('status', 3)->where('updated_at', Carbon::today()->format('Y-m-d'))->count(),
+                    'label'       => Pedido::whereRaw('DATE(updated_at) = CURDATE()')->where('status', 3)->count(),
                     'label_color' => 'success',
                 ],
                 [
                     'text'       => 'Negados',
                     'icon_color' => 'red',
                     'url'        => 'pedido/cancelados',
-                    'label'       => Pedido::where('status', 4)->where('updated_at', Carbon::today()->format('Y-m-d'))->count(),
+                    'label'       => Pedido::whereRaw('DATE(updated_at) = CURDATE()')->where('status', 4)->count(),
                     'label_color' => 'success',
                 ],
             );

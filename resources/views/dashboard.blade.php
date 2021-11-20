@@ -9,7 +9,7 @@
 
 @section('content')
 
-<div class="container col-8"> 
+<div class="container col-10"> 
 
 
     <div class="row">
@@ -75,7 +75,7 @@
 
     
 
-      <div class="card-footer bg-dark">
+      <div class="card-footer bg-dark mb-3">
         <div class="row">
           <div class="col-sm-3 col-6">
             <div class="description-block border-right">
@@ -115,6 +115,49 @@
         </div>
         <!-- /.row -->
       </div>
+
+     
+
+        <div class="card">
+          <div class="card-header border-0">
+            <h3 class="card-title">Produtos mais vendidos</h3>
+            <div class="card-tools">
+             
+            
+            </div>
+          </div>
+          <div class="card-body p-0">
+            <table class="table table-striped table-valign-middle">
+              <thead>
+              <tr>
+                <th>Poduto</th>
+                <th>Preço</th>
+                <th>Vendas</th>
+                
+              </tr>
+              </thead>
+              <tbody>
+                @foreach ( $vendidos as $value)
+                  
+               
+              <tr>
+                <td>
+                
+                  {{$value->nome}}
+                </td>
+                <td>R$ {{$value->valor}} BRL</td>
+                <td>
+                  
+                  {{$value->produtos_pedidos}} vendidos
+                </td>
+              
+              </tr>
+              @endforeach
+              </tbody>
+            </table>
+          </div>
+        </div>
+
 
 </div>
 

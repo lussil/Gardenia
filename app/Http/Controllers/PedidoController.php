@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Produto;
 use App\Models\PedidoProduto;
 use App\Models\User;
+use DB;
 use Auth;
 use Carbon\Carbon;
 
@@ -106,14 +107,14 @@ class PedidoController extends Controller
     public function concluidos(Pedido $pedido)
     {
         $date = Carbon::today()->format('Y-m-d');
-        $pedido = Pedido::where('status',3)->where('updated_at', $date)->get();
+        $pedido = Pedido::whereRaw('DATE(updated_at) = CURDATE()')->where('status', 3)->get();
         return view('pedido.concluidos', ['pedido' => $pedido]);
     }
 
     public function cancelados(Pedido $pedido)
     {
-        $date = Carbon::today()->format('Y-m-d');
-        $pedido = Pedido::where('status',4)->where('updated_at', $date)->get();
+       
+        $pedido = Pedido::whereRaw('DATE(updated_at) = CURDATE()')->where('status', 4)->get();
         return view('pedido.cancelados', ['pedido' => $pedido]);
     }
 
@@ -134,7 +135,7 @@ class PedidoController extends Controller
         $pedido->save();
 
         $date = Carbon::today()->format('Y-m-d');
-        $pedido = Pedido::where('status',3)->where('updated_at', $date)->get();
+        $pedido = Pedido::whereRaw('DATE(updated_at) = CURDATE()')->where('status', 3)->get();
         return view('pedido.concluidos', ['pedido' => $pedido]);
     }
 
@@ -149,7 +150,7 @@ class PedidoController extends Controller
         return view('pedido.index', ['pedido' => $pedido ,'numeroDePedidos' => $numeroDePedidos ]);
        
     }
-
+    
 
     public function dashboard()
     {
@@ -158,8 +159,14 @@ class PedidoController extends Controller
         $pedidoNegados = Pedido::where('status',4)->where('updated_at','>', $ultimoMes)->count();
         $numeroDePedidos = Pedido::where('status',1)->count();
         $numeroDeProdutos = Produto::count();
+        
+        $vendidos = Produto::select('produtos.nome', 'produtos.valor', DB::raw('COUNT(pedido_produtos.id) as produtos_pedidos'))
+        ->join('pedido_produtos', 'produtos.id', '=', 'pedido_produtos.produto_id')
+        ->groupBy('produtos.nome')
+        ->orderBy('produtos_pedidos', 'desc')
+        ->limit(6)->get();
         $user = Auth::user();
-        return view('dashboard', ['pedidoNegados' => $pedidoNegados, 'pedidoDoMes' => $pedidoDoMes,'user' => $user, 'numeroDePedidos' => $numeroDePedidos, 'numeroDeProdutos' => $numeroDeProdutos]);
+        return view('dashboard', ['vendidos' => $vendidos,'pedidoNegados' => $pedidoNegados, 'pedidoDoMes' => $pedidoDoMes,'user' => $user, 'numeroDePedidos' => $numeroDePedidos, 'numeroDeProdutos' => $numeroDeProdutos]);
     }
     
 
