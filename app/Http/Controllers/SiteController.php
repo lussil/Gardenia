@@ -21,7 +21,7 @@ class SiteController extends Controller
      */
     public function index()
     {
-        $produtos = Produto::limit(4)->orderBy('nome', 'ASC')->get();
+        $produtos = Produto::limit(3)->orderBy('nome', 'ASC')->get();
         $comentarios = Comentario::orderBy('nome', 'ASC')->get(); 
         $arquivos = Arquivo::get();
         return view('doceriagardenia.index', ['produtos' => $produtos , 'comentarios' =>$comentarios, ]);
