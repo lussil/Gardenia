@@ -130,23 +130,20 @@ body {
 
 .frist-cont .container .conteudo2 form button {
     font-size: 18px;
-    color: #FFD000;
-    background-color: #4A2D69;
+    color: #533375;
+    background-color: #FFD000;
     text-transform: lowercase;
+    font-weight: bold;
     margin: 10px 0px;
     padding: 20px 50px;
     border-style: none;
     border-radius: 5px;
 }
-
 .frist-cont .container .conteudo2 form button:hover {
     transition: 0.3s;
-    color: #533375;
-    background-color: #FFD000;
-    font-weight: bold;
-    margin-bottom: 11px;
+    color: #FFD000;
+    background-color: #533375;
 }
-
 
 /* Começo do PRIMEIRO-CONTAINER */
 
@@ -358,14 +355,13 @@ body {
 
 .fourth-cont .container button:hover {
     transition: 0.3s;
-    background-color: #FFD000;
-    color: #4A2D69;
-    font-weight: bold;
-}
+    box-shadow:  black 1px 1px 12px 1px;
 
+}
+/* 
 .fourth-cont .container button a:hover {
     color: #533375;
-}
+} */
 
 
 /* final do QUARTO CONTAINER */
@@ -376,7 +372,7 @@ body {
 
 .slides {
     padding: 10px 0;
-    background-color: blueviolet;
+    background-color: #755B90;
     width: 100%;
 }
 

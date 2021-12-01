@@ -46,7 +46,7 @@ return [
     */
 
     'logo' => '<b>Doceria Gardenia</b>',
-    'logo_img' => '/site/src/img/logo-gardênia.png',
+    'logo_img' => '/site/src/img/donnut-Logo.png',
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
     'logo_img_xl_class' => 'brand-image-xs',

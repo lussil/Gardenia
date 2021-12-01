@@ -75,7 +75,7 @@
 
     
 
-      <div class="card-footer bg-dark mb-3">
+      {{-- <div class="card-footer bg-dark mb-3">
         <div class="row">
           <div class="col-sm-3 col-6">
             <div class="description-block border-right">
@@ -114,7 +114,7 @@
           </div>
         </div>
         <!-- /.row -->
-      </div>
+      </div> --}}
 
      
 
